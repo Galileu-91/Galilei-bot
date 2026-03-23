@@ -183,9 +183,21 @@ async def menu(ctx):
 async def on_ready():
     print(f"✅ Galilei#0213 Online | Visual Alfredo | Sistema de Threads")
 
+def run():
+    # O Render usa a porta 10000 por padrão, ou a variável PORT
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
 # 5. Inicialização Segura
-if TOKEN:
-    keep_alive()  # Inicia o servidorzinho Flask
-    bot.run(TOKEN)
-else:
-    print("❌ ERRO: DISCORD_TOKEN não encontrado!")
+if __name__ == "__main__":
+    if TOKEN:
+        # Importante: Iniciar o servidor ANTES do bot
+        keep_alive()  
+        print("📡 Servidor Keep-Alive rodando...")
+        bot.run(TOKEN)
+    else:
+        print("❌ ERRO: DISCORD_TOKEN não encontrado!")
