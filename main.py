@@ -183,8 +183,9 @@ async def menu(ctx):
 async def on_ready():
     print(f"✅ Galilei#0213 Online | Visual Alfredo | Sistema de Threads")
 
+# 1. Ajuste na porta para o Render (Porta dinâmica)
 def run():
-    # O Render usa a porta 10000 por padrão, ou a variável PORT
+    # O Render define a porta automaticamente; se não houver, usa 10000
     port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
 
@@ -192,12 +193,25 @@ def keep_alive():
     t = Thread(target=run)
     t.start()
 
-# 5. Inicialização Segura
+# ... (Mantenha o restante das suas classes QuestaoView e MenuSimulado)
+
+# 2. Ajuste nos nomes dos botões (Sincronizar com o GitHub)
+class MenuSimulado(View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
+    @discord.ui.button(label="Teste 1", style=discord.ButtonStyle.secondary, row=1)
+    async def btn_plan(self, interaction: discord.Interaction, button: discord.ui.Button):
+        # Mudei para "Teste de prova 1.txt" para bater com o nome real no seu GitHub
+        await self.preparar_sala(interaction, "Teste de prova 1.txt") 
+
+# ... (Restante do código)
+
+# 5. Inicialização Segura (Padrão de Ciência de Dados)
 if __name__ == "__main__":
     if TOKEN:
-        # Importante: Iniciar o servidor ANTES do bot
         keep_alive()  
-        print("📡 Servidor Keep-Alive rodando...")
+        print("📡 Servidor Keep-Alive sinalizando na porta do Render...")
         bot.run(TOKEN)
     else:
-        print("❌ ERRO: DISCORD_TOKEN não encontrado!")
+        print("❌ ERRO: DISCORD_TOKEN não encontrado nas Environment Variables!")
