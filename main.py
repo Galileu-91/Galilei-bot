@@ -188,13 +188,21 @@ async def menu(ctx):
 async def on_ready():
     print(f"✅ Galilei#0213 Online | Visual Alfredo | Sistema de Threads")
 
-# --- INICIALIZAÇÃO ---
+# --- INICIALIZAÇÃO SEGURA ---
 if __name__ == "__main__":
     if TOKEN:
+        # 1. Inicia o Flask para o Render não dar timeout
         keep_alive()
+        
+        # 2. Aguarda um tempo maior para estabilizar a rede do Render
         import time
-        print("⏳ Aguardando 10 segundos para estabilizar conexão...")
-        time.sleep(10)
-        bot.run(TOKEN)
+        print("⏳ Aguardando 30 segundos para limpar sessões antigas...")
+        time.sleep(30) 
+        
+        # 3. Tenta rodar o bot
+        try:
+            bot.run(TOKEN)
+        except Exception as e:
+            print(f"❌ Erro ao iniciar o bot: {e}")
     else:
         print("❌ ERRO: DISCORD_TOKEN não encontrado!")
