@@ -5,6 +5,22 @@ import re
 import os
 import asyncio
 from dotenv import load_dotenv # Adicionado para segurança
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot Galilei está Online!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
 
 # 1. Configurações Iniciais e Segurança
 load_dotenv() # Carrega o arquivo .env
@@ -169,6 +185,7 @@ async def on_ready():
 
 # 5. Inicialização Segura
 if TOKEN:
+    keep_alive()  # Inicia o servidorzinho Flask
     bot.run(TOKEN)
 else:
     print("❌ ERRO: DISCORD_TOKEN não encontrado!")
