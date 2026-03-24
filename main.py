@@ -189,17 +189,23 @@ async def on_ready():
     print(f"✅ Galilei#0213 Online | Visual Alfredo | Sistema de Threads")
 
 # --- INICIALIZAÇÃO SEGURA (Versão Final) ---
+import threading
+
+# ... sua função keep_alive e o resto do código ...
+
 if __name__ == "__main__":
-    if TOKEN:
-        print("🚀 Iniciando servidor de manutenção...")
-        keep_alive()
-        
-        print("🤖 Tentando conectar o Galilei ao Discord...")
-        try:
+    try:
+        # 1. Cria a Thread para o Flask (o site que mantém vivo)
+        t = threading.Thread(target=keep_alive)
+        t.daemon = True  # Isso faz a thread fechar se o programa principal fechar
+        t.start()
+        print("🌐 Servidor de manutenção iniciado na porta 10000")
+
+        # 2. Inicia o Bot (isso bloqueia a execução aqui, o que é o correto)
+        if TOKEN:
+            print("🤖 Acordando o Galileu...")
             bot.run(TOKEN)
-        except Exception as e:
-            print(f"❌ ERRO FATAL: {e}")
-            import time
-            time.sleep(30)  # espera 30 segundos antes de reiniciar
-    else:
-        print("❌ ERRO: DISCORD_TOKEN não encontrado!")
+        else:
+            print("❌ Erro: Token não encontrado.")
+    except Exception as e:
+        print(f"⚠️ Ocorreu um erro ao iniciar: {e}")
