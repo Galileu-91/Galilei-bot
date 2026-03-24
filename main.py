@@ -189,17 +189,17 @@ async def on_ready():
     print(f"✅ Galilei#0213 Online | Visual Alfredo | Sistema de Threads")
 
 # --- INICIALIZAÇÃO SEGURA (Versão Final) ---
-if __name__ == "__main__":
+        if __name__ == "__main__":
     if TOKEN:
-        # 1. Inicia o Flask em background primeiro
         print("🚀 Iniciando servidor de manutenção...")
-        keep_alive() 
+        keep_alive()
         
-        # 2. Tenta conectar o bot ao Discord
         print("🤖 Tentando conectar o Galilei ao Discord...")
         try:
             bot.run(TOKEN)
         except Exception as e:
             print(f"❌ ERRO FATAL: {e}")
+            import time
+            time.sleep(30)  # espera 30 segundos antes de reiniciar
     else:
         print("❌ ERRO: DISCORD_TOKEN não encontrado!")
