@@ -191,17 +191,15 @@ async def on_ready():
 # --- INICIALIZAÇÃO SEGURA (Versão Final) ---
 if __name__ == "__main__":
     if TOKEN:
-        print("🚀 Iniciando servidor de manutenção Flask...")
+        # 1. Inicia o Flask em background primeiro
+        print("🚀 Iniciando servidor de manutenção...")
+        keep_alive() 
+        
+        # 2. Tenta conectar o bot ao Discord
+        print("🤖 Tentando conectar o Galilei ao Discord...")
         try:
-            keep_alive() # Inicia o servidor web em uma Thread separada
-            
-            print("🤖 Tentando conectar o Galilei ao Discord agora...")
-            # bot.run é o comando que realmente "liga" o bot
-            bot.run(TOKEN) 
-            
+            bot.run(TOKEN)
         except Exception as e:
-            # Se houver erro de Token ou rede, aparecerá aqui no log do Render
-            print(f"❌ ERRO FATAL AO LIGAR O BOT: {e}")
+            print(f"❌ ERRO FATAL: {e}")
     else:
-        # Se cair aqui, você precisa checar o nome da variável no painel do Render
-        print("❌ ERRO: A variável 'DISCORD_TOKEN' não foi encontrada no ambiente.")
+        print("❌ ERRO: DISCORD_TOKEN não encontrado!")
