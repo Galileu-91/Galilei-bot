@@ -1,4 +1,4 @@
-Dentre as etapas para um bom Planejamento Estratégico de Tecnologia da Informação, o primeiro item deve ser:
+# Dentre as etapas para um bom Planejamento Estratégico de Tecnologia da Informação, o primeiro item deve ser:
 Escolha uma opção:
 a. Ações após análises.
 b. Definição dos objetivos.
@@ -6,7 +6,7 @@ c. Posicionamento da empresa no mercado
 d. Análise do Cenário
 A resposta correta é: d.
 
-Escolha as palavras que melhor completam a frase abaixo:
+# Escolha as palavras que melhor completam a frase abaixo:
 Para que um prestador de serviços do tipo ______ utilize um____ é preciso que este seja instalado nos terminas dos usuários de maneira que venha a fornecer informações relevantes sobre a máquina e os programas que lá estão sendo executados. a máquina.
 Escolha uma opção:
 a. MSP ---- MMM
@@ -15,7 +15,7 @@ c. MSP --- RMM
 d. RMM ---- MSP
 A resposta correta é: c.
 
-Assinale a alternativa que melhor completa a frase abaixo:
+# Assinale a alternativa que melhor completa a frase abaixo:
 Um dos tópicos que garante uma abordagem do tipo ______ é a verificação prévia da integridade e garantia de funcionamento de todo um parque tecnológico. Esta garantia é composta de diversas ações, mas, sem dúvida, passam por testes e levantamentos de dados que devem, na medida do possível, serem_____________.
 Escolha uma opção:
 a. Break-fix ------ automatizados
@@ -23,7 +23,7 @@ b. MSP ---- automatizados
 c. MSP ------ manuais
 A resposta correta é: b.
 
-Assinale a alternativa que melhor completa a frase abaixo:
+# Assinale a alternativa que melhor completa a frase abaixo:
 O Brasil tem um histórico de em torno de ______ dispositivos por técnico, enquanto que em países como os Estados Unidos a automação pode chegar a permitir que em torno de ______ dispositivos sejam monitorados por técnicos:
 Escolha uma opção:
 a. 100 ---- 400
@@ -31,21 +31,21 @@ b. 200 ------ 300
 c. 100 ------ 200
 A resposta correta é: a.
 
-Assinale verdadeiro ou falso para a afirmativa abaixo
+# Assinale verdadeiro ou falso para a afirmativa abaixo
 Em empresas bem-organizadas, gastos de TI se restringem a aquisição de software e equipamentos e suas manutenções visto que, estes equipamentos mantém seu funcionamento ininterrupto.
 Escolha uma opção:
 a. Falso
 b. Verdadeiro
 A resposta correta é: a.
 
-MSP representa:
+# MSP representa:
 Escolha uma opção:
 a. Managed Service Prototyping – Gerenciamento de Serviços de Prototipagem
 b. Managed Service Provider – Provedores de Serviços Gerenciados 
 c. Maintenance Service Provider – Manutenção de Serviços de Provedores.
 A resposta correta é: b.
 
-Assinale o item ao qual um bom Planejamento Estratégico de TI não precisa atender:
+# Assinale o item ao qual um bom Planejamento Estratégico de TI não precisa atender:
 Escolha uma opção:
 a. Aumento na produtividade
 b. Foco na segurança.
@@ -53,35 +53,35 @@ c. Otimização do monitoramento.
 d. Aumento de custos com TI
 A resposta correta é: d.
 
-Investimentos na área de Tecnologia da Informação se tornaram necessários em empresas
+# Investimentos na área de Tecnologia da Informação se tornaram necessários em empresas
 Escolha uma opção:
 a. de pequeno, médio e grande porte.
 b. somente nas de médio e grande porte.
 c. somente nas de grande porte.
 A resposta correta é: a.
 
-RMM representa:
+# RMM representa:
 Escolha uma opção:
 a. Remote Monitoring & Management – Gerenciamento de Monitoramento Remoto
 b. Remote Mantenemente & Management.
 c. Rede de Monitoramento & Gerenciamento.
 A resposta correta é: a.
 
-Associe as frases às características do tipo de automação.
+# Associe as frases às características do tipo de automação.
 Refere-se a tarefas rotineiras com o acesso remoto e instalações simples como a de antivírus.
 a. Básica
 b. Avançada
 c. Media
 A resposta correta é: a.
 
-Associe as frases às características do tipo de automação.
+# Associe as frases às características do tipo de automação.
 Utilizam políticas pré-definidas de antivírus e procedimentos de atualização de segurança por meio de “Patches”.
 a. Básica
 b. Avançada
 c. Media
 A resposta correta é: b.
 
-São criadas tarefas e scripts personalizados, de maneira a atender necessidades específicas das empresas.
+# São criadas tarefas e scripts personalizados, de maneira a atender necessidades específicas das empresas.
 a. Média
 b. Básica
 c. Avançada

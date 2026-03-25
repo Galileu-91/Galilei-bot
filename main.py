@@ -190,7 +190,7 @@ class MenuSimulado(View):
         with open(caminho, 'r', encoding='utf-8') as f:
             conteudo = f.read()
 
-        blocos = re.split(r'\n(?=\d+\.)', conteudo)
+        blocos = re.split(r'\n(?=#)', conteudo)
         questoes_lista = []
         for bloco in blocos:
             if not bloco.strip(): continue
