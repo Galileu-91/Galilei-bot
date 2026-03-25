@@ -1,5 +1,4 @@
-#
-O que é "Business Intelligence" (BI)?
+#. O que é "Business Intelligence" (BI)?
 Escolha uma opção:
 a. Um processo de coleta, organização e análise de dados para dar suporte à tomada de decisão.
 b. Uma técnica de venda de computadores para empresas de grande porte.
@@ -7,8 +6,7 @@ c. Um software que substitui completamente a necessidade de gestores humanos.
 d. O ato de traduzir termos técnicos de TI para o inglês.
 A resposta correta é: a
 
-#
-Qual a função principal de um "Firewall" em uma rede corporativa?
+#. Qual a função principal de um "Firewall" em uma rede corporativa?
 Escolha uma opção:
 a. Acelerar a velocidade da internet em horários de pico.
 b. Controlar o tráfego de entrada e saída de dados com base em regras de segurança.
@@ -16,8 +14,7 @@ c. Realizar o backup automático de todas as estações de trabalho.
 d. Organizar os cabos de rede dentro do rack.
 A resposta correta é: b
 
-#
-O que define a técnica de "Phishing"?
+#. O que define a técnica de "Phishing"?
 Escolha uma opção:
 a. Uma atualização de segurança obrigatória do Windows.
 b. Um método de engenharia social para enganar usuários e obter informações confidenciais.
@@ -25,8 +22,7 @@ c. Um tipo de cabo de fibra óptica de alta performance.
 d. A instalação física de servidores em ambientes refrigerados.
 A resposta correta é: b
 
-#
-No ciclo de vida de desenvolvimento de sistemas (SDLC), qual a importância da fase de "Levantamento de Requisitos"?
+#. No ciclo de vida de desenvolvimento de sistemas (SDLC), qual a importância da fase de "Levantamento de Requisitos"?
 Escolha uma opção:
 a. Serve apenas para definir o preço final do software.
 b. É a fase onde se define o que o sistema deve fazer para atender às necessidades do negócio.

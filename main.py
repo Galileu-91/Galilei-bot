@@ -200,7 +200,7 @@ class MenuSimulado(View):
         await interaction.response.send_message(f"✅ Sala criada, clique aqui👉🏼: {thread.mention}", ephemeral=True)
         await self.iniciar_logica(interaction, nome_arquivo, thread)
 
-    async def iniciar_logica(self, interaction, nome_arquivo, thread):
+async def iniciar_logica(self, interaction, nome_arquivo, thread):
         caminho = os.path.join("Simulados", nome_arquivo)
         if not os.path.exists(caminho):
             return await thread.send(f"❌ Arquivo `{nome_arquivo}` não encontrado.")
@@ -208,50 +208,52 @@ class MenuSimulado(View):
         with open(caminho, 'r', encoding='utf-8') as f:
             conteudo = f.read()
 
-        blocos = re.split(r'\n(?=#)', conteudo)
+        # ✅ MELHORIA: Divide ignorando espaços extras e foca no marcador #
+        # ✅ NOVO DIVISOR: Ele quebra o texto sempre que achar um #
+        # Não importa se tem texto colado nele ou não
+        blocos = [b.strip() for b in conteudo.split('#') if b.strip()]
         questoes_lista = []
         
         for bloco in blocos:
-            if not bloco.strip(): continue
-            
+            # 1. Limpa o bloco e pula se estiver vazio
+            linhas = [l.strip() for l in bloco.split('\n') if l.strip()]
+            if not linhas: continue
+
+            # 2. Identifica a resposta correta no bloco
             res = re.search(r'resposta correta é:\s*([a-d])', bloco, re.IGNORECASE)
             letra_correta_original = res.group(1).lower() if res else "a"
 
-            linhas = bloco.strip().split('\n')
-            enunciado = ""
+            enunciado_acumulado = []
             alternativas_limpas = []
             texto_da_resposta = ""
             
             for linha in linhas:
-                linha_s = linha.strip()
-                if not linha_s: continue # Pula linhas vazias
-
-                # 1. Identifica se é uma alternativa (a., b., c., d.)
-                if re.match(r'^[a-d][\s\.)]', linha_s, re.IGNORECASE) and "resposta correta é" not in linha_s.lower():
-                    txt = re.sub(r'^[a-d][\s\.)]+', '', linha_s).strip()
+                # ✅ Identifica se a linha é uma alternativa (a. , b. , etc)
+                if re.match(r'^[a-d][\s\.)]', linha, re.IGNORECASE) and "resposta correta é" not in linha.lower():
+                    txt = re.sub(r'^[a-d][\s\.)]+', '', linha).strip()
                     alternativas_limpas.append(txt)
-                    if linha_s.lower().startswith(letra_correta_original):
+                    if linha.lower().startswith(letra_correta_original):
                         texto_da_resposta = txt
                 
-                # 2. Ignora a linha do gabarito original
-                elif "resposta correta é" in linha_s.lower():
+                # Ignora a linha do gabarito
+                elif "resposta correta é" in linha.lower():
                     continue
                 
-                # 3. Ignora o marcador de bloco
-                elif "#" in linha_s and len(linha_s) < 3:
-                    continue
-
-                # 4. TUDO O QUE SOBROU É ENUNCIADO (A pergunta propriamente dita)
+                # ✅ TUDO QUE SOBROU NO BLOCO É PERGUNTA
                 else:
-                    enunciado += linha + "\n"
-                    
-            if texto_da_resposta:
+                    enunciado_acumulado.append(linha)
+
+            if alternativas_limpas and texto_da_resposta:
                 questoes_lista.append({
-                    "pergunta": enunciado.strip(),
+                    "pergunta": "\n".join(enunciado_acumulado),
                     "alternativas": alternativas_limpas,
                     "texto_correto": texto_da_resposta
                 })
 
+        if not questoes_lista:
+            return await thread.send("❌ Não consegui ler nenhuma questão. Verifique se o formato do TXT está correto!")
+
+        # 2. EMBARALHAMENTO E ENVIO
         random.shuffle(questoes_lista)
         sessoes_usuarios[interaction.user.id] = questoes_lista
 
@@ -262,11 +264,11 @@ class MenuSimulado(View):
         letras = ["a", "b", "c", "d"]
         lista_formatada = [f"{letras[i]}. {t}" for i, t in enumerate(alts_shuffled) if i < 4]
 
-        corpo_final = f"{q['pergunta']}\n\n" + "\n".join(lista_formatada)
+        corpo_msg = f"**{q['pergunta']}**\n\n" + "\n".join(lista_formatada)
 
         view = QuestaoView(interaction.user.id, 0, 0, thread)
         msg = await thread.send(
-            content=f"📖 **Iniciando: {nome_arquivo}**\n\nQuestão 1:\n{corpo_final}", 
+            content=f"📖 **Iniciando Simulado**\n\nQuestão 1:\n{corpo_msg}", 
             view=view
         )
         view.message = msg
