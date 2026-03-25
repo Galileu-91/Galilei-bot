@@ -203,64 +203,73 @@ class MenuSimulado(View):
     async def iniciar_logica(self, interaction, nome_arquivo, thread):
         caminho = os.path.join("Simulados", nome_arquivo)
         if not os.path.exists(caminho):
-            return await thread.send(f"❌ Arquivo `{nome_arquivo}` não encontrado na pasta /Simulados.")
+            return await thread.send(f"❌ Arquivo `{nome_arquivo}` não encontrado.")
 
         with open(caminho, 'r', encoding='utf-8') as f:
             conteudo = f.read()
 
-        # ✅ NOVO SISTEMA: Separa Enunciado e Alternativas
         blocos = re.split(r'\n(?=#)', conteudo)
         questoes_lista = []
+        
         for bloco in blocos:
             if not bloco.strip(): continue
             
+            # 1. Identifica a letra correta original (A, B, C ou D)
             res = re.search(r'(?:A )?resposta correta é:\s*([a-d])', bloco, re.IGNORECASE)
-            letra_correta_original = res.group(1).upper() if res else "A"
+            letra_original = res.group(1).upper() if res else "A"
 
-            # Divide o bloco em linhas para isolar as alternativas
             linhas = bloco.strip().split('\n')
             enunciado_puro = ""
-            alternativas_brutas = []
+            alternativas_texto = []
+            texto_correto = ""
             
             for linha in linhas:
-                # Se a linha começa com a., b., c., d. (com ou sem espaço)
-                if re.match(r'^[a-d][\s\.)]', linha.strip(), re.IGNORECASE):
-                    alternativas_brutas.append(linha.strip())
+                linha = linha.strip()
+                # ✅ FILTRO CRÍTICO: Só pega se for alternativa (a., b., c., d.) 
+                # e IGNORA a linha que diz qual é a resposta correta
+                if re.match(r'^[a-d][\s\.)]', linha, re.IGNORECASE) and "resposta correta é" not in linha.lower():
+                    # Extrai apenas o texto da opção, removendo o "a. " do começo
+                    texto_limpo = re.sub(r'^[a-d][\s\.)]+', '', linha).strip()
+                    alternativas_texto.append(texto_limpo)
+                    
+                    # Guarda qual é o texto que deveria ser o certo
+                    if linha.lower().startswith(letra_original.lower()):
+                        texto_correto = texto_limpo
+                
+                # Se não for alternativa nem gabarito, é enunciado
                 elif "resposta correta é" not in linha.lower() and "#" not in linha:
                     enunciado_puro += linha + "\n"
 
-            # Identifica o texto da resposta correta antes de embaralhar
-            texto_correto = ""
-            for alt in alternativas_brutas:
-                if alt.lower().startswith(letra_correta_original.lower()):
-                    texto_correto = re.sub(r'^[a-d][\s\.)]+', '', alt).strip()
+            # Só adiciona se encontrou o texto da resposta
+            if texto_correto:
+                questoes_lista.append({
+                    "pergunta": enunciado_puro.strip(),
+                    "alternativas": alternativas_texto,
+                    "texto_correto": texto_correto
+                })
 
-            questoes_lista.append({
-                "pergunta": enunciado_puro.strip(),
-                "alternativas": alternativas_brutas,
-                "texto_correto": texto_correto
-            })
-
-            # 1. Embaralha a ordem das perguntas
+        # 2. Embaralha a ordem das perguntas
+        import random
         random.shuffle(questoes_lista)
-        
         sessoes_usuarios[interaction.user.id] = questoes_lista
 
-        # 2. Prepara a PRIMEIRA questão com alternativas embaralhadas
-        q_inicial = questoes_lista[0]
+        # 3. Prepara a PRIMEIRA questão com letras embaralhadas
+        q_ini = questoes_lista[0]
+        alts_embaralhadas = list(q_ini["alternativas"])
+        random.shuffle(alts_embaralhadas)
         
-        # 3. MÁGICA: Pega o texto das opções e embaralha as letras
-        alts_texto = [re.sub(r'^[a-d][\s\.)]+', '', a).strip() for a in q_inicial["alternativas"]]
-        random.shuffle(alts_texto)
-        
-        # 4. Remonta com novas letras (a., b., c., d.)
-        novas_opcoes = [f"{l}. {t}" for l, t in zip(["a", "b", "c", "d"], alts_texto)]
-        corpo_primeira = f"{q_inicial['pergunta']}\n\n" + "\n".join(novas_opcoes)
+        # Remonta o texto para o Discord (a. texto1, b. texto2...)
+        letras = ["a", "b", "c", "d"]
+        opcoes_formatadas = []
+        for i, texto in enumerate(alts_embaralhadas):
+            if i < len(letras):
+                opcoes_formatadas.append(f"{letras[i]}. {texto}")
 
-        # 5. Cria a sala e envia
+        corpo_msg = f"{q_ini['pergunta']}\n\n" + "\n".join(opcoes_formatadas)
+
         view = QuestaoView(interaction.user.id, 0, 0, thread)
         msg = await thread.send(
-            content=f"📖 **Iniciando: {nome_arquivo}**\n\nQuestão 1:\n{corpo_primeira}", 
+            content=f"📖 **Iniciando: {nome_arquivo}**\n\nQuestão 1:\n{corpo_msg}", 
             view=view
         )
         view.message = msg
