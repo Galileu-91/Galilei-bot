@@ -106,6 +106,7 @@ class QuestaoView(View):
         novos_acertos = self.acertos
         feedback = "✅ **Correto!**" if escolha == correta else f"❌ **Errado!** A resposta era **{correta}**."
         if escolha == correta: novos_acertos += 1
+        feedback = f"✅ **Correto!** A resposta era **{correta}**."
 
         await interaction.response.edit_message(view=None)
 
@@ -114,7 +115,7 @@ class QuestaoView(View):
             q = questoes[proximo]
             nova_view = QuestaoView(self.user_id, proximo, novos_acertos, self.thread)
             msg = await self.thread.send(
-                content=f"{feedback}\n\n---\n**Questão {proximo + 1}:**\n{q['pergunta']}", 
+                content=f"{feedback}\n\n---\nQuestão {proximo + 1}:\n{q['pergunta']}", 
                 view=nova_view
             )
             nova_view.message = msg
@@ -126,7 +127,7 @@ class QuestaoView(View):
             btn_repetir = Button(label="Repetir Simulado", style=discord.ButtonStyle.success, emoji="🔄")
             
             async def repetir_callback(it: discord.Interaction):
-                await it.response.defer() # Evita o erro "interação falhou"
+                await it.response.defer(ephemeral=True) # Evita o erro "interação falhou"
                 await self.thread.purge(limit=100) # Limpa a tela
                 # 🎲 EMBARALHA AS QUESTÕES (AQUI ESTÁ O SEGREDO!)
                 random.shuffle(sessoes_usuarios[self.user_id])
@@ -234,11 +235,10 @@ async def on_ready():
 async def limpar(ctx, quantidade: int = 100):
     """Apaga as mensagens do canal (máximo 100 por vez)."""
     try:
-        # Garante que não tente apagar mais de 100 (limite do Discord)
+        # ✅ Garante que o comando !limpar também seja apagado
         limite = min(quantidade, 100)
         deleted = await ctx.channel.purge(limit=limite)
         
-        # Envia confirmação que se apaga sozinha em 3 segundos
         await ctx.send(f"🧹 {len(deleted)} mensagens limpas por ordem do Mano Gali!", delete_after=3)
         print(f"✅ Faxina concluída no canal {ctx.channel.name}")
     except Exception as e:
