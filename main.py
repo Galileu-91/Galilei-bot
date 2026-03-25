@@ -1,3 +1,5 @@
+import time
+
 import discord
 from discord.ext import commands
 from discord.ui import Button, View
@@ -211,15 +213,17 @@ if __name__ == "__main__":
         print("🚀 Iniciando servidor de manutenção...")
         # Cria a thread para o Flask não travar o bot
         t = threading.Thread(target=keep_alive)
-        t.daemon = True 
+        t.daemon = True
         t.start()
 
         print("🤖 Tentando conectar o Galilei ao Discord...")
         try:
-            # O bot.run deve ser a ÚLTIMA coisa, pois ele "trava" o código rodando
-            bot.run(TOKEN)
-        except Exception as e:
-            # Isso vai cuspir o erro real no log (como o 429 de excesso de tentativas)
-            print(f"❌ ERRO FATAL: {e}")
+            bot.run(TOKEN) # O comando que pode dar erro fica dentro do try
+        except discord.errors.HTTPException as e:
+            if e.status == 429:
+                print("Rate limit detectado. Aguardando 30s...")
+                time.sleep(30) # Pausa técnica antes de qualquer tentativa automática
+            else:
+                print(f"Erro de conexão: {e}")
     else:
-        print("❌ ERRO: DISCORD_TOKEN está vazio no sistema.")
+        print("❌ ERRO: DISCORD_TOKEN não encontrado nas variáveis de ambiente.")
