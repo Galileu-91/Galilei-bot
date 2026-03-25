@@ -1,4 +1,5 @@
-# Qual o principal objetivo de um sistema ERP (Enterprise Resource Planning) em uma organização?
+#
+Qual o principal objetivo de um sistema ERP (Enterprise Resource Planning) em uma organização?
 Escolha uma opção:
 a. Aumentar o consumo de hardware nos terminais dos usuários.
 b. Centralizar os dados e integrar os processos de diferentes departamentos.
@@ -6,7 +7,8 @@ c. Substituir a necessidade de backups físicos e em nuvem.
 d. Monitorar apenas as redes sociais dos colaboradores.
 A resposta correta é: b
 
-# No contexto de Segurança da Informação, o que define o princípio da "Disponibilidade"?
+#
+No contexto de Segurança da Informação, o que define o princípio da "Disponibilidade"?
 Escolha uma opção:
 a. Garantir que a informação não seja alterada por pessoas não autorizadas.
 b. Garantir que apenas o CEO tenha acesso aos dados críticos.
@@ -14,7 +16,8 @@ c. Garantir que os sistemas e dados estejam acessíveis aos usuários autorizado
 d. Garantir que o código-fonte seja aberto para toda a comunidade.
 A resposta correta é: c
 
-# O que caracteriza uma infraestrutura de TI baseada em "IaaS" (Infrastructure as a Service)?
+#
+O que caracteriza uma infraestrutura de TI baseada em "IaaS" (Infrastructure as a Service)?
 Escolha uma opção:
 a. O fornecedor entrega apenas o software final pronto para uso.
 b. O cliente aluga recursos de computação como servidores, armazenamento e redes virtualizadas.
@@ -22,7 +25,8 @@ c. É um modelo onde não existe conexão com a internet.
 d. O cliente é responsável por construir o hardware físico no data center do provedor.
 A resposta correta é: b
 
-# Qual a principal diferença entre um Banco de Dados Relacional (SQL) e um Não Relacional (NoSQL)?
+#
+Qual a principal diferença entre um Banco de Dados Relacional (SQL) e um Não Relacional (NoSQL)?
 Escolha uma opção:
 a. SQL não permite o armazenamento de números, apenas texto.
 b. NoSQL é usado exclusivamente para planilhas de Excel.
@@ -30,7 +34,8 @@ c. SQL utiliza tabelas com esquemas fixos, enquanto NoSQL permite estruturas de 
 d. SQL só funciona em servidores locais (on-premise).
 A resposta correta é: c
 
-# Em Gestão de TI, o que é o "SLA" (Service Level Agreement)?
+#
+Em Gestão de TI, o que é o "SLA" (Service Level Agreement)?
 Escolha uma opção:
 a. Um software de monitoramento de temperatura de servidores.
 b. Um contrato que define o nível de serviço esperado entre um fornecedor e um cliente.
@@ -38,7 +43,8 @@ c. Um protocolo de comunicação para roteadores Mitel.
 d. Um imposto brasileiro sobre produtos de tecnologia.
 A resposta correta é: b
 
-# Qual o papel do "Stakeholder" em um projeto de TI?
+#
+Qual o papel do "Stakeholder" em um projeto de TI?
 Escolha uma opção:
 a. É o profissional responsável apenas pela limpeza do hardware.
 b. É qualquer pessoa ou entidade que tenha interesse ou seja afetada pelo projeto.

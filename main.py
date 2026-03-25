@@ -224,14 +224,27 @@ class MenuSimulado(View):
             
             for linha in linhas:
                 linha_s = linha.strip()
+                if not linha_s: continue # Pula linhas vazias
+
+                # 1. Identifica se é uma alternativa (a., b., c., d.)
                 if re.match(r'^[a-d][\s\.)]', linha_s, re.IGNORECASE) and "resposta correta é" not in linha_s.lower():
                     txt = re.sub(r'^[a-d][\s\.)]+', '', linha_s).strip()
                     alternativas_limpas.append(txt)
                     if linha_s.lower().startswith(letra_correta_original):
                         texto_da_resposta = txt
-                elif "resposta correta é" not in linha_s.lower() and "#" not in linha_s:
-                    enunciado += linha + "\n"
+                
+                # 2. Ignora a linha do gabarito original
+                elif "resposta correta é" in linha_s.lower():
+                    continue
+                
+                # 3. Ignora o marcador de bloco
+                elif "#" in linha_s and len(linha_s) < 3:
+                    continue
 
+                # 4. TUDO O QUE SOBROU É ENUNCIADO (A pergunta propriamente dita)
+                else:
+                    enunciado += linha + "\n"
+                    
             if texto_da_resposta:
                 questoes_lista.append({
                     "pergunta": enunciado.strip(),
