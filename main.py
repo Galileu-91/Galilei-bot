@@ -87,6 +87,7 @@ class QuestaoView(View):
     async def resetar_simulado(self, interaction: discord.Interaction):
         if interaction.user.id != self.user_id:
             return await interaction.response.send_message("❌ Não é sua sala!", ephemeral=True)
+        # ✅ Responde ao Discord antes de deletar a thread
         await interaction.response.send_message("Limpando sala...", ephemeral=True)
         await self.thread.delete()
 
@@ -95,30 +96,44 @@ class QuestaoView(View):
             return await interaction.response.send_message("❌ Use sua própria sala!", ephemeral=True)
 
         self.respondido = True
-        escolha = interaction.data['custom_id'].upper()
+        escolha_letra = interaction.data['custom_id'].upper()
         questoes = sessoes_usuarios[self.user_id]
+        q_atual = questoes[self.index]
 
-        try:
-            correta = questoes[self.index]["correta"]
-        except (KeyError, IndexError):
-            correta = "A"
+        # ✅ LÓGICA DE VALIDAÇÃO: Compara o texto da opção clicada com o texto correto
+        # Mapeia qual texto está em qual letra agora
+        mapeamento = self.message.content.split('\n')
+        texto_escolhido = ""
+        for linha in mapeamento:
+            if linha.startswith(f"{escolha_letra}."):
+                texto_escolhido = linha.replace(f"{escolha_letra}. ", "").strip()
 
-        novos_acertos = self.acertos
-        feedback = "✅ **Correto!**" if escolha == correta else f"❌ **Errado!** A resposta era **{correta}**."
-        if escolha == correta: novos_acertos += 1
-        feedback = f"✅ **Correto!** A resposta era **{correta}**."
+        if texto_escolhido.lower() == q_atual["texto_correto"].lower():
+            self.acertos += 1
+            feedback = f"✅ **Correto!**"
+        else:
+            feedback = f"❌ **Errado!** A resposta era: **{q_atual['texto_correto']}**"
 
         await interaction.response.edit_message(view=None)
 
         proximo = self.index + 1
         if proximo < len(questoes):
-            q = questoes[proximo]
-            nova_view = QuestaoView(self.user_id, proximo, novos_acertos, self.thread)
+            # ✅ EMBARALHA AS LETRAS PARA A PRÓXIMA QUESTÃO
+            q_prox = questoes[proximo]
+            alts_texto = [re.sub(r'^[a-d][\s\.)]+', '', a).strip() for a in q_prox["alternativas"]]
+            random.shuffle(alts_texto)
+            
+            # Monta o novo texto com a., b., c., d.
+            novas_opcoes = [f"{l}. {t}" for l, t in zip(["a", "b", "c", "d"], alts_texto)]
+            corpo_questao = f"{q_prox['pergunta']}\n\n" + "\n".join(novas_opcoes)
+
+            nova_view = QuestaoView(self.user_id, proximo, self.acertos, self.thread)
             msg = await self.thread.send(
-                content=f"{feedback}\n\n---\nQuestão {proximo + 1}:\n{q['pergunta']}", 
+                content=f"{feedback}\n\n---\nQuestão {proximo + 1}:\n{corpo_questao}", 
                 view=nova_view
             )
             nova_view.message = msg
+
         else:
             # --- BLOCO ALTERADO PARA REPETIR ---
             view_final = View()
@@ -127,19 +142,21 @@ class QuestaoView(View):
             btn_repetir = Button(label="Repetir Simulado", style=discord.ButtonStyle.success, emoji="🔄")
             
             async def repetir_callback(it: discord.Interaction):
-                await it.response.defer(ephemeral=True) # Evita o erro "interação falhou"
-                await self.thread.purge(limit=100) # Limpa a tela
-                # 🎲 EMBARALHA AS QUESTÕES (AQUI ESTÁ O SEGREDO!)
+                # ✅ Avisa o Discord para esperar o processo de limpeza (purge)
+                await it.response.defer(ephemeral=True) 
+                
+                await self.thread.purge(limit=100) 
                 random.shuffle(sessoes_usuarios[self.user_id])
 
-                self.acertos = 0 # Zera os acertos
-                self.index = 0   # Volta para a primeira posição
+                self.acertos = 0 
+                self.index = 0   
 
-                # Reinicia a primeira questão do mesmo simulado
                 primeira_q = sessoes_usuarios[self.user_id][0]
                 nova_view = QuestaoView(self.user_id, 0, 0, self.thread)
+                
+                # ✅ Texto ajustado para letra menor aqui também
                 msg = await self.thread.send(
-                    content=f"🎲 **Simulado Embaralhado! Boa sorte...**\n\n**Questão 1:**\n{primeira_q['pergunta']}", 
+                    content=f"🎲 **Simulado Embaralhado!**\n\nQuestão 1:\n{primeira_q['pergunta']}", 
                     view=nova_view
                 )
                 nova_view.message = msg
@@ -191,20 +208,61 @@ class MenuSimulado(View):
         with open(caminho, 'r', encoding='utf-8') as f:
             conteudo = f.read()
 
+        # ✅ NOVO SISTEMA: Separa Enunciado e Alternativas
         blocos = re.split(r'\n(?=#)', conteudo)
         questoes_lista = []
         for bloco in blocos:
             if not bloco.strip(): continue
+            
             res = re.search(r'(?:A )?resposta correta é:\s*([a-d])', bloco, re.IGNORECASE)
-            gabarito = res.group(1).upper() if res else "A"
-            enunciado = re.split(r'A resposta correta é:|Resposta correta é:', bloco, flags=re.IGNORECASE)[0].strip()
-            questoes_lista.append({"pergunta": enunciado[:1900], "correta": gabarito})
+            letra_correta_original = res.group(1).upper() if res else "A"
 
+            # Divide o bloco em linhas para isolar as alternativas
+            linhas = bloco.strip().split('\n')
+            enunciado_puro = ""
+            alternativas_brutas = []
+            
+            for linha in linhas:
+                # Se a linha começa com a., b., c., d. (com ou sem espaço)
+                if re.match(r'^[a-d][\s\.)]', linha.strip(), re.IGNORECASE):
+                    alternativas_brutas.append(linha.strip())
+                elif "resposta correta é" not in linha.lower() and "#" not in linha:
+                    enunciado_puro += linha + "\n"
+
+            # Identifica o texto da resposta correta antes de embaralhar
+            texto_correto = ""
+            for alt in alternativas_brutas:
+                if alt.lower().startswith(letra_correta_original.lower()):
+                    texto_correto = re.sub(r'^[a-d][\s\.)]+', '', alt).strip()
+
+            questoes_lista.append({
+                "pergunta": enunciado_puro.strip(),
+                "alternativas": alternativas_brutas,
+                "texto_correto": texto_correto
+            })
+
+            # 1. Embaralha a ordem das perguntas
         random.shuffle(questoes_lista)
-
+        
         sessoes_usuarios[interaction.user.id] = questoes_lista
+
+        # 2. Prepara a PRIMEIRA questão com alternativas embaralhadas
+        q_inicial = questoes_lista[0]
+        
+        # 3. MÁGICA: Pega o texto das opções e embaralha as letras
+        alts_texto = [re.sub(r'^[a-d][\s\.)]+', '', a).strip() for a in q_inicial["alternativas"]]
+        random.shuffle(alts_texto)
+        
+        # 4. Remonta com novas letras (a., b., c., d.)
+        novas_opcoes = [f"{l}. {t}" for l, t in zip(["a", "b", "c", "d"], alts_texto)]
+        corpo_primeira = f"{q_inicial['pergunta']}\n\n" + "\n".join(novas_opcoes)
+
+        # 5. Cria a sala e envia
         view = QuestaoView(interaction.user.id, 0, 0, thread)
-        msg = await thread.send(f"📖 **Iniciando: {nome_arquivo}**\n\n**Questão 1:**\n{questoes_lista[0]['pergunta']}", view=view)
+        msg = await thread.send(
+            content=f"📖 **Iniciando: {nome_arquivo}**\n\nQuestão 1:\n{corpo_primeira}", 
+            view=view
+        )
         view.message = msg
 
 # --- COMANDOS ---
@@ -233,9 +291,11 @@ async def on_ready():
 @bot.command(name="limpar")
 @commands.has_permissions(manage_messages=True)
 async def limpar(ctx, quantidade: int = 100):
-    """Apaga as mensagens do canal (máximo 100 por vez)."""
+
     try:
-        # ✅ Garante que o comando !limpar também seja apagado
+        # ✅ Apaga o comando !limpar enviado pelo usuário primeiro
+        await ctx.message.delete()
+        
         limite = min(quantidade, 100)
         deleted = await ctx.channel.purge(limit=limite)
         
