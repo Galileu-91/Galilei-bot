@@ -68,7 +68,7 @@ class QuestaoView(View):
         btn_reset.callback = self.resetar_simulado
         self.add_item(btn_reset)
 
-        asyncio.create_task(self.contagem_regressiva())
+        bot.loop.create_task(self.contagem_regressiva())
 
     async def contagem_regressiva(self):
         await asyncio.sleep(240) 
@@ -145,7 +145,9 @@ class QuestaoView(View):
                 # ✅ Avisa o Discord para esperar o processo de limpeza (purge)
                 await it.response.defer(ephemeral=True) 
                 
-                await self.thread.purge(limit=100) 
+                async for msg in self.thread.history(limit=100):
+                    await msg.delete()
+
                 random.shuffle(sessoes_usuarios[self.user_id])
 
                 self.acertos = 0 
@@ -200,74 +202,74 @@ class MenuSimulado(View):
         await interaction.response.send_message(f"✅ Sala criada, clique aqui👉🏼: {thread.mention}", ephemeral=True)
         await self.iniciar_logica(interaction, nome_arquivo, thread)
 
-async def iniciar_logica(self, interaction, nome_arquivo, thread):
+    async def iniciar_logica(self, interaction, nome_arquivo, thread):
         caminho = os.path.join("Simulados", nome_arquivo)
-        if not os.path.exists(caminho):
-            return await thread.send(f"❌ Arquivo `{nome_arquivo}` não encontrado.")
 
-        with open(caminho, 'r', encoding='utf-8') as f:
+        if not os.path.exists(caminho):
+            await thread.send(f"❌ Arquivo `{nome_arquivo}` não encontrado.")
+            return
+
+        with open(caminho, "r", encoding="utf-8") as f:
             conteudo = f.read()
 
-        # ✅ MELHORIA: Divide pelo # e ignora se tiver ponto ou espaço logo depois
-        blocos = [b.strip() for b in re.split(r'#\.?\s#', conteudo) if b.strip()]
+        blocos = [b.strip() for b in re.split(r'#\.', conteudo) if b.strip()]
         questoes_lista = []
-        
+
         for bloco in blocos:
-            # 1. Busca a letra do gabarito (a, b, c ou d)
-            res = re.search(r'resposta correta é:\s*([a-d])', bloco, re.IGNORECASE)
-            letra_original = res.group(1).lower() if res else "a"
+            linhas = bloco.splitlines()
 
-            linhas = bloco.split('\n')
-            enunciado_acumulado = []
-            alternativas_limpas = []
+            enunciado = []
+            alternativas = []
             texto_correto = ""
-            
-for linha in linhas:
-                l_s = linha.strip()
-                if not l_s or "escolha uma opção" in l_s.lower(): continue
+            letra_correta = None
 
-                # ✅ 1. Identifica as alternativas
-                if re.match(r'^[a-d][\s\.)]', l_s, re.IGNORECASE) and "resposta correta é" not in l_s.lower():
-                    txt = re.sub(r'^[a-d][\s\.)]+', '', l_s).strip()
-                    alternativas_limpas.append(txt)
-                    if l_s.lower().startswith(letra_original):
-                        texto_correto = txt
-                
-                # ✅ 2. Pula a linha do gabarito para não virar pergunta
-                elif "resposta correta é" in l_s.lower():
+            for linha in linhas:
+                l = linha.strip()
+
+                if not l or "escolha uma opção" in l.lower():
                     continue
-                
-                # ✅ 3. O QUE SOBROU É A PERGUNTA (Isso é o que faltava!)
-                else:
-                    enunciado_acumulado.append(l_s)
 
-    # ✅ 4. Só adiciona se o bot realmente encontrou os dados
-    if alternativas_limpas and texto_correto:
-        questoes_lista.append({
-        "pergunta": "\n".join(enunciado_acumulado),
-        "alternativas": alternativas_limpas,
-        "texto_correto": texto_correto
+                if "resposta correta" in l.lower():
+                    letra_correta = l.split(":")[-1].strip().lower()
+                    continue
+
+                if re.match(r'^[a-d]\.', l, re.IGNORECASE):
+                    texto = l[2:].strip()
+                    alternativas.append(texto)
+                    if letra_correta and l[0].lower() == letra_correta:
+                        texto_correto = texto
+                else:
+                    enunciado.append(l)
+
+            if enunciado and alternativas and texto_correto:
+                questoes_lista.append({
+                    "pergunta": "\n".join(enunciado),
+                    "alternativas": alternativas,
+                    "texto_correto": texto_correto
                 })
 
         if not questoes_lista:
-            return await thread.send("⚠️ Erro: Não consegui ler as questões. Verifique o '#' no seu arquivo!")
+            await thread.send("⚠️ Erro: Não consegui ler as questões. Verifique o '#.' no arquivo!")
+            return
 
-        # 2. Embaralha (Shuffle)
         random.shuffle(questoes_lista)
         sessoes_usuarios[interaction.user.id] = questoes_lista
 
-        # 3. Prepara a Questão 1
+        # Questão 1
         q = questoes_lista[0]
-        alts_shuffled = list(q["alternativas"])
-        random.shuffle(alts_shuffled)
-        
+        alternativas = list(q["alternativas"])
+        random.shuffle(alternativas)
+
         letras = ["a", "b", "c", "d"]
-        opcoes = [f"{letras[i]}. {t}" for i, t in enumerate(alts_shuffled) if i < 4]
+        opcoes = [f"{letras[i]}. {alternativas[i]}" for i in range(min(4, len(alternativas)))]
 
         corpo = f"**{q['pergunta']}**\n\n" + "\n".join(opcoes)
 
         view = QuestaoView(interaction.user.id, 0, 0, thread)
-        msg = await thread.send(content=f"📖 Simulado: {nome_arquivo}\n\nQuestão 1:\n{corpo}", view=view)
+        msg = await thread.send(
+            content=f"📖 Simulado: {nome_arquivo}\n\nQuestão 1:\n{corpo}",
+            view=view
+        )
         view.message = msg
 
 # --- COMANDOS ---
