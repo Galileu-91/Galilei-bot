@@ -195,24 +195,28 @@ class MenuSimulado(View):
         await self.preparar_sala(interaction, "Fundamentos de Gestão Empresarial.txt")
 
     async def preparar_sala(self, interaction, nome_arquivo):
+    # ✅ cria a thread DESARQUIVADA
         thread = await interaction.channel.create_thread(
-            name=f"Estudo-{interaction.user.name}",
-            type=discord.ChannelType.public_thread 
-        )
-
-        # ✅ diz ao Discord: "vou responder depois"
-        await interaction.response.defer(ephemeral=True)
-
-        # ✅ roda a lógica sem bloquear a interaction
-        asyncio.create_task(
-        self.iniciar_logica(interaction, nome_arquivo, thread)
+        name=f"Estudo-{interaction.user.name}",
+        type=discord.ChannelType.public_thread,
+        auto_archive_duration=1440
     )
 
-        # ✅ resposta rápida visível pro usuário
+    # ✅ libera a interaction (obrigatório)
+        await interaction.response.defer(ephemeral=True)
+
+    # ✅ AVISO IMEDIATO (debug + UX)
+        await thread.send("📘 Simulado iniciado... carregando questões")
+
+    # ✅ chama a lógica DIRETAMENTE (sem create_task)
+        await self.iniciar_logica(interaction, nome_arquivo, thread)
+
+    # ✅ feedback ao usuário
         await interaction.followup.send(
         f"✅ Sala criada: {thread.mention}",
         ephemeral=True
     )
+    
         await interaction.response.send_message(f"✅ Sala criada, clique aqui👉🏼: {thread.mention}", ephemeral=True)
         await self.iniciar_logica(interaction, nome_arquivo, thread)
 
