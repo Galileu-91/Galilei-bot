@@ -239,7 +239,11 @@ async def iniciar_logica(self, interaction, nome_arquivo, thread):
             bloco = "[#" + bloco
 
             # Extrai o enunciado entre [#  #]
-            match_pergunta = re.search(r'\[#(.*?)#\]', bloco, re.DOTALL)
+            match_pergunta = re.search(r'(?:<|&lt;)\s*Resposta correta:\s*([a-d])\s*(?:>|&gt;)',
+                bloco, 
+                re.IGNORECASE
+            )
+
             if not match_pergunta:
                 continue
 
