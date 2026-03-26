@@ -199,6 +199,20 @@ class MenuSimulado(View):
             name=f"Estudo-{interaction.user.name}",
             type=discord.ChannelType.public_thread 
         )
+
+        # ✅ diz ao Discord: "vou responder depois"
+        await interaction.response.defer(ephemeral=True)
+
+        # ✅ roda a lógica sem bloquear a interaction
+        asyncio.create_task(
+        self.iniciar_logica(interaction, nome_arquivo, thread)
+    )
+
+        # ✅ resposta rápida visível pro usuário
+        await interaction.followup.send(
+        f"✅ Sala criada: {thread.mention}",
+        ephemeral=True
+    )
         await interaction.response.send_message(f"✅ Sala criada, clique aqui👉🏼: {thread.mention}", ephemeral=True)
         await self.iniciar_logica(interaction, nome_arquivo, thread)
 
