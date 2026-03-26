@@ -202,7 +202,7 @@ class MenuSimulado(View):
         await interaction.response.send_message(f"✅ Sala criada, clique aqui👉🏼: {thread.mention}", ephemeral=True)
         await self.iniciar_logica(interaction, nome_arquivo, thread)
 
-    async def iniciar_logica(self, interaction, nome_arquivo, thread):
+async def iniciar_logica(self, interaction, nome_arquivo, thread):
         caminho = os.path.join("Simulados", nome_arquivo)
 
         if not os.path.exists(caminho):
@@ -212,62 +212,67 @@ class MenuSimulado(View):
         with open(caminho, "r", encoding="utf-8") as f:
             conteudo = f.read()
 
-        blocos = [b.strip() for b in re.split(r'#\.', conteudo) if b.strip()]
+        # 🔹 Divide as questões pelo DELIMITADOR OFICIAL
+        blocos = [b.strip() for b in conteudo.split("[#") if b.strip()]
         questoes_lista = []
 
         for bloco in blocos:
-            linhas = bloco.splitlines()
+            # Junta novamente o texto da questão
+            bloco = "[#" + bloco
 
-            enunciado = []
-            alternativas = []
-            texto_correto = ""
+            # Extrai o enunciado entre [#  #]
+            match_pergunta = re.search(r'\[#(.*?)#\]', bloco, re.DOTALL)
+            if not match_pergunta:
+                continue
+
+            pergunta = match_pergunta.group(1).strip()
+
+            alternativas = {}
             letra_correta = None
 
-            for linha in linhas:
-                l = linha.strip()
+            # Alternativas {a} {b} {c} {d}
+            for alt in re.findall(r'\{([a-d])\}\s*(.+)', bloco, re.IGNORECASE):
+                letra = alt[0].lower()
+                texto = alt[1].strip()
+                alternativas[letra] = texto
 
-                if not l or "escolha uma opção" in l.lower():
-                    continue
+            # Resposta correta
+            match_resp = re.search(r'<\s*Resposta correta:\s*([a-d])\s*>', bloco, re.IGNORECASE)
+            if not match_resp:
+                continue
 
-                if "resposta correta" in l.lower():
-                    letra_correta = l.split(":")[-1].strip().lower()
-                    continue
+            letra_correta = match_resp.group(1).lower()
 
-                if re.match(r'^[a-d]\.', l, re.IGNORECASE):
-                    texto = l[2:].strip()
-                    alternativas.append(texto)
-                    if letra_correta and l[0].lower() == letra_correta:
-                        texto_correto = texto
-                else:
-                    enunciado.append(l)
+            if letra_correta not in alternativas:
+                continue
 
-            if enunciado and alternativas and texto_correto:
-                questoes_lista.append({
-                    "pergunta": "\n".join(enunciado),
-                    "alternativas": alternativas,
-                    "texto_correto": texto_correto
-                })
+            questoes_lista.append({
+                "pergunta": pergunta,
+                "alternativas": list(alternativas.values()),
+                "texto_correto": alternativas[letra_correta]
+            })
 
         if not questoes_lista:
-            await thread.send("⚠️ Erro: Não consegui ler as questões. Verifique o '#.' no arquivo!")
+            await thread.send("⚠️ Não consegui ler nenhuma questão. Verifique o formato do arquivo.")
             return
 
+        # 🔹 Embaralha a ORDEM DAS QUESTÕES
         random.shuffle(questoes_lista)
         sessoes_usuarios[interaction.user.id] = questoes_lista
 
-        # Questão 1
+        # 🔹 Prepara a PRIMEIRA QUESTÃO
         q = questoes_lista[0]
-        alternativas = list(q["alternativas"])
-        random.shuffle(alternativas)
+        alternativas = q["alternativas"].copy()
+        random.shuffle(alternativas)  # ✅ Embaralha A–D
 
         letras = ["a", "b", "c", "d"]
-        opcoes = [f"{letras[i]}. {alternativas[i]}" for i in range(min(4, len(alternativas)))]
+        opcoes = [f"{letras[i]}. {alternativas[i]}" for i in range(len(alternativas))]
 
         corpo = f"**{q['pergunta']}**\n\n" + "\n".join(opcoes)
 
         view = QuestaoView(interaction.user.id, 0, 0, thread)
         msg = await thread.send(
-            content=f"📖 Simulado: {nome_arquivo}\n\nQuestão 1:\n{corpo}",
+            content=f"📘 **Simulado iniciado**\n\nQuestão 1:\n{corpo}",
             view=view
         )
         view.message = msg

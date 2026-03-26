@@ -1,31 +1,106 @@
-#. O que é "Business Intelligence" (BI)?
-Escolha uma opção:
-a. Um processo de coleta, organização e análise de dados para dar suporte à tomada de decisão.
-b. Uma técnica de venda de computadores para empresas de grande porte.
-c. Um software que substitui completamente a necessidade de gestores humanos.
-d. O ato de traduzir termos técnicos de TI para o inglês.
-A resposta correta é: a
+[# criatividade, segundo o guia de estudo, é essencial para o processo de inovação porque:
+I. É a faísca inicial que permite recombinar recursos e gerar o novo.
+II. Substitui completamente o planejamento estratégico.
+III. Estimula as pessoas a pensarem e estruturar soluções de forma diferente.
+IV. Garante a viabilidade financeira de todo projeto inovador.
+V. É uma habilidade que pode ser estimulada por meio de práticas organizacionais. #]
+{a} As respostas IV e V estão corretas, enquanto as respostas I, II e III estão incorretas;
+{b} As respostas I, II e III estão corretas, enquanto as respostas IV e V estão incorretas;
+{c} As respostas I, II e IV estão corretas, enquanto as respostas III e V estão incorretas;
+{d} As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
+<Resposta correta: d>
 
-#. Qual a função principal de um "Firewall" em uma rede corporativa?
-Escolha uma opção:
-a. Acelerar a velocidade da internet em horários de pico.
-b. Controlar o tráfego de entrada e saída de dados com base em regras de segurança.
-c. Realizar o backup automático de todas as estações de trabalho.
-d. Organizar os cabos de rede dentro do rack.
-A resposta correta é: b
+[# O marketing global é um instrumento central para as empresas em um mercado competitivo. Para criar valor e satisfazer as necessidades dos consumidores, quais variáveis de grande importância o gestor deve considerar, especialmente no mercado externo?
+I. A necessidade de padronização total para reduzir custos.
+II. A correta identificação da necessidade dos consumidores. 
+III. O conhecimento dos clientes alvo. 
+IV. O respeito às referências e características culturais de cada local.
+V. A aplicação irrestrita dos princípios de Marketing Doméstico. #]
+{a} As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
+{b} As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
+{c} As respostas I, II estão corretas, enquanto as respostas III, IV e V estão incorretas;
+{d} As respostas II, III e IV estão corretas, enquanto as respostas I e V estão incorretas;
+<Resposta correta: d>
 
-#. O que define a técnica de "Phishing"?
-Escolha uma opção:
-a. Uma atualização de segurança obrigatória do Windows.
-b. Um método de engenharia social para enganar usuários e obter informações confidenciais.
-c. Um tipo de cabo de fibra óptica de alta performance.
-d. A instalação física de servidores em ambientes refrigerados.
-A resposta correta é: b
+[# No contexto do marketing global, qual conceito é utilizado para descrever o equilíbrio entre padronização e adaptação, pensando globalmente, mas agindo localmente? #]
+{a} Glocalização.
+{b} Marketing de Exportação.
+{c} Diferenciação Cultural.
+{d} Padronização Estratégica. 
+<Resposta correta: a>
 
-#. No ciclo de vida de desenvolvimento de sistemas (SDLC), qual a importância da fase de "Levantamento de Requisitos"?
-Escolha uma opção:
-a. Serve apenas para definir o preço final do software.
-b. É a fase onde se define o que o sistema deve fazer para atender às necessidades do negócio.
-c. É quando os desenvolvedores começam a escrever o código sem planejamento prévio.
-d. É a fase final de descarte do sistema antigo.
-A resposta correta é: b
+[# Caso da Gol Linhas Aéreas é um exemplo prático de inovação, como descritas no guia, porque: #]
+{a} I. Copiou integralmente o modelo de companhias aéreas tradicionais.
+{b} II. Baseou-se apenas em promoções de preço sem inovação estrutural.
+{c} III. Aplicou o modelo de negócios “low cost, low fare”.
+{d} IV. Redesenhou a proposta de valor para atender mercados negligenciados.
+<Resposta correta: c>
+
+[#A inovação, é um fator essencial para o desempenho empresarial moderno, pois:
+I. Está relacionada à recombinação de recursos e conhecimentos.
+II. Baseia-se apenas em pesquisa e desenvolvimento (P&D).
+III. Promove vantagem competitiva sustentável.
+IV. Limita-se à criação de novos produtos físicos.
+V. Está associada à capacidade de adaptar-se às mudanças do mercado.#]
+
+{a} As respostas II, III e V estão corretas, enquanto as respostas I e IV estão incorretas;
+{b} As respostas IV e V estão corretas, enquanto as respostas I, II e III estão incorretas;
+{c} As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
+{d} As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
+<Resposta correta: c>
+
+[# Recombinação de recursos, segundo Schumpeter, pode resultar em:
+I. Novos métodos de produção e comercialização.
+II. Novos produtos ou mercados inexplorados.
+III. Repetição de práticas tradicionais do setor
+IV. Acesso a novas fontes de matéria-prima.
+V. Imitação superficial da concorrência. #]
+{a} As respostas IV e V estão corretas, enquanto as respostas I, II e III estão incorretas;
+{b} As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
+{c} As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
+{d} As respostas I, II e IV estão corretas, enquanto as respostas III e V estão incorretas;
+<Resposta correta: d>
+
+[# A inovação como processo organizacional transversal significa que ela:
+I. Conecta estratégia, pessoas e operações.
+II. É responsabilidade exclusiva do setor de P&D.
+III. Deve permear todas as áreas da empresa.
+IV. Limita-se à criação de novos produtos.
+V. É um ciclo contínuo de aprendizado e melhoria.#]
+{a} As respostas II, III e IV estão corretas, enquanto as respostas I e V estão incorretas;
+{b} As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
+{c} As respostas I, II e IV estão corretas, enquanto as respostas III e V estão incorretas;
+{d} As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
+<Resposta correta: d>
+
+[# De acordo com a Revista Consumidor Moderno (2006), qual é o impacto mercadológico direto da associação de marcas à responsabilidade ambiental?
+Maior cobrança por parte dos governos. #]
+{a} Redução dos custos de produção.
+{b} Maior fidelização e reconhecimento de mercado.
+{c} Maior desconfiança do consumidor
+<Resposta correta: b>
+
+[# A agenda ESG é introduzida como uma evolução conceitual da sustentabilidade empresarial. O que a sigla representa e qual seu principal foco?
+I. Economic, Social and Global.
+II. Environmental, Social and Governance. 
+III. Foco na redução de riscos e atração de investidores alinhados a princípios éticos. 
+IV. Foco na maximização do consumo. 
+V. Foco na produção de resíduos poluidores. #]
+{a} As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
+{b} As respostas I, II e IV estão corretas, enquanto as respostas III e V estão incorretas;
+{c} As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
+{d} As respostas II e III estão corretas, enquanto as respostas I, IV e V estão incorretas;
+<Resposta correta: d>
+
+[# Apesar das dificuldades de atuação, o Marketing Internacional, Multinacional e Global nunca ofereceu tantas oportunidades. Qual fator é crucial para o desenvolvimento de um posicionamento diferenciado nesse cenário?
+I. O conhecimento das diversas culturas e a operação em regiões diferentes.
+II. O foco exclusivo em ações governamentais de estímulo. 
+III. A consolidação da marca para ter maiores oportunidades de mercado, inclusive em tempo de crise. 
+IV. A simplificação da concorrência devido à crise nos países desenvolvidos.
+V. A utilização de portos secos para realizar todas as ações de exportação. #]
+
+{a} As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
+{b} As respostas I, II estão corretas, enquanto as respostas III, IV e V estão incorretas;
+{c} As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
+{d} As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
+<Resposta correta: a>
