@@ -222,31 +222,26 @@ async def iniciar_logica(self, interaction, nome_arquivo, thread):
             alternativas_limpas = []
             texto_correto = ""
             
-            for linha in linhas:
+for linha in linhas:
                 l_s = linha.strip()
-                if not l_s or"escolha uma opção" in l_s.lower():
-                    continue
+                if not l_s or "escolha uma opção" in l_s.lower(): continue
 
-                # ✅ Pula a linha "Escolha uma opção:" para não poluir
-                if "escolha uma opção" in l_s.lower():
-                    continue
-
-                # ✅ Identifica alternativas (a., b., c., d.)
+                # ✅ 1. Identifica as alternativas
                 if re.match(r'^[a-d][\s\.)]', l_s, re.IGNORECASE) and "resposta correta é" not in l_s.lower():
                     txt = re.sub(r'^[a-d][\s\.)]+', '', l_s).strip()
                     alternativas_limpas.append(txt)
-                    
                     if l_s.lower().startswith(letra_original):
                         texto_correto = txt
                 
-                # Ignora a linha do gabarito
+                # ✅ 2. Pula a linha do gabarito para não virar pergunta
                 elif "resposta correta é" in l_s.lower():
                     continue
                 
-                # O que sobrou é a PERGUNTA
+                # ✅ 3. O QUE SOBROU É A PERGUNTA (Isso é o que faltava!)
                 else:
                     enunciado_acumulado.append(l_s)
 
+            # ✅ 4. Só adiciona se o bot realmente encontrou os dados
             if alternativas_limpas and texto_correto:
                 questoes_lista.append({
                     "pergunta": "\n".join(enunciado_acumulado),
