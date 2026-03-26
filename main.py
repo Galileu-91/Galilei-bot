@@ -206,17 +206,15 @@ async def iniciar_logica(self, interaction, nome_arquivo, thread):
             return await thread.send(f"❌ Arquivo `{nome_arquivo}` não encontrado.")
 
         with open(caminho, 'r', encoding='utf-8') as f:
-            conteudo = f.read()
+            # Lemos o arquivo e já limpamos espaços inúteis
+            conteudo = f.read().strip()
 
-        # ✅ Divide pelo # e remove blocos totalmente vazios
-        blocos_brutos = conteudo.split('#')
+        # ✅ Separador ultra-sensível: aceita '#' colado ou com espaço
+        blocos_brutos = [b.strip() for b in conteudo.split('#') if b.strip()]
         questoes_lista = []
         
         for bloco in blocos_brutos:
-            bloco = bloco.strip()
-            if not bloco: continue
-
-            # 1. Pega a letra do gabarito (A, B, C ou D)
+            # Captura a letra (a-d) do gabarito
             res = re.search(r'resposta correta é:\s*([a-d])', bloco, re.IGNORECASE)
             letra_correta_original = res.group(1).lower() if res else None
 
@@ -226,27 +224,28 @@ async def iniciar_logica(self, interaction, nome_arquivo, thread):
             texto_da_resposta = ""
             
             for linha in linhas:
-                linha_s = linha.strip()
-                if not linha_s: continue
+                l_s = linha.strip()
+                if not l_s: continue
 
-                # ✅ Identifica o que é alternativa
-                if re.match(r'^[a-d][\s\.)]', linha_s, re.IGNORECASE) and "resposta correta é" not in linha_s.lower():
-                    txt = re.sub(r'^[a-d][\s\.)]+', '', linha_s).strip()
-                    alternativas_limpas.append(txt)
+                # Identifica alternativas (a., b., c., d.)
+                if re.match(r'^[a-d][\s\.)]', l_s, re.IGNORECASE) and "resposta correta é" not in l_s.lower():
+                    # Remove a letra do início (ex: "a. ")
+                    somente_texto = re.sub(r'^[a-d][\s\.)]+', '', l_s).strip()
+                    alternativas_limpas.append(somente_texto)
                     
-                    # Se essa linha for a correta, guarda o texto dela
-                    if letra_correta_original and linha_s.lower().startswith(letra_correta_original):
-                        texto_da_resposta = txt
+                    if letra_correta_original and l_s.lower().startswith(letra_correta_original):
+                        texto_da_resposta = somente_texto
                 
-                # Ignora a linha do gabarito original
-                elif "resposta correta é" in linha_s.lower():
+                elif "resposta correta é" in l_s.lower():
                     continue
                 
-                # TUDO O QUE SOBROU É PERGUNTA
+                
                 else:
-                    enunciado_acumulado.append(linha_s)
+                    # Se não é alternativa nem gabarito, É PERGUNTA
+                    enunciado_acumulado.append(l_s)
 
-            # Só adiciona se tiver o básico: Pergunta + Alternativas + Resposta
+
+            
             if alternativas_limpas and texto_da_resposta:
                 questoes_lista.append({
                     "pergunta": "\n".join(enunciado_acumulado),
@@ -254,26 +253,25 @@ async def iniciar_logica(self, interaction, nome_arquivo, thread):
                     "texto_correto": texto_da_resposta
                 })
 
-        # Verifica se achou alguma coisa
-        if not questoes_lista:
-            return await thread.send("⚠️ Não encontrei questões no formato correto. Verifique se usou o `#` para separar cada pergunta!")
 
-        # 2. Embaralha tudo
-        import random
+        if not questoes_lista:
+            return await thread.send("⚠️ Erro: Nenhuma questão processada. Verifique o uso do '#' no arquivo!")
+
+        # Embaralhamento (Essencial para Data Science!)
         random.shuffle(questoes_lista)
         sessoes_usuarios[interaction.user.id] = questoes_lista
 
-        # 3. Prepara a primeira questão
+
         q = questoes_lista[0]
         alts_shuffled = list(q["alternativas"])
         random.shuffle(alts_shuffled)
         
         letras = ["a", "b", "c", "d"]
-        lista_formatada = [f"{letras[i]}. {t}" for i, t in enumerate(alts_shuffled) if i < 4]
+        lista_formatada = [f"{letras[i]}. {t}" for i, t in enumerate(alts_shuffled) if i < len(letras)]
 
         corpo_final = f"**{q['pergunta']}**\n\n" + "\n".join(lista_formatada)
 
-        # 4. Envia
+
         view = QuestaoView(interaction.user.id, 0, 0, thread)
         msg = await thread.send(
             content=f"📖 **Iniciando: {nome_arquivo}**\n\nQuestão 1:\n{corpo_final}", 
