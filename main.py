@@ -200,62 +200,73 @@ class MenuSimulado(View):
         # Aviso visual na thread
         msg_loading = await thread.send("📘 **Iniciando simulado...**")
       
-        with open(caminho, "r", encoding="utf-8") as f:
-            blocos = f.read().split("---")
+        try:
+            with open(caminho, "r", encoding="utf-8") as f:
+                conteudo = f.read()
+                # Divide o arquivo pelos separadores ---
+                blocos = [b for b in conteudo.split("---") if b.strip()]
 
             questoes_lista = []
-        for bloco in blocos:
-            linhas = [l.strip() for l in bloco.strip().split('\n') if l.strip()]
-        
-            pergunta_completa = []
-            alts_dict = {}
-            texto_correto = ""
-            fase_pergunta = True # Switch para saber se ainda estamos lendo a pergunta
-
-        for linha in linhas:
-            # Se a linha começa com alternativa, mudamos a fase
-            if re.match(r"^[A-D]:", linha.upper()):
-                fase_pergunta = False
-                letra = linha[0].upper()
-                texto = linha[2:].strip()
-                alts_dict[letra] = texto
-            elif linha.upper().startswith("QUESTAO:"):
-                pergunta_completa.append(linha.replace("QUESTAO:", "").strip())
-            elif linha.upper().startswith("GABARITO:"):
-                letra_gab = linha.replace("GABARITO:", "").strip().upper()
-                if letra_gab in alts_dict:
-                    texto_correto = alts_dict[letra_gab]
-            elif fase_pergunta:
-                # ✅ Se ainda não chegamos nas alternativas, 
-                # qualquer linha extra (como I, II, III) entra na pergunta.
-                pergunta_completa.append(linha)
-
-        if pergunta_completa and texto_correto:
-            questoes_lista.append({
-                "pergunta": "\n".join(pergunta_completa), # Junta tudo com quebra de linha
-                "alternativas": list(alts_dict.values()),
-                "texto_correto": texto_correto
-            })
-
-        if questoes_lista:
-            random.shuffle(questoes_lista)
-            sessoes_usuarios[interaction.user.id] = questoes_lista
-            q = questoes_lista[0]
-        
-            # Embaralha apenas a exibição das alternativas
-            alts_exibicao = q["alternativas"].copy()
-            random.shuffle(alts_exibicao)
-            opcoes_texto = [f"{l}. {t}" for l, t in zip(["A", "B", "C", "D"], alts_exibicao)]
             
-            view = QuestaoView(interaction.user.id, 0, 0, thread)
-            # O corpo agora conterá as afirmações I, II, III...
-            msg = await thread.send(content=f"**{q['pergunta']}**\n\n" + "\n".join(opcoes_texto), view=view)
-            view.message = msg
+            for bloco in blocos:
+                linhas = [l.strip() for l in bloco.strip().split('\n') if l.strip()]
+                
+                pergunta_completa = []
+                alts_dict = {}
+                texto_correto = ""
+                fase_pergunta = True 
 
-        else:
-            await thread.send("⚠️ Erro: Não encontrei questões válidas dentro do arquivo.")
+                for linha in linhas:
+                    # ✅ Identifica as alternativas A, B, C ou D
+                    if re.match(r"^[A-D]:", linha.upper()):
+                        fase_pergunta = False
+                        letra = linha[0].upper()
+                        texto = linha[2:].strip()
+                        alts_dict[letra] = texto
+                    # ✅ Identifica o início da questão
+                    elif linha.upper().startswith("QUESTAO:"):
+                        pergunta_completa.append(linha.replace("QUESTAO:", "").strip())
+                    # ✅ Identifica o Gabarito
+                    elif linha.upper().startswith("GABARITO:"):
+                        letra_gab = linha.replace("GABARITO:", "").strip().upper()
+                        if letra_gab in alts_dict:
+                            texto_correto = alts_dict[letra_gab]
+                    # ✅ Se estiver na fase da pergunta, acumula (inclui I, II, III...)
+                    elif fase_pergunta:
+                        pergunta_completa.append(linha)
 
-            await thread.send(f"❌ Erro técnico ao ler o simulado.")
+                # Só adiciona se a questão estiver completa
+                if pergunta_completa and texto_correto:
+                    questoes_lista.append({
+                        "pergunta": "\n".join(pergunta_completa),
+                        "alternativas": list(alts_dict.values()),
+                        "texto_correto": texto_correto
+                    })
+
+            if questoes_lista:
+                # Armazena todas as questões na sessão do usuário
+                random.shuffle(questoes_lista)
+                sessoes_usuarios[interaction.user.id] = questoes_lista
+                
+                q = questoes_lista[0]
+                
+                # Embaralha as alternativas para exibição
+                alts_exibicao = q["alternativas"].copy()
+                random.shuffle(alts_exibicao)
+                opcoes_texto = [f"{l}. {t}" for l, t in zip(["A", "B", "C", "D"], alts_exibicao)]
+                
+                view = QuestaoView(interaction.user.id, 0, 0, thread)
+                
+                # Deleta o "carregando" e manda a primeira questão com tudo (I, II, III...)
+                await msg_loading.delete()
+                msg = await thread.send(content=f"Questão 1:\n**{q['pergunta']}**\n\n" + "\n".join(opcoes_texto), view=view)
+                view.message = msg
+            else:
+                await thread.send("⚠️ Erro: Não encontrei questões válidas no formato QUESTAO/GABARITO.")
+
+        except Exception as e:
+            print(f"Erro técnico: {e}")
+            await thread.send(f"❌ Ocorreu um erro ao processar o simulado.")
 
 # --- COMANDOS (SEU CABEÇALHO COMPLETO) ---
 @bot.command()
