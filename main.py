@@ -222,81 +222,62 @@ class MenuSimulado(View):
 
 async def iniciar_logica(self, interaction, nome_arquivo, thread):
         caminho = os.path.join("Simulados", nome_arquivo)
-
         if not os.path.exists(caminho):
-            await thread.send(f"❌ Arquivo `{nome_arquivo}` não encontrado.")
-            return
+            return await thread.send(f"❌ Arquivo `{nome_arquivo}` não encontrado.")
 
         with open(caminho, "r", encoding="utf-8") as f:
             conteudo = f.read()
 
-        # 🔹 Divide as questões pelo DELIMITADOR OFICIAL
-        blocos = [b.strip() for b in conteudo.split("[#") if b.strip()]
+        # 🔹 Separa as questões pelo fechamento do bloco #]
+        blocos = [b.strip() for b in conteudo.split("#]") if b.strip()]
         questoes_lista = []
 
         for bloco in blocos:
-            # Junta novamente o texto da questão
-            bloco = "[#" + bloco
-
-            # Extrai o enunciado entre [#  #]
-            match_pergunta = re.search(r'(?:<|&lt;)\s*Resposta correta:\s*([a-d])\s*(?:>|&gt;)',
-                bloco, 
-                re.IGNORECASE
-            )
-
+            # 1. Extrai o enunciado (Tudo entre [# e o fim do texto antes das chaves)
+            match_pergunta = re.search(r'\[#\s*(.*?)(?=\{[a-d]\})', bloco, re.DOTALL | re.IGNORECASE)
             if not match_pergunta:
                 continue
+            
+            pergunta_texto = match_pergunta.group(1).strip()
 
-            pergunta = match_pergunta.group(1).strip()
-
+            # 2. Extrai Alternativas {a} texto
             alternativas = {}
-            letra_correta = None
-
-            # Alternativas {a} {b} {c} {d}
-            for alt in re.findall(r'\{([a-d])\}\s*(.+)', bloco, re.IGNORECASE):
+            for alt in re.findall(r'\{([a-d])\}\s*([^\n{<]+)', bloco, re.IGNORECASE):
                 letra = alt[0].lower()
                 texto = alt[1].strip()
                 alternativas[letra] = texto
 
-            # Resposta correta
+            # 3. Extrai Resposta correta <Resposta correta: d> ou <d>
             match_resp = re.search(r'<\s*Resposta correta:\s*([a-d])\s*>', bloco, re.IGNORECASE)
             if not match_resp:
-                continue
+                # Tenta um padrão mais simples caso o anterior falhe
+                match_resp = re.search(r'<([a-d])>', bloco, re.IGNORECASE)
 
-            letra_correta = match_resp.group(1).lower()
-
-            if letra_correta not in alternativas:
-                continue
-
-            questoes_lista.append({
-                "pergunta": pergunta,
-                "alternativas": list(alternativas.values()),
-                "texto_correto": alternativas[letra_correta]
-            })
+            if match_resp and alternativas:
+                letra_correta = match_resp.group(1).lower()
+                if letra_correta in alternativas:
+                    questoes_lista.append({
+                        "pergunta": pergunta_texto,
+                        "alternativas": list(alternativas.values()),
+                        "texto_correto": alternativas[letra_correta]
+                    })
 
         if not questoes_lista:
-            await thread.send("⚠️ Não consegui ler nenhuma questão. Verifique o formato do arquivo.")
-            return
+            return await thread.send("⚠️ Formato inválido! Certifique-se de usar `[# texto #]`, `{a} opção` e `<Resposta correta: a>`.")
 
-        # 🔹 Embaralha a ORDEM DAS QUESTÕES
+        # 🔹 Embaralha e Inicia (Lógica que já estava funcionando)
         random.shuffle(questoes_lista)
         sessoes_usuarios[interaction.user.id] = questoes_lista
-
-        # 🔹 Prepara a PRIMEIRA QUESTÃO
         q = questoes_lista[0]
-        alternativas = q["alternativas"].copy()
-        random.shuffle(alternativas)  # ✅ Embaralha A–D
+        alts = q["alternativas"].copy()
+        random.shuffle(alts)
 
         letras = ["a", "b", "c", "d"]
-        opcoes = [f"{letras[i]}. {alternativas[i]}" for i in range(len(alternativas))]
-
+        opcoes = [f"{letras[i]}. {alts[i]}" for i in range(len(alts))]
         corpo = f"**{q['pergunta']}**\n\n" + "\n".join(opcoes)
 
         view = QuestaoView(interaction.user.id, 0, 0, thread)
-        msg = await thread.send(
-            content=f"📘 **Simulado iniciado**\n\nQuestão 1:\n{corpo}",
-            view=view
-        )
+        msg = await thread.send(content=f"📘 **Simulado iniciado**\n\nQuestão 1:\n{corpo}", view=view)
         view.message = msg
 
 # --- COMANDOS ---
