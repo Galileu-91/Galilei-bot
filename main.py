@@ -201,6 +201,8 @@ class MenuSimulado(View):
         type=discord.ChannelType.public_thread,
         auto_archive_duration=1440
     )
+        await interaction.response.send_message(f"✅ Sala criada, clique aqui 👉 {thread.mention}", ephemeral=True)
+        await self.iniciar_logica(interaction, nome_arquivo, thread)
 
     # ✅ libera a interaction (obrigatório)
         await interaction.response.defer(ephemeral=True)
@@ -223,6 +225,7 @@ class MenuSimulado(View):
 async def iniciar_logica(self, interaction, nome_arquivo, thread):
     caminho = os.path.join("Simulados", nome_arquivo)
     with open(caminho, "r", encoding="utf-8") as f:
+        # Divide pelos tracejados que coloquei no TXT
         blocos = f.read().split("---")
 
     questoes_lista = []
@@ -235,32 +238,31 @@ async def iniciar_logica(self, interaction, nome_arquivo, thread):
             if linha.startswith("QUESTAO:"):
                 q_data["pergunta"] = linha.replace("QUESTAO:", "").strip()
             elif linha.startswith(("A:", "B:", "C:", "D:")):
-                letra = linha[0].lower()
+                letra = linha[0].upper()
                 texto = linha[2:].strip()
                 alts_dict[letra] = texto
                 q_data["alternativas"].append(texto)
             elif linha.startswith("GABARITO:"):
-                letra_gabarito = linha.replace("GABARITO:", "").strip().lower()
+                letra_gabarito = linha.replace("GABARITO:", "").strip().upper()
                 if letra_gabarito in alts_dict:
                     q_data["texto_correto"] = alts_dict[letra_gabarito]
 
         if q_data["pergunta"] and q_data["texto_correto"]:
             questoes_lista.append(q_data)
 
-    # Inicia o Simulado
     if questoes_lista:
         random.shuffle(questoes_lista)
         sessoes_usuarios[interaction.user.id] = questoes_lista
         q = questoes_lista[0]
+        # Embaralha as letras para o usuário não decorar a posição
         alts_random = q["alternativas"].copy()
         random.shuffle(alts_random)
+        opcoes = [f"{l}. {t}" for l, t in zip(["A", "B", "C", "D"], alts_random)]
         
-        opcoes_f = [f"{l}. {t}" for l, t in zip(["A", "B", "C", "D"], alts_random)]
-        corpo = f"**{q['pergunta']}**\n\n" + "\n".join(opcoes_f)
-
         view = QuestaoView(interaction.user.id, 0, 0, thread)
-        msg = await thread.send(content=f"📘 **Simulado iniciado!**\n\nQuestão 1:\n{corpo}", view=view)
+        msg = await thread.send(content=f"📘 **Simulado iniciado!**\n\nQuestão 1:\n**{q['pergunta']}**\n\n" + "\n".join(opcoes), view=view)
         view.message = msg
+        
     else:
         await thread.send("⚠️ Erro: Não consegui ler as questões no novo formato [# #].")
 # --- COMANDOS ---
