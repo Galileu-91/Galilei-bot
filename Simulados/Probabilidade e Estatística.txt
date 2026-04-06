@@ -89,7 +89,7 @@ C: Multiplicar o valor atual por 1,09
 D: Dividir o valor atual por 1,09
 GABARITO: C
 ---
-QUESTOA: A Universidade utiliza em seu sistema de notas valores com apreciação de uma casa decimal, porém o valor decimal da nota só pode ser 5 décimos. Sabendo que a média mínima para aprovação em qualquer matéria é 7,0 e que o cálculo de sua média em uma determinada matéria resultou em 6,75. Você está:
+QUESTAO: A Universidade utiliza em seu sistema de notas valores com apreciação de uma casa decimal, porém o valor decimal da nota só pode ser 5 décimos. Sabendo que a média mínima para aprovação em qualquer matéria é 7,0 e que o cálculo de sua média em uma determinada matéria resultou em 6,75. Você está:
 A: Reprovado
 B: Aprovado
 GABARITO: B
@@ -158,3 +158,80 @@ B: Existe uma afirmativa errada e duas corretas.
 C: Todas as afirmativas estão corretas.
 D: Existe uma afirmativa correta e duas erradas
 GABARITO: C
+---
+QUESTAO: Deseja-se representar a evolução do custo do Dólar ao longo dos últimos 12 meses. Qual o melhor tipo de gráfico a ser utilizado?
+A: Colunas
+B: Barras
+C: Setores
+D: Dispersão (XY)
+GABARITO: A
+---
+QUESTAO: Um técnico de laboratório executou uma pesquisa de cultura de uma bactéria ao longo de um período de 6 meses e pretende representá-la em um gráfico. Qual o melhor tipo de gráfico a ser utilizado?
+A: Pizza
+B: Dispersão (XY)
+C: Colunas
+D: Barras
+GABARITO: C
+---
+QUESTAO: Em uma pesquisa obteve-se o tempo em minutos utilizados por alunos de uma escola para realizar uma prova, que resultou nos valores da tabela abaixo. Com estes valores será necessária a montagem de uma tabela de distribuição de frequências.
+30|24|27|37|40|35|32|29|28|41|
+33|33|36|27|28|30|29|40|42|41|
+27|42|28|41|29|40|30|30|38|27|
+Qual o intervalo de classe mais indicado para construir a tabela de distribuição der frequências é:
+A: 5,5
+B: 3,6
+C: 4
+D: 5,4
+GABARITO: C
+---
+QUESTAO: Um pesquisador levantou a densidade de diversos tipos de misturas e pretende representá-las em um gráfico. Qual o melhor tipo de gráfico a ser utilizado?
+A: Linhas
+B: Barras
+C: Pizza
+D: Dispersão (XY)
+GABARITO: B
+---
+QUESTAO: Em um estudo número de pontos de jogadores em um campeonato de vôlei obteve-se os valores da tabela fornecida. Calcule o valor da média de pontos dos jogadores, devidamente arredondados
+Classe 1, 2, 3, 4, 5, 6
+Números de pontos 0, 3, 6, 9, 12, 15 | 3, 6, 9, 12, 15, 18
+Fi 10, 9, 7, 13, 5, 3
+A: 9
+B: 12
+C: 11
+D: 8
+GABARITO: D
+---
+QEUSTAO: Em uma pesquisa obteve-se o tempo em minutos utilizados por alunos de uma escola para realizar uma prova, que resultou nos valores da tabela abaixo. Com estes valores será necessária a montagem de uma tabela de distribuição de frequências.
+30|24|27|37|40|35|32|29|28|41|
+33|33|36|27|28|30|29|40|42|41|
+27|42|28|41|29|40|30|30|38|27|
+Qual o número de classes mais indicado para construir a tabela de distribuição der frequências é:
+A: 5,4
+B: 3,6
+C: 5
+D: 5,5
+GABARITO: C
+---
+QEUSTAO: Em uma pesquisa eleitoral, deseja-se comparar a aceitação de todos os candidatos com os valores obtidos nas pesquisas dos meses anteriores. Qual o melhor tipo de gráfico a ser utilizado?
+A: Pizza
+B: Linhas 
+C: Dispersão
+D: Barras
+GABRITO: B
+---
+QUESTAO: Em um estudo número de pontos de jogadores em um campeonato de vôlei obteve-se os valores da tabela fornecida. Calcule o valor da moda dos pontos dos jogadores, devidamente arredondados
+Classe 1, 2, 3, 4, 5, 6
+Número de pontos 0, 3, 6, 9, 12, 15 | 3, 6, 9, 12, 15, 18
+Fi 10, 9, 7, 13, 5, 3
+A: 8
+B: 9
+C: 12
+D: 11
+GABRITO: D
+---
+QUESTAO: Em uma pesquisa eleitoral deseja-se mostrar a participação de cada candidato no total de votos disponíveis. Qual o melhor tipo de gráfico a ser utilizado?
+A: Barra
+B: Dispersão (XY)
+C: Linhas
+D: Setores
+GABARITO: D
