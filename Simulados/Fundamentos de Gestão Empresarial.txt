@@ -23,7 +23,7 @@ D: As respostas II, III e IV estão corretas, enquanto as respostas I e V estão
 GABARITO: D
 ---
 QUESTAO: No contexto do marketing global, qual conceito é utilizado para descrever o equilíbrio entre padronização e adaptação, pensando globalmente, mas agindo localmente?
-A: Glocalização.
+A: Globalização.
 B: Marketing de Exportação.
 C: Diferenciação Cultural.
 D: Padronização Estratégica. 
@@ -31,7 +31,7 @@ GABARITO: A
 ---
 QUESTAO: A inovação, é um fator essencial para o desempenho empresarial moderno, pois:
 I. Está relacionada à recombinação de recursos e conhecimentos.
-II. Basease apenas em pesquisa e desenvolvimento (P&D).
+II. Baseasse apenas em pesquisa e desenvolvimento (P&D).
 III. Promove vantagem competitiva sustentável.
 IV. Limita-se à criação de novos produtos físicos.
 V. Está associada à capacidade de adaptar-se às mudanças do mercado.
@@ -126,7 +126,7 @@ II. Novos produtos ou mercados inexplorados.
 III. Repetição de práticas tradicionais do setor
 IV. Acesso a novas fontes de matéria-prima.
 V. Imitação superficial da concorrência.
-A:As respostas IV e V estão corretas, enquanto as respostas I, II e III estão incorretas;
+A: As respostas IV e V estão corretas, enquanto as respostas I, II e III estão incorretas;
 B: As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
 C: As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
 D: As respostas I, II e IV estão corretas, enquanto as respostas III e V estão incorretas;
@@ -145,7 +145,7 @@ II. Environmental, Social and Governance.
 III. Foco na redução de riscos e atração de investidores alinhados a princípios éticos.
 IV. Foco na maximização do consumo.
 V. Foco na produção de resíduos poluidores.
-A:As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
+A: As respostas I e III estão corretas, enquanto as respostas II, IV e V estão incorretas;
 B: As respostas I, II e IV estão corretas, enquanto as respostas III e V estão incorretas;
 C: As respostas I, III e V estão corretas, enquanto as respostas II e IV estão incorretas;
 D: As respostas II e III estão corretas, enquanto as respostas I, IV e V estão incorretas;
