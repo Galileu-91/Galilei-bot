@@ -288,3 +288,34 @@ B: Modelagem de dados
 C: DBA
 D: SQL
 GABARITO: C
+---
+QUESTAO: Associe as afirmações com os nomes:
+-Dados não voláteis (não podem ser alterados apenas utilizados para analisar situações).
+-Procura dados em banco de dados de maneira a encontrar padrões de comportamento que podem indicar tendencias.
+-Dados não estão ordenados, precisam ser encontrados e processados no lado.
+A: Data Warehouse, Data mining, Data lake.
+B: Data mining, Data lake,Data Warehouse
+C: Data mining, Data Warehouse, Data lake
+D: Data Warehouse, Data lake, Data mining
+GABARITO: A
+---
+QUESTAO: Assinale Verdadeiro ou Falso para as afirmativas abaixo
+-Hoje o termo SQL é de propriedade da Microsoft.
+-O MySQL foi criado originalmente por David Axmark, Allan Larsson e Michael Monty e hoje pertence à Oracle.
+-Sistemas de Informações armazena informações em SQL.
+-Quando Sistemas de Informações precisam consultar ou inserir informações eles utilizam a linguagem SQL
+A: Verdadeiro, verdadeiro, falso, falso
+B: Falso, verdadeiro, falso, verdadeiro
+C: Falso, falso, verdadeiro, verdadeiro
+D: Verdadeiro, falso, falso, falso
+GABARITO: B
+---
+QUESTAO: Associe as definições aos nomes:
+-Capacidade de analisar grandes volumes de dados sob múltiplas perspectivas.
+-A capacidade de criar algoritmos de aprendizagem e generalização para simular as capacidades humanas.
+-Nome que se dá a uma tecnologia que permite conectar aparelhos utilizados em nosso dia a dia à Internet, tendo como objetivo que estes troquem informações entre si e a partir destas informações executem ações.
+A: Olap, Inteligência Artificial, Olap
+B: Inteligência Artificial, Olap, Internet das Coisas
+C: Olap, Inteligência Artificial, Internet das Coisas
+D: Internet das Coisas, Olap, Inteligência Artificial
+GABARITO: C
