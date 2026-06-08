@@ -1,277 +1,277 @@
-1. A cultura orientada por dados é conhecida como:
+QUESTÃO: A cultura orientada por dados é conhecida como:
 A: Data-driven culture.
 B: DataOps culture.
 C: Data-Science culture.
 D: Data-lake culture.
 RESPONDIDO: A
 ---
-2. Qual a principal vantagem de dados estruturados?
+QUESTÃO: Qual a principal vantagem de dados estruturados?
 A: Visualização intuitiva e direta.
 B: Fácil acesso e análise manual.
 C: Facilidade de armazenamento e recuperação.
 D: Compreensão imediata sem necessidade de processamento.
 RESPONDIDO: A
 ---
-3. Os resultados de pesquisas, como registro de notas de um aluno em banco de dados de uma instituição de ensino são classificados como:
+QUESTÃO: Os resultados de pesquisas, como registro de notas de um aluno em banco de dados de uma instituição de ensino são classificados como:
 A: Formato de dados estruturado e interno.
 B: Formato de dados não estruturado e interno.
 C: Formato de dados não estruturado e interno.
 D: Formato de dados estruturado e externo.
 REPONDIDO: A 
 ---
-4. Dê um exemplo de dados não estruturados.
+QUESTÃO: Dê um exemplo de dados não estruturados.
 A: Websites.
 B: Redes sociais.
 C: Banco de dados relacional.
 D: Tabelas SQL.
 RESPONDIDO: B
 ---
-5. Uma pesquisa de opinião pergunta aos participantes qual é a sua renda familiar anual. Qual tipo de dado quantitativo é mais adequado para armazenar essa informação?
+QUESTÃO: Uma pesquisa de opinião pergunta aos participantes qual é a sua renda familiar anual. Qual tipo de dado quantitativo é mais adequado para armazenar essa informação?
 A: Discreto
 B: Ordinal
 C: Nominal
 D: Contínuo
 RESPONDIDO: A
 ---
-6. Uma empresa de transporte registra o tempo que leva para entregar suas encomendas. Qual tipo dedado quantitativo é mais adequado para armazenar essa informação?
+QUESTÃO: Uma empresa de transporte registra o tempo que leva para entregar suas encomendas. Qual tipo dedado quantitativo é mais adequado para armazenar essa informação?
 A: Ordinal
 B: Discreto
 C: Nominal
 D: Contínuo
 REPONDIDO: D
 ---
-7. Qual a principal vantagem de dados não estruturados?
+QUESTÃO: Qual a principal vantagem de dados não estruturados?
 A: Facilidade de integração com outros tipos de dados.
 B: Estrutura rígida e organizada.
 C: Compreensão instantânea sem ferramentas específicas.
 D: Riqueza de informações e insights valiosos.
 RESPONDIDO: C
 ---
-8. Qual a principal diferença entre dados estruturados e não estruturados?
+QUESTÃO: Qual a principal diferença entre dados estruturados e não estruturados?
 A: Estrutura física de armazenamento.
 B: Formato e organização dos dados.
 C: Tamanho e volume dos dados.
 D: Tipo de software utilizado para análise.
 RESPONDIDO: B
 ---
-9. Big Data é:
+QUESTÃO: Big Data é:
 A: volume + oportunidade + segurança + veracidade, tudo agregando + valor.
 B: volume + variedade + agilidade + efetividade, tudo agregando + valor+ atualidade.
 C: dimensão + variedade + otimização + veracidade, tudo agregando + agilidade.
 D: volume + variedade + velocidade + veracidade, tudo agregando + valor.
 RESPONDIDO: D
 ---
-10. Qual a importância de dominar os diferentes tipos de dados?
+QUESTÃO: Qual a importância de dominar os diferentes tipos de dados?
 A: Manter a organização dos dados em pastas e subpastas.
 B: Obter insights valiosos e tomar decisões mais assertivas.
 C: Atender a requisitos específicos de armazenamento.
 D: Excluir dados irrelevantes e desatualizados.
 RESPONDIDO: B
--------------
-1. Qual a importância de dominar os diferentes tipos de dados?
+---
+QUESTÃO: Qual a importância de dominar os diferentes tipos de dados?
 A: Obter insights valiosos e tomar decisões mais assertivas.
 B: Manter a organização dos dados em pastas e subpastas.
 C: Atender a requisitos específicos de armazenamento.
 D: Excluir dados irrelevantes e desatualizados.
 RESPONDIDO: A
 ---
-2. Uma pesquisa de opinião pergunta aos participantes qual é a sua renda familiar anual. Qual tipo de dado quantitativo é mais adequado para armazenar essa informação?
+QUESTÃO: Uma pesquisa de opinião pergunta aos participantes qual é a sua renda familiar anual. Qual tipo de dado quantitativo é mais adequado para armazenar essa informação?
 A: Discreto
 B: Contínuo
 C: Ordinal
 D: Nominal
 RESPONDIDO: B
 ---
-3. Big Data é:
+QUESTÃO: Big Data é:
 A: volume + variedade + velocidade + veracidade, tudo agregando + valor.
 B: volume + variedade + agilidade + efetividade, tudo agregando + valor+ atualidade.
 C: volume + oportunidade + segurança + veracidade, tudo agregando + valor.
 D: dimensão + variedade + otimização + veracidade, tudo agregando + agilidade.
 RESPONDIDO: A
 ---
-4. Dê um exemplo de dados estruturados.
+QUESTÃO: Dê um exemplo de dados estruturados.
 A: Planilhas do Excel.
 B: Imagens.
 C: Vídeos.
 D: E-mails.
 RESPONDIDO: A
 ---
-5. O que é DataOps?
+QUESTÃO: O que é DataOps?
 A: é um conjunto de melhores práticas que visam tornar eficiente a coordenação entre a Ciência de Dados e as operações de dados e tornou-se assim um assunto fundamental para qualquer organização de TI que queira sobreviver e prosperar em um mundo onde inteligência de negócio sem tempo real é uma necessidade competitiva.
 B: é um conjunto operações de dados independente da Ciência de Dados e tornou-se assim uma ferramenta de dados eletrônicos e funcionais, fundamental para qualquer organização de TI que queira sobreviver e prosperar em um mundo onde D: inteligência de negócios em tempo compartilhado é uma necessidade competitiva.
 C: é um conjunto de técnicas de levantamento de dados para análise científica, para impressão de relatórios em tempo real.
 D: é um conjunto de linguagens de programação para desenvolvedores em C++, dev, Java e scripts operacionais.
 RESPONDIDO: A
 ---
-6. Uma empresa de transporte registra o tempo que leva para entregar suas encomendas. Qual tipo dedado quantitativo é mais adequado para armazenar essa informação?
+QUESTÃO: Uma empresa de transporte registra o tempo que leva para entregar suas encomendas. Qual tipo dedado quantitativo é mais adequado para armazenar essa informação?
 A: Discreto
 B: Contínuo
 C: Nominal
 D: Ordinal
 RESPONDIDO: B
 ---
-7. Cite onde podemos encontrar tipos de dados fazem parte do cotidiano das pessoas?
+QUESTÃO: Cite onde podemos encontrar tipos de dados fazem parte do cotidiano das pessoas?
 A: mídias sociais, sistemas de monitoramento e procedimentos médicos.
 B: e-commerce, TV & vídeo, sensores
 C: Notícias de jornais e imagens por satélite.
 D: todas as alternativas acima estão corretas.
 RESPONDIDO: D
 ---
-8. Conceitue dados:
+QUESTÃO: Conceitue dados:
 A: Dados são coleções de informações, tais como números, palavras, medições, observações ou mesmo apenas descrições de coisas.
 B: Dados são coleções de fatos, tais como números, palavras, medições, informações ou mesmo descrições de coisas.
 C: Dados são coleções de fatos, tais como números, palavras, medições, observações ou mesmo apenas descrições de coisas.
 D: Dados são coleções de relatórios com números, palavras, medições, observações e descrições de coisas.
 RESPONDIDO: C
 ---
-9. Resultados de pesquisas, registro de compras realizadas na empresa, banco de dados de sistemas internos são classificados como:
+QUESTÃO: Resultados de pesquisas, registro de compras realizadas na empresa, banco de dados de sistemas internos são classificados como:
 A: Formato de dados não estruturado e interno.
 B: Formato de dados não estruturado e interno.
 C: Formato de dados estruturado e externo.
 D: Formato de dados estruturado e interno.
 RESPONDIDO: D
 ---
-10. Dê um exemplo de dados não estruturados.
+QUESTÃO: Dê um exemplo de dados não estruturados.
 A: Tabelas SQL.
 B: Redes sociais.
 C: Websites.
 D: Banco de dados relacional.
 RESPONDIDO: B
 ---
-1. O que é Ciência de Dados?
+QUESTÃO: O que é Ciência de Dados?
 A: É o processo para extrair informações valiosas a partir de dados.
 B: Inclui modelagem preditiva e ajuda a analisar e interpretar grandes quantidades de dados.
 C: Todas as afirmativas acima estão corretas.
 D: É o termo usado para definir a extração de insights de dados que são coletados de várias fontes.
 RESPONDIDO: D
 ---
-2. Os dados são obtidos de diversas maneiras: e-mails, redes sociais, smartphones, tablets etc. A tecnologia se tornou necessária para que os dados sejam utilizados nas organizações e aplicadas aos seus negócios. Qual a afirmação que mostra as etapas onde os dados são projetados:
+QUESTÃO: Os dados são obtidos de diversas maneiras: e-mails, redes sociais, smartphones, tablets etc. A tecnologia se tornou necessária para que os dados sejam utilizados nas organizações e aplicadas aos seus negócios. Qual a afirmação que mostra as etapas onde os dados são projetados:
 A: Análise, tratamento e armazenamento.
 B: Armazenamento, análise, coleta e tratamento.
 C: Coleta dos dados, armazenamento, tratamento e análise.
 D: Tratamento, armazenamento, análise.
 RESPONDIDO: B
 ---
-3. Quais são as etapas de um ciclo de vida da ciência de dados?
+QUESTÃO: Quais são as etapas de um ciclo de vida da ciência de dados?
 A: Compreensão dos dados --> compreensão do problema --> preparação dos dados --> modelagem--> avaliação --> revisão.
 B: Compreensão do problema --> compreensão dos dados --> preparação dos dados --> modelagem--> avaliação --> implementação.
 C: Preparação dos dados --> compreensão dos dados --> identificação do problema--> modelagem --> avaliação --> implementação.
 D: Compreensão do problema --> compreensão dos dados --> preparação dos dados --> modelagem--> avaliação --> testes.
 RESPONDIDO: B
 ---
-4. São exemplos de onde pode ser aplicada a Ciência de Dados?
+QUESTÃO: São exemplos de onde pode ser aplicada a Ciência de Dados?
 A: Detecção de fraudes Carros automatizados, melhores sistemas de monitoramento, detecção eprevenção de epidemias, terremotos, educação customizada, por demanda e online.
 B: Todas as alternativas se aplicam a Ciência de Dados.
 C: Medicamentos customizados, baseados no histórico de cada paciente.
 D: Processo otimizado de iluminação residencial, industrial e pública, sistemas de buscas mais eficientes.
 RESPONDIDO: B
 ---
-5. Como é iniciado um projeto com ciência de dados?
+QUESTÃO: Como é iniciado um projeto com ciência de dados?
 A: Pelo levantamento de dados.
 B: Pelo objetivo, ou seja, as questões que precisam ser respondidas.
 C: Pela reunião de início de gerenciamento do projeto.
 D: Todas as alternativas estão corretas
 RESPONDIDO: D
 ---
-6. Qual a definição de estatística?
+QUESTÃO: Qual a definição de estatística?
 A: Estatística envolve a distribuição, reclassificação, resumo, organização, análise e interpretação dos dados. É um conjunto de métodos e processos qualitativos que serve para estudar e medir fenômenos coletivos.
 B: Estatística envolve a coleta, classificação, resumo, organização, análise e interpretação dos dados. É conjunto de métodos e processos quantitativos que serve para estudar e medir fenômenos coletivos.
 C: Estatística envolve somente dados estatístico e não tem nenhuma correlação com Ciência de dados.
 D: Estatística envolve dados matemáticos e numéricos, utilizado para realizar um resumo histórico, e fazer a análise e interpretação dos dados qualitativos. É um segmento de métodos e processos administrativos que serve ampliar os recursos da Ciência de Dados.
 RESPONDIDO:D 
 ---
-7. Qual a fase inicial do ciclo de vida de um projeto de Ciência de Dados?
+QUESTÃO: Qual a fase inicial do ciclo de vida de um projeto de Ciência de Dados?
 A: Definição do Problema
 B: Avaliação e Refinamento
 C: Treinamento do Modelo
 D: Implementação
 RESPONDIDO: A
 ---
-8. Qual das seguintes alternativas NÃO é um dos principais pilares tecnológicos na Ciência de Dados?
+QUESTÃO: Qual das seguintes alternativas NÃO é um dos principais pilares tecnológicos na Ciência de Dados?
 A: Programação e Computação
 B: Matemática e Estatística
 C: Comunicação e Visualização
 D: Ética e Responsabilidade
 RESPONDIDO: D
 ---
-9. Marque a alternativa correta sobre Ciência de Dados:
+QUESTÃO: Marque a alternativa correta sobre Ciência de Dados:
 A: Conjunto de técnicas, teorias e métodos usados para analisar vasto volume de dados e transformá-lo em insights significativos e acionáveis.
 B: Conjunto de técnicas, teorias e métodos usados para analisar apenas um pequeno volume de dado se transformá-lo em insights significativos e acionáveis.
 C: Conjunto de técnicas, teorias e métodos usados para analisar apenas uma quantidade pequena dedados e gerar em insights não significativos e acionáveis.
 D: Conjunto de técnicas, teorias e métodos, para analisar apenas grande volume de dados e transformá-lo em insights não significativos e direcionáveis.
 RESPODIDO: A
 ---
-10. A Ciência de Dados pode ser aplicada à Educação. Indique a afirmação incorreta.
+QUESTÃO: A Ciência de Dados pode ser aplicada à Educação. Indique a afirmação incorreta.
 A: Monitoramento do estudante na sua vida acadêmica.
 B: Orientação em tempo real para que o estudante não abandone a escola.
 C: Conjunto muito grande de informação que não pode ser cruzado com indicadores socioeconômicos.
 D: Personalização do processo de aprendizagem.
 RESPONDIDO: A
 ---
-1. Exemplifique aplicações onde são utilizados conceitos de ciência de dados:
+QUESTÃO: Exemplifique aplicações onde são utilizados conceitos de ciência de dados:
 A: Medicamentos customizados baseados no histórico de cada paciente.
 B: Processo otimizado de iluminação residencial, industrial e pública, sistemas de buscas mais eficientes.
 C: Todas as alternativas estão corretas.
 D: Detecção de terremotos, educação customizada, por demanda e online.
 RESPONDIDO: C
 
-2. Qual das seguintes alternativas NÃO é um dos principais pilares tecnológicos na Ciência de Dados?
+QUESTÃO: Qual das seguintes alternativas NÃO é um dos principais pilares tecnológicos na Ciência de Dados?
 A: Ética e Responsabilidade
 B: Matemática e Estatística
 C: Programação e Computação
 D: Comunicação e Visualização
 RESPONDIDO: A
 
-3. Ciência de Dados é uma grande área multidisciplinar em si e consiste em conjuntos de habilidades especializadas, tais como:
+QUESTÃO: Ciência de Dados é uma grande área multidisciplinar em si e consiste em conjuntos de habilidades especializadas, tais como:
 A: Estatística, história da filosofia, computação e conhecimento de negócios, além de técnicas e teorias, como a análise preditiva, modelagem, engenharia e mineração de dados e visualização.
 B: Estatística inferencial, matemática, física quântica, programação, computação e conhecimento de negócios, mas não inclui técnicas e teorias, como a análise preditiva, modelagem, engenharia e mineração de dados e visualização.
 C: Matemática espacial, programação de negócios, computação, além de técnicas e teorias, como a análise esportiva, modelagem de espaços, engenharia e mineração de dados e visualização.
 D: Estatística, matemática, programação, computação e conhecimento de negócios, além de técnicas e teorias, como a análise preditiva, modelagem, engenharia e mineração de dados e visualização.
 RESPONDIDO: D
 
-4. Qual a definição de estatística?
+QUESTÃO: Qual a definição de estatística?
 A: Estatística envolve somente dados estatístico e não tem nenhuma correlação com Ciência de dados.
 B: Estatística envolve dados matemáticos e numéricos, utilizado para realizar um resumo histórico, e fazer a análise e interpretação dos dados qualitativos. É um segmento de métodos e processos administrativos que serve ampliar os recursos da Ciência de Dados.
 C: Estatística envolve a coleta, classificação, resumo, organização, análise e interpretação dos dados. É conjunto de métodos e processos quantitativos que serve para estudar e medir fenômenos coletivos.
 D: Estatística envolve a distribuição, reclassificação, resumo, organização, análise e interpretação dos dados. É um conjunto de métodos e processos qualitativos que serve para estudar e medir fenômenos coletivos.
 RESPONDIDO: C
 
-5. Atualmente, surgem novas metodologias que tenham o objetivo de analisar grandes volume de dados e associá-las de forma interdisciplinar. A alternativa correta para definir "ciência dos dados":
+QUESTÃO: Atualmente, surgem novas metodologias que tenham o objetivo de analisar grandes volume de dados e associá-las de forma interdisciplinar. A alternativa correta para definir "ciência dos dados":
 A: A ciência dos dados é a geração de volume e variedade de novos dados.
 B: A ciência dos dados é o ato de organizar dados em uma data warehouse.
 C: A ciência dos dados é um tipo de banco de dados.
 D: A ciência dos dados é o estudo disciplinado de dados e informações.
 RESPONDIDO: D
 
-6. A Ciência de Dados pode ser aplicada à Educação. Indique a afirmação incorreta.
+QUESTÃO: A Ciência de Dados pode ser aplicada à Educação. Indique a afirmação incorreta.
 A: Personalização do processo de aprendizagem.
 B: Conjunto muito grande de informação que não pode ser cruzado com indicadores socioeconômicos.
 C: Monitoramento do estudante na sua vida acadêmica.
 D: Orientação em tempo real para que o estudante não abandone a escola.
 RESPONDIDO: B
 
-7. O cenário futuro da Ciência de Dados é:
+QUESTÃO: O cenário futuro da Ciência de Dados é:
 A: Continuará a crescer devido a importância em todas as áreas.
 B: Será apenas utilizada por grandes empresas.
 C: Será substituída por outras tecnologias.
 D: Será apenas utilizada por governos.
 RESPONDIDO: A
 
-8. Sobre tratamento de dados no âmbito da Estatística é correto afirmar:
+QUESTÃO: Sobre tratamento de dados no âmbito da Estatística é correto afirmar:
 A: Todas as afirmações estão corretas.
 B: Os dados estatísticos fazem referência a uma variável.
 C: Estatística trata dados.
 D: Estatística trabalha com variáveis, que podem assumir diferentes valores, em diferentes unidades.
 RESPONDIDO A
 
-9. O que é Ciência de Dados?
+QUESTÃO: O que é Ciência de Dados?
 A: Todas as afirmativas acima estão corretas.
 B: É o processo para extrair informações valiosas a partir de dados.
 C: Inclui modelagem preditiva e ajuda a analisar e interpretar grandes quantidades de dados.
 D: É o termo usado para definir a extração de insights de dados que são coletados de várias fontes.
 RESPONDIDO: A
 
-10. Como é iniciado um projeto com ciência de dados?
+QUESTÃO: Como é iniciado um projeto com ciência de dados?
 A: Pelo objetivo, ou seja, as questões que precisam ser respondidas.
 B: Pela reunião de início de gerenciamento do projeto.
 C: Pelo levantamento de dados.

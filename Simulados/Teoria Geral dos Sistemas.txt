@@ -4,7 +4,7 @@ B: Identificar situações problema
 C: Criar novas possibilidades
 D: Criar condições de aprender a aprender
 GABARITO: A
-
+---
 QUESTÃO: A um sistema caixa preta forneceu-se as entradas e obteve-se as saídas abaixo
 Entrada 2, 3, 4, 5
 Saída 10, 15, 20, 25
@@ -14,7 +14,7 @@ B: será 35
 C: será 30
 D: Não é obrigatoriamente dedutível
 GABARITO: D
-
+---
 QUESTÃO: Associe os tipos de sistemas de acordo com a abordagem do estudo de sistemas.
 Aqueles que todos os seus subsistemas não são visíveis 
 Aqueles que todos os seus subsistemas são perfeitamente visíveis 
@@ -24,14 +24,14 @@ B: Sistema tipo caixa turva, Sistema tipo caixa preta, Sistema tipo caixa banca
 C: Sistema tipo caixa banca, Sistema tipo caixa banca, Sistema tipo caixa preta
 D: Sistema tipo caixa preta, Sistema tipo caixa preta, Sistema tipo caixa turva
 GABARITO: A
-
+---
 QEUSTÃO: Podemos definir Homeostase como:
 A: a procura constante de um sistema com objetivo de encontrar condições de equilíbrio
 B: a procura do melhor desenvolvimento do homem
 C: o domínio da teoria da comunicação e do controle executado por máquina ou por seres humanos
 D: a identificação do homem durante processos estáticos
 GABARITO: A
-
+---
 QUESTÃO: Associe os números da figura abaixo como ciclo de solução de Problemas da Metodologia Cibernética
 Observar>2>3>4
 A: 2 Avaliar, 3 Projetar, 4 Observar
@@ -39,7 +39,7 @@ B: 2 Projetar, 3 Avaliar, 4 Implementar
 C: 2 Avaliar, 3 Projetar, 4 Implementar
 D: 2 Implementar, 3 Avaliar, 4 Avaliar
 GABARITO: C
-
+---
 QUESTÃO: Assinale a afirmativa correta para o sistema caixa banca da figura
 Entradas 👉🏼 A=500,00 B=20 
 Sistema do tipo Caixa Branca 👉🏼 Saída=A x B 
@@ -49,28 +49,28 @@ B: A saída será 10000,00
 C: A saída será 1000,00
 D: A saída será zero
 GABARITO: B
-
+---
 QUESTÃO: Para a solução de Problemas da Metodologia Cibernética, Observar consiste em:
 A: Criar condições de aprender a aprender
 B: Criar novas possibilidades
 C: Identificar situações problema
 D: Estruturar situações problema
 GABARITO: C
-
+---
 QUESTÃO: Para a solução de Problemas da Metodologia Cibernética, Projetar consiste em:
 A: Identificar situações problema
 B: Criar novas possibilidades
 C: Estruturar situações problema
 D: Criar condições de aprender a aprender
 GABARITO: B
-
+---
 QUESTÃO: Originalmente cibernética consiste em:
 A: Identificar em sistemas aqueles que são executados exclusivamente por computador
 B: Identificar o conhecimento existente em pessoas de conduzir corretamente embarcações
 C: Ações que podem sofrer ataques de hacker
 D: Nenhuma das alternativas
 GABARITO: B
-
+---
 QUESTÃO: Para a solução de Problemas da Metodologia Cibernética, Implementar consiste em:
 A: Criar novas possibilidades
 B: Criar condições de aprender a aprender
