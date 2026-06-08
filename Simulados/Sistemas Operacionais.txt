@@ -4,65 +4,205 @@ B: Apenas uma técnica teórica sem uso prático.
 C: Memória física disponível no disco rígido.
 D: Uma técnica para acessar mais memória do que está fisicamente disponível.
 GABARITO: D
----
+
 QUESTAO: O que é o contexto de hardware de um processo?
 A: O conteúdo dos registradores da CPU durante a execução do processo.
 B: As características e limites de recursos do processo.
 C: O ambiente onde o programa é executado.
 D: As informações sobre o programa armazenadas para continuação da execução.
 GABARITO: A
----
+
 QUESTAO: Em que estado um processo está aguardando por algum evento externo ou recurso para continuar suaexecução?
 A: Execução (running).
 B: Espera (waiter).
 C: Pronto (ready).
 D: Inativo (inactive).
 GABARITO: B
----
+
 QUESTAO: Qual é uma das principais responsabilidades do Gerenciamento de Memória?
 A: Gerenciar a alocação de energia.
 B: Controlar o acesso à internet.
 C: Controlar o uso da CPU.
 D: Coordenar o uso da memória no computador
 GABARITO: D
----
+
 QUESTAO: O que marca a 3ª geração de sistemas operacionais?
 A: O desenvolvimento de linguagens de programação.
 B: A introdução de computadores pessoais.
 C: A capacidade de leitura de trabalhos de cartões para o disco.
 D: A criação de sistemas operacionais baseados em UNIX.
 GABARITO: C
----
+
 QUESTAO: O que acontece durante a operação de swap de memória?
 A: A memória virtual é desativada temporariamente.
 B: A fragmentação de memória é resolvida automaticamente.
 C: Dados e instruções são transferidos da CPU para a memória física.
 D: Processos inativos são transferidos da memória física para o disco rígido
 GABARITO: D
----
+
 QUESTAO: Qual é a principal vantagem das threads em computação?
 A: Maior custo de desenvolvimento de chips.
 B: Aumento de velocidade.
 C: Restrição no compartilhamento de recursos.
 D: Diminuição da eficiência energética.
 GABARITO: B
----
+
 QUESTAO: Qual das seguintes gerações de computadores introduziu os sistemas operacionais para computadores pessoais?
 A: 3ª Geração - ICs e Multiprogramação.
 B: 2ª Geração - Transistors e Sistemas de lote (batch).
 C: 1ª Geração - Tubos de Vácuo.
 D: 4ª Geração - Computadores Pessoais.
 GABRITO: D
----
+
 Quais são os sistemas operacionais mais comuns para smartphones?
 A: Unix, Linux, e iOS.
 B: Linux, macOS, e Windows.
 C: Android, iOS, e macOS.
 D: Android, iOS, e Windows Phone.
 GABARITO: D
----
+
 QUESTAO: Qual é a função principal de um sistema operacional?
 A: Gerenciar apenas os recursos de um sistema complexo.
 B: Funcionar como uma ponte entre aplicações e hardware.
 C: Garantir a compatibilidade com diferentes programas.
 D: Apenas controlar a execução de tarefas.
+GABARITO:B
+
+QUESTÃO: Qual é o comando utilizado para modificar a senha de um dos usuários do Mac?
+A: curl
+B: cut
+C: ping
+D: passwd
+GABRITO: D
+
+QUESTÃO: O que é o Kernel em um sistema operacional Linux?
+A: O ambiente gráfico usado para interagir com o sistema operacional.
+B: O componente responsável por gerenciar recursos de hardware e software.
+C: O mecanismo de pesquisa interna usado para localizar arquivos e pastas.
+D: O conjunto de pacotes de software que formam o sistema operacional.
+GABARITO: B
+
+QUESTÃO: Qual é a função do comando touch no Terminal Linux?
+A: Listar os conteúdos de um diretório.
+B: Visualizar o conteúdo de um arquivo de texto.
+C: Cria um arquivo no diretório corrente.
+D: Copiar arquivos para um diretório específico.
+GABARITO: C
+
+QUESTÃO: Qual é o comando usado para listar os nomes dos arquivos do diretório que está sendo usado no momento no Terminal do MacOS?
+A: pwd
+B: is
+C: ls
+D: dir
+GABARITO: C
+
+QUESTÃO: O que o comando mkdir faz no Linux?
+A: Cria um ou vários diretórios no sistema.
+B: Remove um diretório do sistema.
+C: Cria um novo arquivo no sistema.
+D: Lista os arquivos de um diretório.
+GABARITO: A
+
+QUESTÃO: Qual é o sistema operacional dos computadores da Apple?
+A: MacOS
+B: Windows
+C: Android
+D: Linux
+GABARITO: A
+
+QUESTÃO: O que diferencia o Linux de outros sistemas operacionais como o Windows e o macOS?
+A: O Linux é desenvolvido pela Microsoft.
+B: O Linux é um sistema operacional de código fechado.
+C: O Linux é exclusivo para dispositivos da marca Apple.
+D: O Linux é de código aberto, o que significa que seu código fonte pode ser acessado e modificado livremente.
+GABARITO: D
+
+QUESTÃO: Quais são algumas das características do sistema operacional Linux em relação à segurança?
+A: Sistema de permissões de acesso robusto e menos vulnerável a vírus de computador.
+B: Ausência de recursos de criptografia de dados.
+C: Vulnerabilidade a ataques de hackers devido ao seu código aberto.
+D: Execução exclusiva de programas de terceiros.
+GABARITO: A
+
+QUESTÃO: Qual das seguintes afirmações sobre o Linux é verdadeira com base no texto fornecido?
+A: O Linux permite que qualquer pessoa veja e modifique seu código fonte devido à sua natureza de código aberto.
+B: O Linux é um sistema operacional desenvolvido exclusivamente pela Microsoft.
+C: O Linux é incompatível com periféricos de computador e dispositivos modernos.
+D: O Linux é baseado no sistema operacional Windows.
+GABARITO: A
+
+QUESTÃO: Qual é a função do comando cd no Terminal Linux?
+A: Copiar arquivos para um diretório específico.
+B: Navegar pelos arquivos e diretórios Linux.
+C: Listar os conteúdos de um diretório.
+D: Visualizar o conteúdo de um arquivo de texto.
+GABARITO: B
+
+QUESTÃO: Qual é o principal objetivo do sistema operacional Windows?
+A: Organizar arquivos em disco.
+B: Controlar periféricos como teclado, impressora e mouse.
+C: Interpretar os comandos do usuário.
+D: Proporcionar uma experiência de uso simplificada e acessível aos usuários.
+GABARITO: D
+
+QUESTÃO: O que são metadados em um sistema de arquivos?
+A: Informações sobre arquivos e diretórios
+B: Dados de navegação na internet
+C: Configurações do sistema operacional
+D: Dados de aplicativos
+GABARITO: A
+
+QUESTÃO: Qual das seguintes versões do Windows foi considerada o primeiro grande sucesso comercial da Microsoft?
+A: Windows 3.0
+B: Windows 10
+C: Windows XP
+D: Windows 95
+GABARITO: A
+
+QUESTÃO: Qual sistema de arquivos é comumente usado em dispositivos Windows?
+A: APFS
+B: HFS+
+C: Ext4
+D: NTFS
+GABARITO: D
+
+QUESTÃO: Quais são algumas características dos sistemas de arquivos?
+A: Recursos de design gráfico
+B: Controle de acesso e permissões
+C: Ferramentas de produtividade
+D: Monitoramento de pressão arterial
+GABARITO: B
+
+GABARITO: Qual sistema operacional da Microsoft foi lançado para uso corporativo, servidores e estações de trabalho, oferecendo maior estabilidade e segurança?
+A: Windows 98
+B: Windows 8
+C: Windows Vista
+D: Windows NT
+
+QUESTÃO: O que o comando "taskkill" faz no Terminal do Windows?
+A: Lista os processos em execução.
+B: Encerra um processo específico.
+C: Exibe informações sobre o sistema operacional e o hardware.
+D: Verifica e repara arquivos do sistema corrompidos.
+GABARITO: B
+
+QUESTÃO: Qual comando do Terminal do Windows é usado para criar um novo diretório?
+A: ipconfig
+B: del
+C: mkdir
+D: dir
+GABARITO: C
+
+QUESTÃO: O comando "ipconfig" é utilizado para:
+A: Exibir informações sobre a configuração de rede do computador.
+B: Criar um novo diretório.
+C: Listar o conteúdo de um diretório.
+D: Excluir arquivos.
+GABARITO: A
+
+QUESTÃO: Qual é o objetivo principal do sistema de arquivos?
+A: Alocar recursos de hardware
+B: Gerenciar o conteúdo dos discos do sistema
+C: Otimizar a velocidade da CPU
+D: Controlar o acesso à internet
+GABARITO: B

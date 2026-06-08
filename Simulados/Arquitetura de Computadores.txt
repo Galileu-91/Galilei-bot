@@ -1,0 +1,203 @@
+QUESTAO: Qual é a menor e mais elementar unidade que os computadores utilizam para trabalhar?
+A: Kilobyte
+B: Byte
+C: Megabyte
+D: Bit
+GABARITO: D
+---
+QUESTAO: O que é um Byte?
+A: A menor unidade de medida em um computador.
+B: Uma unidade de entrada e saída.
+C: Um conjunto de oito bits.
+D: Uma unidade de medida para contagem.
+GABARITO: C
+---
+QUESTAO: O que é a CPU?
+A: Uma unidade que interpreta e executa instruções.
+B: Uma unidade de armazenamento temporário.
+C: Uma unidade de controle de dados.
+D: Uma unidade de entrada e saída.
+GABARITO: A
+---
+QUESTAO: Qual a principal função da Unidade de Controle (UC)?
+A: Fornecer resultados finais do processamento.
+B: Controlar a execução de instruções.
+C: Armazenar temporariamente os dados.
+D: Realizar operações matemáticas.
+GABARITO: B
+---
+QUESTAO: Qual a diferença entre hardware e software?
+A: Hardware é a parte física do computador, enquanto software é a parte lógica.
+B: Hardware refere-se à parte lógica do computador, enquanto software refere-se à parte física.
+C: Hardware e software são termos intercambiáveis.
+D: Hardware e software são partes do processador.
+GABARITO: A
+---
+QUESTAO: Qual é a função do contador de programa (PC)?
+A: Controlar a execução de instruções.
+B: Controlar a transferência de dados entre a CPU e a memória.
+C: Armazenar o endereço da próxima instrução a ser buscada.
+D: Armazenar temporariamente os operandos das operações.
+GABARITO: C
+---
+QUESTAO: O que é um computador?
+A: Uma máquina capaz de armazenar apenas dados de forma permanente.
+B: Uma máquina capaz de realizar operações matemáticas simples.
+C: Uma máquina capaz de coletar, manipular e fornecer resultados da manipulação de dados.
+D: Uma máquina utilizada apenas para executar tarefas repetitivas.
+GABARITO: C
+---
+QUESTAO: que são registradores?
+A: Dispositivos de entrada e saída.
+B: Dispositivos que armazenam permanentemente os dados.
+C: Áreas de armazenamento temporário dentro da CPU.
+D: Memórias utilizadas para realizar operações na CPU.
+GABARITO: C
+---
+QUESTAO: O que é o sistema hexadecimal?
+A: Um sistema de numeração com base 16.
+B: Um sistema de numeração com base 10.
+C: Um sistema de numeração com base 2.
+D: Um sistema de numeração com base 8.
+GABARITO: A
+
+QUESTÃO: Qual é a menor e mais elementar unidade que os computadores utilizam para trabalhar?
+A: Kilobyte
+B: Byte
+C: Megabyte
+D: Bit
+GABARITO: D
+
+QUESTÃO: O que é um Byte?
+A: A menor unidade de medida em um computador.
+B: Uma unidade de entrada e saída.
+C: Um conjunto de oito bits.
+D: Uma unidade de medida para contagem.
+GABARITO: C
+
+QUESTÃO: O que é a CPU?
+A: Uma unidade que interpreta e executa instruções.
+B: Uma unidade de armazenamento temporário.
+C: Uma unidade de controle de dados.
+D: Uma unidade de entrada e saída.
+GABARITO: A
+
+QUESTÃO: O que é um Byte?
+A: A menor unidade de informação em um computador.
+B: Uma unidade de medida para armazenamento.
+C: Um dispositivo de entrada e saída.
+D: Um conjunto de oito bits.
+
+QUESTÃO: Qual a principal função da Unidade de Controle (UC)?
+A: Fornecer resultados finais do processamento.
+B: Controlar a execução de instruções.
+C: Armazenar temporariamente os dados.
+D: Realizar operações matemáticas.
+
+QUESTÃO: Qual a diferença entre hardware e software?
+A: Hardware é a parte física do computador, enquanto software é a parte lógica.
+B: Hardware refere-se à parte lógica do computador, enquanto software refere-se à parte física.
+C: Hardware e software são termos intercambiáveis.
+D: Hardware e software são partes do processador.
+GABARITO: A
+
+QUESTÃO: Qual é a função do contador de programa (PC)?
+A: Controlar a execução de instruções.
+B: Controlar a transferência de dados entre a CPU e a memória.
+C: Armazenar o endereço da próxima instrução a ser buscada.
+D: Armazenar temporariamente os operandos das operações.
+GABARITO: C
+
+QUESTÃO: O que é um computador?
+A: Uma máquina capaz de armazenar apenas dados de forma permanente.
+B: Uma máquina capaz de realizar operações matemáticas simples.
+C: Uma máquina capaz de coletar, manipular e fornecer resultados da manipulação de dados.
+D: Uma máquina utilizada apenas para executar tarefas repetitivas
+GABARITO: C
+
+QUESTÃO: O que são registradores?
+A: Dispositivos de entrada e saída.
+B: Dispositivos que armazenam permanentemente os dados.
+C: Áreas de armazenamento temporário dentro da CPU.
+D: Memórias utilizadas para realizar operações na CPU.
+GABARITO: C
+
+QUESTÃO: O que é o sistema hexadecimal?
+A: Um sistema de numeração com base 16.
+B: Um sistema de numeração com base 10.
+C: Um sistema de numeração com base 2.
+D: Um sistema de numeração com base 8.
+GABARITO: A
+
+QUESTÃO: Assinale a afirmativa correta sobre a origem da Teoria Geral dos Sistemas
+A: foi criada pelo Google para o desenvolvimento de programas de busca em sistemas de internet a partir do início dos anos 2000
+B: foi desenvolvida durante a segunda guerra mundial para construir o eniac (primeiro computador eletrônico)
+C: foi apresentada pela Microsoft para o desenvolvimento de Sistemas Operacionais em 1995
+D: foi apresentada pelo biólogo Austríaco Karl Ludwig Von Bertalanffy no final dos anos de 1930
+GABARITO: D
+
+QUESTÃO: Quando um sistema apresenta problemas, segundo a Teoria Geral dos Sistemas, ele deve ser abordado:
+A: Isolando o subsistema que apresenta o problema
+B: Como um todo
+GABARITO: B
+
+QUESTÃO: Assinale Verdadeiro ou Falso para a afirmativa abaixo.
+Sistemas que trocam informações com o ambiente externo são chamados de sistemas fechados no ambiente enquanto que, os que não conversam são chamados de sistemas abertos para o ambiente
+A: Verdadeiro
+B: Falso
+GABARITO: B
+
+QUESTÃO: Assinale Verdadeiro ou Falso para a afirmativa abaixo.
+De acordo com a Teoria Geral dos sistemas o todo não é simplesmente a soma das partes
+A: Verdadeiro
+B: Falso
+GABARITO: A
+
+QUESTÃO: Assinale verdadeiro ou falso para as afirmativas abaixo de acordo com o enfoque da Teoria Geral dos Sistemas
+Os sistemas são sempre compostos por diversos subsistemas, que interagem entre si _______.
+Para analisar o comportamento de um sistema é necessário considerar o funcionamento de todos os subsistemas que o compõe ______.
+Segundo o livro de Bertalanffy os sistemas estão sempre fragmentados em múltiplos subsistemas de maneira que para uma análise correta basta analisar um dos subsistemas e teremos o mesmo comportamento em todos os demais ______.
+O conceito de Pensamento Sistêmico foi incorporado por Bill Gates no livro Teoria Geral de Sistemas: o esqueleto da ciência _______.
+A: FALSO, VERDEIRO,VERDADEIRO, FALSO
+B: VERDADEIRO, VERDADEIRO, FALSO, FALSO.
+C: VERDADEIRO, FALSO, FALSO, FALSO
+D: FALSO, FALSO, VERDADEIRO, VERDADEIRO
+GABARITO: B
+
+QUESTÃO: Assinale verdadeiro ou falso para as afirmativas abaixo de acordo com o enfoque da Teoria Geral dos Sistemas
+Todo o sistema pode ser considerado como composto de subsistemas ________.
+Sistemas humanos podem representar comportamentos de seres humanos, mas sistemas empresariais não podem ser representados por subsistemas ______.
+Sistemas econômicos são sistemas abertos _______.
+Sistemas militares normalmente são sistemas fechados ________.
+A: VERDADEIRO, FALSO, VERDADEIRO, VERDADEIRO
+B: VERDADEIRO,VERDADEIRO, FALSO, FALSO
+C: FALSO, VERDADEIRO, FALSO, VERDADEIRO
+D: FALSO, FALSO, VERDADEIRO, VERDADEIRO
+GABARITO: A
+
+QUESTÃO: Assinale a alternativa que melhor completa a frase segundo a visão do físico austríaco Fritjop Carpa.
+Uma visão ___________ do mundo onde os especialistas da atualidade, embora capacitados e dominantes de suas respectivas áreas de atuação, já não conseguem lidar com os problemas urgentes do cotidiano.Isso porque, para resolvê-los, é necessária uma visão _________________, uma vez que os problemas de nosso tempo estão interligados e são -________________ entre si.
+A: degradante, individual, geodependentes
+B: generalista, holística, dependentes
+C: independente, única, monodependentes
+D: holística, sistêmica, interdependentes
+GABARITO: D
+
+QUESTÃO: Relacione os cientistas e pensadores com suas abordagens
+Galileu Galilei, Francis Bacom, Renê Descartes, Ludwig Von Bertalanffy
+A: Abordagem Clássica, Abordagem Clássica, Abordagem Clássica, Abordagem Clássica
+B: Abordagem Clássica, Abordagem Clássica, Abordagem Clássica, Abordagem Sistêmica
+C: Abordagem Clássica, Abordagem Sistêmica, Abordagem Sistêmica, Abordagem Sistêmica
+D: Abordagem Clássica, Abordagem Clássica, Abordagem Sistêmica, Abordagem Sistêmica
+GABARITO: B
+
+QUESTÃO: Relacione as definições com as palavras que as representam
+Entrada _______
+Saída ___________
+Ações em uma das partes influenciam em outras, de maneira que qualquer ação pode provocar novas ações _________.
+Refere-se à perda de energia em sistemas isolados _________.
+A: Input, Holismo, Entropia, Output
+B: Input, Output, Holismo, Entropia
+C: Entropia, Holismo, Output, Input
+D: Output, Input, Holismo, Entropia
+GABARITO: B
