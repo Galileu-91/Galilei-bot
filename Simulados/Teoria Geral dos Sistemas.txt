@@ -230,3 +230,11 @@ B: Input, Output, Holismo, Entropia
 C: Entropia, Holismo, Output, Input
 D: Output, Input, Holismo, Entropia
 GABARITO: B 
+---
+QUESTÃO: Associe à figura abaixo os nomes dos elementos
+IMAGEM: https://github.com/Galileu-91/Galilei-bot/blob/main/imagens/TGS%20image1.png
+A: 1 Entrada, 2 Processamento, 3 Saída, 4 Retroalimentação.
+B: 1 Saída, 2 Entrada, 3 Retroalimentação, 4 Processamento.
+C: 1 Retroalimentação, 2 Saída, 3 Entrada, 4 Processamento.
+D: 1 Processamento, 2 Saída, 3 Retroalimentação, 4 Entrada.
+GABARITO: A
