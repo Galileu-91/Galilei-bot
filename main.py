@@ -1,3 +1,4 @@
+from itertools import islice
 import time
 import random
 import discord
@@ -234,7 +235,7 @@ class MenuSimulado(View):
                         pergunta_completa.append(linha.replace("QUESTAO:", "").strip())
                     # ✅ Imagem
                     elif linha.upper().startswith("IMAGEM:"):
-                        url_imagem = linha.replace("IMAGEM:", "").strip()
+                        imagem_url = linha.replace("IMAGEM:", "").strip()
 
                     # ✅ Identifica o Gabarito
                     elif linha.upper().startswith("GABARITO:"):
@@ -251,7 +252,7 @@ class MenuSimulado(View):
                         "pergunta": "\n".join(pergunta_completa),
                         "alternativas": list(alts_dict.values()),
                         "texto_correto": texto_correto,
-                        "imagem": url_imagem if 'url_imagem' in locals() else None
+                        "imagem": imagem_url if 'imagem_url' in locals() else None
                     })
 
             if questoes_lista:
@@ -271,8 +272,8 @@ class MenuSimulado(View):
                 # Deleta o "carregando" e manda a primeira questão com tudo (I, II, III...)
                 await msg_loading.delete()
                 embed = discord.Embed(
-                    title="Questão 1",
-                    description=q["pergunta"]
+                    title=f"Questão {indice+1}",
+                    description=f"**{q['pergunta'].strip()}**"
                 )
 
                 # Se houver linha com [imagem], adiciona ao embed
