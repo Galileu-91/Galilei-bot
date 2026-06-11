@@ -113,13 +113,9 @@ class QuestaoView(View):
                      # (Nota: Como embaralhamos para exibição, vamos validar direto pelo texto do botão clicado na View)
                      pass
 
-        # Substitua TODO aquele bloco antigo de mapeamento por esta validação simples baseada nos fields do Embed enviado:
-        texto_escolhido = ""
-        if self.message.embeds:
-            for field in self.message.embeds[0].fields:
-                if field.name == escolha_letra:
-                    texto_escolhido = field.value.split(". ", 1)[1].strip()
-
+       # Pega a alternativa diretamente pelo índice de memória da View (A=0, B=1, C=2, D=3)
+        index_letra = ord(escolha_letra) - 65
+        texto_escolhido = self.alternativas_atuais[index_letra]
 
         if texto_escolhido.lower() == q_atual["texto_correto"].lower():
             self.acertos += 1
@@ -143,20 +139,27 @@ class QuestaoView(View):
             # Envia o feedback da resposta anterior separado antes da nova questão
             await self.thread.send(content=feedback)
 
-            # Monta o Embed para a nova questão
+            # --- HIGIENIZAÇÃO DA PRÓXIMA PERGUNTA ---
+            pergunta_limpa = q_prox['pergunta'].replace("QUESTÃO:", "").replace("QUESTAO:", "").strip()
+
+            # Monta o bloco de alternativas direto para a descrição
+            bloco_opcoes = ""
+            for l, t in zip(["A", "B", "C", "D"], alts_texto):
+                texto_alt_limpo = re.sub(r'^[A-D]:\s*', '', t)
+                bloco_opcoes += f"**{l})** {texto_alt_limpo}\n"
+
             embed_prox = discord.Embed(
                 title=f"Questão {proximo + 1}",
-                description=f"**{q_prox['pergunta'].strip()}**",
+                description=f"{pergunta_limpa}\n\n{bloco_opcoes}",
                 color=discord.Color.blue()
             )
             
             if q_prox["imagem"]:
                 embed_prox.set_image(url=q_prox["imagem"])
-                
-            for l, t in zip(["A", "B", "C", "D"], alts_texto):
-                embed_prox.add_field(name=l, value=f"{l}. {t}", inline=False)
 
             nova_view = QuestaoView(self.user_id, proximo, self.acertos, self.thread)
+            nova_view.alternativas_atuais = alts_texto # Passa a ordem de memória adiante
+            
             msg = await self.thread.send(embed=embed_prox, view=nova_view)
             nova_view.message = msg
         else:
@@ -307,21 +310,31 @@ class MenuSimulado(View):
                 
                 view = QuestaoView(interaction.user.id, 0, 0, thread)
                 
-                # Deleta o "carregando" e manda a primeira questão com tudo (I, II, III...)
+                # --- HIGIENIZAÇÃO DA PRIMEIRA PERGUNTA ---
+                pergunta_ini_limpa = q['pergunta'].replace("QUESTÃO:", "").replace("QUESTAO:", "").strip()
+                
+                # Gera o bloco de alternativas textual limpo dentro da própria descrição
+                bloco_opcoes = ""
+                for l, t in zip(["A", "B", "C", "D"], alts_exibicao):
+                    texto_alt_limpo = re.sub(r'^[A-D]:\s*', '', t)
+                    bloco_opcoes += f"**{l})** {texto_alt_limpo}\n"
+                
+                view = QuestaoView(interaction.user.id, 0, 0, thread)
+                view.alternativas_atuais = alts_exibicao # Salva a ordem na memória da View
+                
                 await msg_loading.delete()
+                
                 embed = discord.Embed(
                     title="Questão 1", 
-                    description=f"**{q['pergunta'].strip()}**"
+                    description=f"{pergunta_ini_limpa}\n\n{bloco_opcoes}",
+                    color=discord.Color.blue()
                 )
 
-                # Se houver linha com [imagem], adiciona ao embed
+
                 if q["imagem"]:
                     embed.set_image(url=q["imagem"])
 
-                # Adiciona alternativas
-                for l, t in zip(["A", "B", "C", "D"], opcoes_texto):
-                    embed.add_field(name=l, value=t, inline=False)
-
+                
                 msg = await thread.send(embed=embed, view=view)
                 view.message = msg
 
