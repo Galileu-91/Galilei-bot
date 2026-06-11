@@ -214,63 +214,63 @@ B: Processo otimizado de iluminação residencial, industrial e pública, sistem
 C: Todas as alternativas estão corretas.
 D: Detecção de terremotos, educação customizada, por demanda e online.
 RESPONDIDO: C
-
+---
 QUESTÃO: Qual das seguintes alternativas NÃO é um dos principais pilares tecnológicos na Ciência de Dados?
 A: Ética e Responsabilidade
 B: Matemática e Estatística
 C: Programação e Computação
 D: Comunicação e Visualização
 RESPONDIDO: A
-
+---
 QUESTÃO: Ciência de Dados é uma grande área multidisciplinar em si e consiste em conjuntos de habilidades especializadas, tais como:
 A: Estatística, história da filosofia, computação e conhecimento de negócios, além de técnicas e teorias, como a análise preditiva, modelagem, engenharia e mineração de dados e visualização.
 B: Estatística inferencial, matemática, física quântica, programação, computação e conhecimento de negócios, mas não inclui técnicas e teorias, como a análise preditiva, modelagem, engenharia e mineração de dados e visualização.
 C: Matemática espacial, programação de negócios, computação, além de técnicas e teorias, como a análise esportiva, modelagem de espaços, engenharia e mineração de dados e visualização.
 D: Estatística, matemática, programação, computação e conhecimento de negócios, além de técnicas e teorias, como a análise preditiva, modelagem, engenharia e mineração de dados e visualização.
 RESPONDIDO: D
-
+---
 QUESTÃO: Qual a definição de estatística?
 A: Estatística envolve somente dados estatístico e não tem nenhuma correlação com Ciência de dados.
 B: Estatística envolve dados matemáticos e numéricos, utilizado para realizar um resumo histórico, e fazer a análise e interpretação dos dados qualitativos. É um segmento de métodos e processos administrativos que serve ampliar os recursos da Ciência de Dados.
 C: Estatística envolve a coleta, classificação, resumo, organização, análise e interpretação dos dados. É conjunto de métodos e processos quantitativos que serve para estudar e medir fenômenos coletivos.
 D: Estatística envolve a distribuição, reclassificação, resumo, organização, análise e interpretação dos dados. É um conjunto de métodos e processos qualitativos que serve para estudar e medir fenômenos coletivos.
 RESPONDIDO: C
-
+---
 QUESTÃO: Atualmente, surgem novas metodologias que tenham o objetivo de analisar grandes volume de dados e associá-las de forma interdisciplinar. A alternativa correta para definir "ciência dos dados":
 A: A ciência dos dados é a geração de volume e variedade de novos dados.
 B: A ciência dos dados é o ato de organizar dados em uma data warehouse.
 C: A ciência dos dados é um tipo de banco de dados.
 D: A ciência dos dados é o estudo disciplinado de dados e informações.
 RESPONDIDO: D
-
+---
 QUESTÃO: A Ciência de Dados pode ser aplicada à Educação. Indique a afirmação incorreta.
 A: Personalização do processo de aprendizagem.
 B: Conjunto muito grande de informação que não pode ser cruzado com indicadores socioeconômicos.
 C: Monitoramento do estudante na sua vida acadêmica.
 D: Orientação em tempo real para que o estudante não abandone a escola.
 RESPONDIDO: B
-
+---
 QUESTÃO: O cenário futuro da Ciência de Dados é:
 A: Continuará a crescer devido a importância em todas as áreas.
 B: Será apenas utilizada por grandes empresas.
 C: Será substituída por outras tecnologias.
 D: Será apenas utilizada por governos.
 RESPONDIDO: A
-
+---
 QUESTÃO: Sobre tratamento de dados no âmbito da Estatística é correto afirmar:
 A: Todas as afirmações estão corretas.
 B: Os dados estatísticos fazem referência a uma variável.
 C: Estatística trata dados.
 D: Estatística trabalha com variáveis, que podem assumir diferentes valores, em diferentes unidades.
 RESPONDIDO A
-
+---
 QUESTÃO: O que é Ciência de Dados?
 A: Todas as afirmativas acima estão corretas.
 B: É o processo para extrair informações valiosas a partir de dados.
 C: Inclui modelagem preditiva e ajuda a analisar e interpretar grandes quantidades de dados.
 D: É o termo usado para definir a extração de insights de dados que são coletados de várias fontes.
 RESPONDIDO: A
-
+---
 QUESTÃO: Como é iniciado um projeto com ciência de dados?
 A: Pelo objetivo, ou seja, as questões que precisam ser respondidas.
 B: Pela reunião de início de gerenciamento do projeto.

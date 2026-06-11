@@ -77,5 +77,156 @@ B: Criar condições de aprender a aprender
 C: Identificar situações problema
 D: Estruturar situações problema
 GABARITO: B
-
-QUESTÃO: 
+---
+QUESTÃO: O conceito de separar cidades em zonas de usos exclusivos como foi feiro no decorrer do Século XX principalmente em cidades norte americanas....
+A: Foi ótimo porque deu oportunidade às empresas de entretenimento colocarem um cinema em cada uma das zonas
+B: Foi ótimo para criar cidades cibernéticas
+C: Não deu certo devido a provocar muitos deslocamentos dos moradores, para trabalho, laser, compras, etc.
+D: Não deu certo devido a grande concentração de residências nos centros das cidades.
+GABARITO: C
+---
+QUESTÃO: Internet das Coisas IoT
+A: Impossibilitou que Cidades Cibernéticas crescessem ordenadamente.
+B: É uma tecnologia que se apresentou como um grande inimigo de Cidades Cibernéticas
+C: É uma tecnologia que se apresentou como um grande aliado de Cidades Cibernéticas.
+D: Não existe
+GABARITO: C
+---
+QUESTÃO: Fabricantes de aparelhos celulares que mantiveram suas linhas de produção e não começaram a produzir SmartPhones perderam o mercado porque não consideraram do modelo de MichaelPorter o item...
+A: Nenhuma das alternativas
+B: Fornecedores.
+C: Concorrentes tradicionais.
+D: Produtos e serviços substitutos.
+GABARITO: D
+---
+QUESTÃO: A constante preocupação com a aceitação de seu produto é, de acordo como o modelo de Michael Porter referente a
+A: Fornecedores
+B: Clientes
+---
+QUESTÃO: Analise as 3 frases abaixo sobre escalabilidade e responda a alternativa correta
+I A capacidade dos sistemas de TI serem expandidos à medida que recebem Retroalimentações de saída
+II Tanto maior quanto mais rápido for possível expandir ou diminuir a estrutura existente ou contratadas.
+III Tanto maior quanto maior for o parque de TI
+A: Todas as afirmativas estão corretas
+B: Existem duas afirmativas corretas
+C: Existe somente uma afirmativa corretas
+D: Todas as afirmativas estão corretas
+GABARITO: B
+---
+QUESTÃO: O acrônimo BYOD representa
+A: Bring Your Own Director
+B: Be Yor Own Director
+C: Bring Your Own Device
+D: Brother Yong On Dad
+---
+QUESTÃO: Responda se os elementos citados representam CTO diretos ou Indiretos para setores de TI.
+Hardware e Software. 
+Manutenção predial. 
+Elaboração de documentação de TI 
+Aluguel. 
+A: Direto, Indireto, Direto, Indireto
+B: Indireto, Direto, Indireto, Direto
+C: Direto, Direto, Indireto, Indireto
+D: Indireto, Direto, Direto, Indireto
+GABARITO: A
+---
+QUESTÃO: Relacione a permissão da utilização de plataformas móveis por funcionários com suas vantagens e desvantagens
+Departamento de TI precisará conhecer e gerenciar diversas plataformas
+Produtividade
+Riscos de colocar arquivos indesejados na rede da empresa
+Economia
+A: Desvantagem, Desvantagem, Vantagem, Vantagem
+B: Desvantagem, Vantagem, Desvantagem, Vantagem
+C: Vantagem, Vantagem, Vantagem, Desvantagem
+D: Desvantagem, Desvantagem, Vantagem, Vantagem
+GABARITO: B
+---
+QUESTÃO: Assinale a alternativa que melhor completa a frase abaixo:
+Falhas ou má utilizações de software devido às dificuldades de ______, podem produzir entradas em diversos ____________, como os de produção causando saídas _________
+A: idioma – subsistemas – inesperadas
+B: idioma – programas – esperadas
+C: programação – entradas – armadas
+GABARITO: A
+---
+QUESTÃO: Assinale qual dos itens abaixo não é uma das vantagens competitivas do modelo de Michael Porter
+A: Concorrentes desistentes do mercado.
+B: Clientes
+C: Novos entrantes no mercado.
+D: Produtos e serviços substitutos.
+GABARITO: A
+---
+QUESTÃO: Assinale a afirmativa correta sobre a origem da Teoria Geral dos Sistemas
+A: foi criada pelo Google para o desenvolvimento de programas de busca em sistemas de internet a partir do início dos anos 2000
+B: foi desenvolvida durante a segunda guerra mundial para construir o eniac (primeiro computador eletrônico)
+C: foi apresentada pela Microsoft para o desenvolvimento de Sistemas Operacionais em 1995
+D: foi apresentada pelo biólogo Austríaco Karl Ludwig Von Bertalanffy no final dos anos de 1930
+GABARITO: D
+---
+QUESTÃO: Quando um sistema apresenta problemas, segundo a Teoria Geral dos Sistemas, ele deve ser abordado:
+A: Isolando o subsistema que apresenta o problema
+B: Como um todo
+GABRITO: B
+---
+QUESTÃO: Assinale Verdadeiro ou Falso para a afirmativa abaixo.
+Sistemas que trocam informações com o ambiente externo são chamados de sistemas fechados noambiente enquanto que, os que não conversam são chamados de sistemas abertos para o ambiente
+A: Verdadeiro
+B: Falso
+GABARITO: B
+---
+QUESTÃO: Assinale Verdadeiro ou Falso para a afirmativa abaixo.
+De acordo com a Teoria Geral dos sistemas o todo não é simplesmente a soma das partes
+A: Verdadeiro
+B: Falso
+GABARITO: A
+---
+QUESTÃO: Assinale verdadeiro ou falso para as afirmativas abaixo de acordo com o enfoque da Teoria Geral dos Sistemas
+Os sistemas são sempre compostos por diversos subsistemas, que interagem entre si. ____________.
+Para analisar o comportamento de um sistema é necessário considerar o funcionamento de todos os subsistemas que o compõe. _____________.
+Segundo o livro de Bertalanffy os sistemas estão sempre fragmentados em múltiplos subsistemas de maneira que para uma análise correta basta analisar um dos subsistemas e teremos o mesmo comportamento em todos os demais __________.
+O conceito de Pensamento Sistêmico foi incorporado por Bill Gates no livro Teoria Geral de Sistemas: o esqueleto da ciência ___________.
+A: Falso, Falso, Verdadeiro, Verdadeiro.
+B: Verdadeiro, Verdadeiro, Falso, Falso.
+C: Verdadeiro, Verdadeiro, Verdadeiro, Falso.
+D: Falso. Verdadeiro, Falso, Falso
+GABARITO: B
+---
+QUESTÃO: Assinale verdadeiro ou falso para as afirmativas abaixo de acordo com o enfoque da Teoria Geral dos Sistemas
+Todo o sistema pode ser considerado como composto de subsistemas __________.
+Sistemas humanos podem representar comportamentos de seres humanos, mas sistemas empresariais não podem ser representados por subsistemas ________.
+Sistemas econômicos são sistemas abertos ___________.
+Sistemas militares normalmente são sistemas fechados ____________.
+A: Verdadeiro, Falso, Verdadeiro, Verdadeiro.
+B: Falso, Falso, Verdadeiro, Verdadeiro.
+C: Falso, Verdadeiro, Falso, Falso.
+D: Verdadeiro, Falso, Verdadeiro, Falso.
+GABARITO: A
+---
+QUESTÃO: Assinale a alternativa que melhor completa a frase segundo a visão do físico austríaco Fritjop Carpa.
+Uma visão ___________ do mundo onde os especialistas da atualidade, embora capacitados e dominantes de suas respectivas áreas de atuação, já não conseguem lidar com os problemas urgentes do cotidiano. Isso porque, para resolvê-los, é necessária uma visão _________________, uma vez que os problemas de nosso tempo estão interligados e são -________________ entre si.
+A: degradante, individual, geodependentes
+B: generalista, holística, dependentes
+C: independente, única, monodependentes
+D: holística, sistêmica, interdependentes
+GABARITO: D
+---
+QUESTÃO: Relacione os cientistas e pensadores com suas abordagens
+Galileu Galilei 
+Francis Bacom
+Renê Descartes
+Ludwig Von Bertalanffy
+A: Abordagem Clássica, Abordagem Clássica, Abordagem Clássica, Abordagem Sistêmica.
+B: Abordagem Clássica, Abordagem Sistêmica, Abordagem Clássica, Abordagem Clássica.
+C: Abordagem Sistêmica, Abordagem Sistêmica, Abordagem Clássica, Abordagem Clássica.
+D: Abordagem Clássica, Abordagem Clássica, Abordagem Sistêmica, Abordagem Clássica.
+GABARITO: A
+---
+QUESTÃO: Relacione as definições com as palavras que as representam
+Entrada _______
+Saída ___________
+Ações em uma das partes influenciam em outras, de maneira que qualquer ação pode provocar novas ações _________.
+Refere-se à perda de energia em sistemas isolados _________.
+A: Input, Holismo, Entropia, Output
+B: Input, Output, Holismo, Entropia
+C: Entropia, Holismo, Output, Input
+D: Output, Input, Holismo, Entropia
+GABARITO: B 

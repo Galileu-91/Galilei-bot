@@ -232,6 +232,10 @@ class MenuSimulado(View):
                     # ✅ Identifica o início da questão
                     elif linha.upper().startswith("QUESTAO:"):
                         pergunta_completa.append(linha.replace("QUESTAO:", "").strip())
+                    # ✅ Imagem
+                    elif linha.upper().startswith("IMAGEM:"):
+                        url_imagem = linha.replace("IMAGEM:", "").strip()
+                        pergunta_completa.append(f"[imagem]{url_imagem}")
                     # ✅ Identifica o Gabarito
                     elif linha.upper().startswith("GABARITO:"):
                         letra_gab = linha.replace("GABARITO:", "").strip().upper()
@@ -265,8 +269,24 @@ class MenuSimulado(View):
                 
                 # Deleta o "carregando" e manda a primeira questão com tudo (I, II, III...)
                 await msg_loading.delete()
-                msg = await thread.send(content=f"Questão 1:\n**{q['pergunta']}**\n\n" + "\n".join(opcoes_texto), view=view)
+                embed = discord.Embed(
+                    title="Questão 1",
+                    description=q["pergunta"]
+                )
+
+                # Se houver linha com [imagem], adiciona ao embed
+                for linha in q["pergunta"].split("\n"):
+                    if linha.startswith("[imagem]"):
+                        url = linha.replace("[imagem]", "").strip()
+                        embed.set_image(url=url)
+
+                # Adiciona alternativas
+                for l, t in zip(["A", "B", "C", "D"], opcoes_texto):
+                    embed.add_field(name=l, value=t, inline=False)
+
+                msg = await thread.send(embed=embed, view=view)
                 view.message = msg
+
             else:
                 await thread.send("⚠️ Erro: Não encontrei questões válidas no formato QUESTAO/GABARITO.")
 

@@ -54,7 +54,7 @@ C: 1ª Geração - Tubos de Vácuo.
 D: 4ª Geração - Computadores Pessoais.
 GABRITO: D
 ---
-Quais são os sistemas operacionais mais comuns para smartphones?
+QUESTÕES: Quais são os sistemas operacionais mais comuns para smartphones?
 A: Unix, Linux, e iOS.
 B: Linux, macOS, e Windows.
 C: Android, iOS, e macOS.
