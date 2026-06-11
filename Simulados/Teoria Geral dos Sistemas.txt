@@ -209,11 +209,8 @@ C: independente, única, monodependentes
 D: holística, sistêmica, interdependentes
 GABARITO: D
 ---
-QUESTÃO: Relacione os cientistas e pensadores com suas abordagens
-Galileu Galilei 
-Francis Bacom
-Renê Descartes
-Ludwig Von Bertalanffy
+QUESTÃO: Relacione os cientistas e pensadores com suas abordagens.
+Galileu Galilei, Francis Bacom, Renê Descartes, Ludwig Von Bertalanffy.
 A: Abordagem Clássica, Abordagem Clássica, Abordagem Clássica, Abordagem Sistêmica.
 B: Abordagem Clássica, Abordagem Sistêmica, Abordagem Clássica, Abordagem Clássica.
 C: Abordagem Sistêmica, Abordagem Sistêmica, Abordagem Clássica, Abordagem Clássica.
@@ -232,7 +229,7 @@ D: Output, Input, Holismo, Entropia
 GABARITO: B 
 ---
 QUESTÃO: Associe à figura abaixo os nomes dos elementos
-IMAGEM: https://github.com/Galileu-91/Galilei-bot/blob/main/imagens/TGS%20image1.png
+IMAGEM: https://raw.githubusercontent.com/Galileu-91/Galilei-bot/refs/heads/main/imagens/TGS%20image1.png
 A: 1 Entrada, 2 Processamento, 3 Saída, 4 Retroalimentação.
 B: 1 Saída, 2 Entrada, 3 Retroalimentação, 4 Processamento.
 C: 1 Retroalimentação, 2 Saída, 3 Entrada, 4 Processamento.
