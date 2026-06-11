@@ -100,14 +100,27 @@ class QuestaoView(View):
         questoes = sessoes_usuarios[self.user_id]
         q_atual = questoes[self.index]
 
-        # Lógica de busca da alternativa no conteúdo da mensagem
-        mapeamento = self.message.content.split('\n')
-        texto_escolhido = ""
-        for linha in mapeamento:
-            if linha.startswith(f"{escolha_letra}."):
-                texto_escolhido = linha.split(". ", 1)[1].strip()
+       # Validação direta e blindada via memória do objeto
+        texto_correto = q_atual["texto_correto"].lower()
+        
+        # Procura se o texto correto coincide com o que foi guardado na questão atual
+        if texto_correto in [alt.lower() for alt in q_atual["alternativas"]]:
+            # Valida se a alternativa clicada corresponde à string correta na lista original
+            # Como as alternativas foram salvas puras do dicionário alts_dict:
+            feedback = f"❌ **Errado!** A resposta era: **{q_atual['texto_correto']}**"
+            for letra_chave, texto_chave in zip(["A", "B", "C", "D"], q_atual["alternativas"]):
+                if texto_chave.lower() == texto_correto and escolha_letra == letra_chave:
+                     # (Nota: Como embaralhamos para exibição, vamos validar direto pelo texto do botão clicado na View)
+                     pass
 
-        # Validação da resposta
+        # Substitua TODO aquele bloco antigo de mapeamento por esta validação simples baseada nos fields do Embed enviado:
+        texto_escolhido = ""
+        if self.message.embeds:
+            for field in self.message.embeds[0].fields:
+                if field.name == escolha_letra:
+                    texto_escolhido = field.value.split(". ", 1)[1].strip()
+
+
         if texto_escolhido.lower() == q_atual["texto_correto"].lower():
             self.acertos += 1
             feedback = f"✅ **Correto!**"
@@ -120,18 +133,31 @@ class QuestaoView(View):
         proximo = self.index + 1
         if proximo < len(questoes):
             # --- SEGUE PARA A PRÓXIMA QUESTÃO ---
+           proximo = self.index + 1
+        if proximo < len(questoes):
+            # --- SEGUE PARA A PRÓXIMA QUESTÃO ---
             q_prox = questoes[proximo]
             alts_texto = q_prox["alternativas"].copy()
             random.shuffle(alts_texto)
             
-            novas_opcoes = [f"{l}. {t}" for l, t in zip(["A", "B", "C", "D"], alts_texto)]
-            corpo_questao = f"**{q_prox['pergunta']}**\n\n" + "\n".join(novas_opcoes)
+            # Envia o feedback da resposta anterior separado antes da nova questão
+            await self.thread.send(content=feedback)
+
+            # Monta o Embed para a nova questão
+            embed_prox = discord.Embed(
+                title=f"Questão {proximo + 1}",
+                description=f"**{q_prox['pergunta'].strip()}**",
+                color=discord.Color.blue()
+            )
+            
+            if q_prox["imagem"]:
+                embed_prox.set_image(url=q_prox["imagem"])
+                
+            for l, t in zip(["A", "B", "C", "D"], alts_texto):
+                embed_prox.add_field(name=l, value=f"{l}. {t}", inline=False)
 
             nova_view = QuestaoView(self.user_id, proximo, self.acertos, self.thread)
-            msg = await self.thread.send(
-                content=f"{feedback}\n\n---\nQuestão {proximo + 1}:\n{corpo_questao}", 
-                view=nova_view
-            )
+            msg = await self.thread.send(embed=embed_prox, view=nova_view)
             nova_view.message = msg
         else:
             # --- FINALIZA O SIMULADO (TRAVA DE DUPLICIDADE FINAL) ---
@@ -152,10 +178,19 @@ class QuestaoView(View):
                 random.shuffle(alts)
                 opcs = [f"{l}. {t}" for l, t in zip(["A", "B", "C", "D"], alts)]
                 
-                m = await self.thread.send(
-                    content=f"🎲 **Simulado Reiniciado!**\n\nQuestão 1:\n**{q_ini['pergunta']}**\n\n" + "\n".join(opcs), 
-                    view=nova_v
+                embed_reiniciar = discord.Embed(
+                    title="Questão 1",
+                    description=f"🎲 **Simulado Reiniciado!**\n\n**{q_ini['pergunta'].strip()}**",
+                    color=discord.Color.blue()
                 )
+                
+                if q_ini["imagem"]:
+                    embed_reiniciar.set_image(url=q_ini["imagem"])
+                    
+                for l, t in zip(["A", "B", "C", "D"], alts):
+                    embed_reiniciar.add_field(name=l, value=f"{l}. {t}", inline=False)
+
+                m = await self.thread.send(embed=embed_reiniciar, view=nova_v)
                 nova_v.message = m
 
             btn_repetir.callback = repetir_callback
