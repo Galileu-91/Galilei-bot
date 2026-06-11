@@ -254,6 +254,9 @@ class MenuSimulado(View):
                         "texto_correto": texto_correto,
                         "imagem": imagem_url if 'imagem_url' in locals() else None
                     })
+                    #Limpa imagem_url para não vazar para a próxima questão
+                    if 'imagem_url' in locals():
+                        del imagem_url
 
             if questoes_lista:
                 # Armazena todas as questões na sessão do usuário
@@ -272,7 +275,7 @@ class MenuSimulado(View):
                 # Deleta o "carregando" e manda a primeira questão com tudo (I, II, III...)
                 await msg_loading.delete()
                 embed = discord.Embed(
-                    title=f"Questão {indice+1}",
+                    title="Questão 1", 
                     description=f"**{q['pergunta'].strip()}**"
                 )
 
