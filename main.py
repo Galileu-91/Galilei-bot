@@ -235,7 +235,7 @@ class MenuSimulado(View):
                     # ✅ Imagem
                     elif linha.upper().startswith("IMAGEM:"):
                         url_imagem = linha.replace("IMAGEM:", "").strip()
-                        pergunta_completa.append(f"[imagem]{url_imagem}")
+
                     # ✅ Identifica o Gabarito
                     elif linha.upper().startswith("GABARITO:"):
                         letra_gab = linha.replace("GABARITO:", "").strip().upper()
@@ -250,7 +250,8 @@ class MenuSimulado(View):
                     questoes_lista.append({
                         "pergunta": "\n".join(pergunta_completa),
                         "alternativas": list(alts_dict.values()),
-                        "texto_correto": texto_correto
+                        "texto_correto": texto_correto,
+                        "imagem": url_imagem if 'url_imagem' in locals() else None
                     })
 
             if questoes_lista:
@@ -275,10 +276,8 @@ class MenuSimulado(View):
                 )
 
                 # Se houver linha com [imagem], adiciona ao embed
-                for linha in q["pergunta"].split("\n"):
-                    if linha.startswith("[imagem]"):
-                        url = linha.replace("[imagem]", "").strip()
-                        embed.set_image(url=url)
+                if q["imagem"]:
+                    embed.set_image(url=q["imagem"])
 
                 # Adiciona alternativas
                 for l, t in zip(["A", "B", "C", "D"], opcoes_texto):
