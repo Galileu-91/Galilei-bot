@@ -206,3 +206,66 @@ B: Gerenciar o conteúdo dos discos do sistema
 C: Otimizar a velocidade da CPU
 D: Controlar o acesso à internet
 GABARITO: B
+---
+QUESTÃO: Qual é a menor e mais elementar unidade que os computadores utilizam para trabalhar?
+A: Kilobyte
+B: Byte
+C: Megabyte
+D: Bit
+GABARITO: D
+---
+QUESTÃO: O que é um Byte?
+A: A menor unidade de medida em um computador.
+B: Uma unidade de entrada e saída.
+C: Um conjunto de oito bits.
+D: Uma unidade de medida para contagem.
+GABARITO: C
+---
+QUESTÃO: O que é a CPU?
+A: Uma unidade que interpreta e executa instruções.
+B: Uma unidade de armazenamento temporário.
+C: Uma unidade de controle de dados.
+D: Uma unidade de entrada e saída.
+GABARITO: A
+---
+QUESTÃO: Qual a principal função da Unidade de Controle (UC)?
+A: Fornecer resultados finais do processamento.
+B: Controlar a execução de instruções.
+C: Armazenar temporariamente os dados.
+D: Realizar operações matemáticas.
+GABARITO: B
+---
+QUESTÃO: Qual a diferença entre hardware e software?
+A: Hardware é a parte física do computador, enquanto software é a parte lógica.
+B: Hardware refere-se à parte lógica do computador, enquanto software refere-se à parte física.
+C: Hardware e software são termos intercambiáveis.
+D: Hardware e software são partes do processador.
+GABARITO: A
+---
+QUESTÃO: Qual é a função do contador de programa (PC)?
+A: Controlar a execução de instruções.
+B: Controlar a transferência de dados entre a CPU e a memória.
+C: Armazenar o endereço da próxima instrução a ser buscada.
+D: Armazenar temporariamente os operandos das operações.
+GABARITO: C
+---
+QUESTÃO: O que é um computador?
+A: Uma máquina capaz de armazenar apenas dados de forma permanente.
+B: Uma máquina capaz de realizar operações matemáticas simples.
+C: Uma máquina capaz de coletar, manipular e fornecer resultados da manipulação de dados.
+D: Uma máquina utilizada apenas para executar tarefas repetitivas.
+GABARITO: C
+---
+QUESTÃO: O que são registradores?
+A: Dispositivos de entrada e saída.
+B: Dispositivos que armazenam permanentemente os dados.
+C: Áreas de armazenamento temporário dentro da CPU.
+D: Memórias utilizadas para realizar operações na CPU.
+GABARITO: C
+---
+QUESTÃO: O que é o sistema hexadecimal?
+A: Um sistema de numeração com base 16.
+B: Um sistema de numeração com base 10.
+C: Um sistema de numeração com base 2.
+D: Um sistema de numeração com base 8.
+GABARITO: A
