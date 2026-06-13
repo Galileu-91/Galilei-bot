@@ -129,5 +129,3 @@ C: Um sistema de numeração com base 2.
 D: Um sistema de numeração com base 8.
 GABARITO: A
 ---
-QUESTÃO:
----
