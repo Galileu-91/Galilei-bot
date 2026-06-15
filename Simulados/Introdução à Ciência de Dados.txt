@@ -68,27 +68,6 @@ C: Atender a requisitos específicos de armazenamento.
 D: Excluir dados irrelevantes e desatualizados.
 GABARITO: B
 ---
-QUESTÃO: Qual a importância de dominar os diferentes tipos de dados?
-A: Obter insights valiosos e tomar decisões mais assertivas.
-B: Manter a organização dos dados em pastas e subpastas.
-C: Atender a requisitos específicos de armazenamento.
-D: Excluir dados irrelevantes e desatualizados.
-GABARITO: A
----
-QUESTÃO: Uma pesquisa de opinião pergunta aos participantes qual é a sua renda familiar anual. Qual tipo de dado quantitativo é mais adequado para armazenar essa informação?
-A: Discreto
-B: Contínuo
-C: Ordinal
-D: Nominal
-GABARITO: B
----
-QUESTÃO: Big Data é:
-A: volume + variedade + velocidade + veracidade, tudo agregando + valor.
-B: volume + variedade + agilidade + efetividade, tudo agregando + valor+ atualidade.
-C: volume + oportunidade + segurança + veracidade, tudo agregando + valor.
-D: dimensão + variedade + otimização + veracidade, tudo agregando + agilidade.
-GABARITO: A
----
 QUESTÃO: Dê um exemplo de dados estruturados.
 A: Planilhas do Excel.
 B: Imagens.
@@ -102,13 +81,6 @@ B: é um conjunto operações de dados independente da Ciência de Dados e torno
 C: é um conjunto de técnicas de levantamento de dados para análise científica, para impressão de relatórios em tempo real.
 D: é um conjunto de linguagens de programação para desenvolvedores em C++, dev, Java e scripts operacionais.
 GABARITO: A
----
-QUESTÃO: Uma empresa de transporte registra o tempo que leva para entregar suas encomendas. Qual tipo dedado quantitativo é mais adequado para armazenar essa informação?
-A: Discreto
-B: Contínuo
-C: Nominal
-D: Ordinal
-GABARITO: B
 ---
 QUESTÃO: Cite onde podemos encontrar tipos de dados fazem parte do cotidiano das pessoas?
 A: mídias sociais, sistemas de monitoramento e procedimentos médicos.
@@ -131,20 +103,6 @@ C: Formato de dados estruturado e externo.
 D: Formato de dados estruturado e interno.
 GABARITO: D
 ---
-QUESTÃO: Dê um exemplo de dados não estruturados.
-A: Tabelas SQL.
-B: Redes sociais.
-C: Websites.
-D: Banco de dados relacional.
-GABARITO: B
----
-QUESTÃO: O que é Ciência de Dados?
-A: É o processo para extrair informações valiosas a partir de dados.
-B: Inclui modelagem preditiva e ajuda a analisar e interpretar grandes quantidades de dados.
-C: Todas as afirmativas acima estão corretas.
-D: É o termo usado para definir a extração de insights de dados que são coletados de várias fontes.
-GABARITO: D
----
 QUESTÃO: Os dados são obtidos de diversas maneiras: e-mails, redes sociais, smartphones, tablets etc. A tecnologia se tornou necessária para que os dados sejam utilizados nas organizações e aplicadas aos seus negócios. Qual a afirmação que mostra as etapas onde os dados são projetados:
 A: Análise, tratamento e armazenamento.
 B: Armazenamento, análise, coleta e tratamento.
@@ -160,7 +118,7 @@ D: Compreensão do problema --> compreensão dos dados --> preparação dos dado
 GABARITO: B
 ---
 QUESTÃO: São exemplos de onde pode ser aplicada a Ciência de Dados?
-A: Detecção de fraudes Carros automatizados, melhores sistemas de monitoramento, detecção eprevenção de epidemias, terremotos, educação customizada, por demanda e online.
+A: Detecção de fraudes Carros automatizados, melhores sistemas de monitoramento, detecção e prevenção de epidemias, terremotos, educação customizada, por demanda e online.
 B: Todas as alternativas se aplicam a Ciência de Dados.
 C: Medicamentos customizados, baseados no histórico de cada paciente.
 D: Processo otimizado de iluminação residencial, industrial e pública, sistemas de buscas mais eficientes.
@@ -172,13 +130,6 @@ B: Pelo objetivo, ou seja, as questões que precisam ser respondidas.
 C: Pela reunião de início de gerenciamento do projeto.
 D: Todas as alternativas estão corretas
 GABARITO: D
----
-QUESTÃO: Qual a definição de estatística?
-A: Estatística envolve a distribuição, reclassificação, resumo, organização, análise e interpretação dos dados. É um conjunto de métodos e processos qualitativos que serve para estudar e medir fenômenos coletivos.
-B: Estatística envolve a coleta, classificação, resumo, organização, análise e interpretação dos dados. É conjunto de métodos e processos quantitativos que serve para estudar e medir fenômenos coletivos.
-C: Estatística envolve somente dados estatístico e não tem nenhuma correlação com Ciência de dados.
-D: Estatística envolve dados matemáticos e numéricos, utilizado para realizar um resumo histórico, e fazer a análise e interpretação dos dados qualitativos. É um segmento de métodos e processos administrativos que serve ampliar os recursos da Ciência de Dados.
-GABARITO:D 
 ---
 QUESTÃO: Qual a fase inicial do ciclo de vida de um projeto de Ciência de Dados?
 A: Definição do Problema
@@ -206,7 +157,7 @@ A: Monitoramento do estudante na sua vida acadêmica.
 B: Orientação em tempo real para que o estudante não abandone a escola.
 C: Conjunto muito grande de informação que não pode ser cruzado com indicadores socioeconômicos.
 D: Personalização do processo de aprendizagem.
-GABARITO: A
+GABARITO: C
 ---
 QUESTÃO: Exemplifique aplicações onde são utilizados conceitos de ciência de dados:
 A: Medicamentos customizados baseados no histórico de cada paciente.
@@ -214,13 +165,6 @@ B: Processo otimizado de iluminação residencial, industrial e pública, sistem
 C: Todas as alternativas estão corretas.
 D: Detecção de terremotos, educação customizada, por demanda e online.
 GABARITO: C
----
-QUESTÃO: Qual das seguintes alternativas NÃO é um dos principais pilares tecnológicos na Ciência de Dados?
-A: Ética e Responsabilidade
-B: Matemática e Estatística
-C: Programação e Computação
-D: Comunicação e Visualização
-GABARITO: A
 ---
 QUESTÃO: Ciência de Dados é uma grande área multidisciplinar em si e consiste em conjuntos de habilidades especializadas, tais como:
 A: Estatística, história da filosofia, computação e conhecimento de negócios, além de técnicas e teorias, como a análise preditiva, modelagem, engenharia e mineração de dados e visualização.
@@ -243,13 +187,6 @@ C: A ciência dos dados é um tipo de banco de dados.
 D: A ciência dos dados é o estudo disciplinado de dados e informações.
 GABARITO: D
 ---
-QUESTÃO: A Ciência de Dados pode ser aplicada à Educação. Indique a afirmação incorreta.
-A: Personalização do processo de aprendizagem.
-B: Conjunto muito grande de informação que não pode ser cruzado com indicadores socioeconômicos.
-C: Monitoramento do estudante na sua vida acadêmica.
-D: Orientação em tempo real para que o estudante não abandone a escola.
-GABARITO: B
----
 QUESTÃO: O cenário futuro da Ciência de Dados é:
 A: Continuará a crescer devido a importância em todas as áreas.
 B: Será apenas utilizada por grandes empresas.
@@ -262,7 +199,7 @@ A: Todas as afirmações estão corretas.
 B: Os dados estatísticos fazem referência a uma variável.
 C: Estatística trata dados.
 D: Estatística trabalha com variáveis, que podem assumir diferentes valores, em diferentes unidades.
-GABARITO A
+GABARITO: A
 ---
 QUESTÃO: O que é Ciência de Dados?
 A: Todas as afirmativas acima estão corretas.
@@ -270,18 +207,3 @@ B: É o processo para extrair informações valiosas a partir de dados.
 C: Inclui modelagem preditiva e ajuda a analisar e interpretar grandes quantidades de dados.
 D: É o termo usado para definir a extração de insights de dados que são coletados de várias fontes.
 GABARITO: A
----
-QUESTÃO: Como é iniciado um projeto com ciência de dados?
-A: Pelo objetivo, ou seja, as questões que precisam ser respondidas.
-B: Pela reunião de início de gerenciamento do projeto.
-C: Pelo levantamento de dados.
-D: Todas as alternativas estão corretas
-GABARITO: A
----
-QUESTÃO: Qual a principal diferença entre dados estruturados e não estruturados?
-A: Formato e organização dos dados. 
-B: Tamanho e volume dos dados.
-C: Estrutura física de armazenamento.
-D: Tipo de software utilizado para análise.
-GABARITO: A
----

@@ -55,10 +55,10 @@ D: 4ª Geração - Computadores Pessoais.
 GABRITO: D
 ---
 QUESTÕES: Quais são os sistemas operacionais mais comuns para smartphones?
-A: Unix, Linux, e iOS.
-B: Linux, macOS, e Windows.
-C: Android, iOS, e macOS.
-D: Android, iOS, e Windows Phone.
+A: Unix, Linux e iOS.
+B: Linux, macOS e Windows.
+C: Android, iOS e macOS.
+D: Android, iOS e Windows Phone.
 GABARITO: D
 ---
 QUESTAO: Qual é a função principal de um sistema operacional?
