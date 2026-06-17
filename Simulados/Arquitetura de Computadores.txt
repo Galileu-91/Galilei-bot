@@ -129,3 +129,108 @@ C: Um sistema de numeração com base 2.
 D: Um sistema de numeração com base 8.
 GABARITO: A
 ---
+QUESTÃO: Qual é a principal vantagem das unidades de estado sólido (SSDs) em comparação com os discos rígidos(HDDs)?
+A: As SSDs consomem menos energia.
+B: As SSDs são mais baratas.
+C: As SSDs têm tempos de acesso mais lentos.
+D: As SSDs têm maior capacidade de armazenamento.
+GABARITO: A
+---
+QUESTÃO: Qual é o principal objetivo do barramento do sistema em um computador?
+A: Controlar o acesso à internet.
+B: Fornecer energia aos componentes do computador.
+C: Conectar os principais componentes do computador, como CPU, memória e dispositivos de E/S. 
+D: Armazenar dados temporários durante o processamento.
+GABARITO: C
+---
+QUESTÃO: O que é necessário para que um módulo do sistema envie dados para outro módulo por meio do barramento?
+A: Acesso à memória principal e transferência dos dados.
+B: Acesso ao controle do barramento e transferência dos dados.
+C: Acesso ao controle do barramento e transferência de uma requisição.
+D: Acesso ao processador e transferência dos dados.
+GABARITO: B
+---
+QUESTÃO: Qual é a principal diferença entre as memórias EPROM e EEPROM?
+A: A EPROM permite regravação parcial, enquanto a EEPROM requer que todo o conteúdo seja apagado antes da regravação.
+B: A EPROM tem uma capacidade de armazenamento maior do que a EEPROM.
+C: A EPROM pode ser apagada eletricamente, enquanto a EEPROM requer luz ultravioleta para apagar.
+D: A EPROM é mais rápida do que a EEPROM.
+GABARITO: C
+---
+QUESTÃO: Qual é a principal função da memória cache em um sistema de computador?
+A: Armazenar dados de forma volátil.
+B: Aumentar a capacidade de armazenamento permanente.
+C: Controlar o acesso de dispositivos externos ao sistema.
+D: Acelerar a velocidade de transferência entre a CPU e a memória principal
+GABARITO: D
+---
+QUESTÃO: Como são classificadas as linhas de um barramento do sistema?
+A: Linhas de processamento, linhas de comunicação e linhas de controle.
+B: Linhas de entrada, linhas de saída e linhas de memória.
+C: Linhas de alimentação, linhas de sinal e linhas de terra.
+D: Linhas de dados, linhas de endereço e linhas de controle.
+GABARITO: D
+---
+QUESTÃO: Qual é a principal função das linhas de controle em um barramento de sistema?
+A: Transmitir sinais de comando que especificam as operações a serem executadas.
+B: Transmitir dados entre os módulos do sistema.
+C: Designar a fonte ou o destino dos dados transferidos.
+D: Controlar o acesso e utilização das linhas de endereço e de dados.
+GABARITO: A
+---
+QUESTÃO: Qual é a principal vantagem do barramento PCI Express (PCI-e) em comparação com o PCI tradicional?
+A: Menor custo de implementação.
+B: Menor número de dispositivos suportados.
+C: Uso de transmissões paralelas.
+D: Maior largura de banda.
+GABARITO: D
+---
+QUESTÃO: Qual das seguintes técnicas de E/S permite que o programa continue sua execução enquanto aguarda a conclusão da operação de E/S?
+A: Acesso direto à memória (DMA)
+B: E/S programada (PIO)
+C: E/S dirigida por interrupção 
+D: E/S serial
+GABARITO: C
+---
+QUESTÃO: Qual das seguintes tecnologias de memórias RAM utiliza flip-flops para armazenar dados?
+A: Flash-ROM
+B: SRAM
+C: DRAM
+D: EEPROM
+GABARITO: B
+---
+QUESTÃO: Qual é uma das principais características das unidades de estado sólido (SSDs) em comparação com os discos rígidos tradicionais (HDDs)?
+A: Maior capacidade de armazenamento.
+B: Acesso mais rápido aos dados.
+C: Funcionamento mecânico.
+D: Maior consumo de energia.
+GABARITO: B
+---
+QUESTÃO: Qual das seguintes tecnologias de memórias RAM utiliza flip-flops para armazenar dados?
+A: SRAM
+B: Flash-ROM
+C: EEPROM
+D: DRAM
+GABARITO: A
+---
+QUESTÃO: Qual é a principal característica das memórias ROM?
+A: Elas têm alta capacidade de armazenamento e baixa velocidade de acesso.
+B: Elas são voláteis, requerendo energia constante para manter os dados.
+C: Elas contêm um padrão permanente de dados que não pode ser alterado. 
+D: Elas são programáveis e apagáveis eletricamente.
+GABARITO: C
+---
+QUESTÃO: Por que é importante ter uma hierarquia de memória em um sistema computacional?
+Para garantir acesso rápido aos dados mais frequentemente utilizados. 
+Para economizar espaço físico.
+Para garantir que todos os dados sejam armazenados na memória principal.
+Para facilitar a comunicação entre dispositivos de diferentes velocidades.
+GABARITO: A
+---
+QUESTÃO: Qual é a característica fundamental das memórias RAM (memória de acesso aleatório)?
+A: Volatilidade
+B: Capacidade de armazenamento permanente
+C: Alta velocidade de acesso
+D: Resistência a falhas
+GABARITO: A
+---
