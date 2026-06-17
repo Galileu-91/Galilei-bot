@@ -220,8 +220,8 @@ class MenuSimulado(View):
     @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=2)
     async def btn1(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
 
-    @discord.ui.button(label="Introdução aos Sistemas de Informação", style=discord.ButtonStyle.secondary, row=2)
-    async def btn2(self, it, btn): await self.preparar_sala(it, "Introdução aos Sistemas de Informação.txt")
+    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.secondary, row=2)
+    async def btn2(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
 
     @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.secondary, row=2)
     async def btn3(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
