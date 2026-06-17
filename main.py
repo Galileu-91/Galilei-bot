@@ -199,11 +199,17 @@ class QuestaoView(View):
             btn_repetir.callback = repetir_callback
             view_final.add_item(btn_repetir)
 
-            # Envia o feedback final (Apenas uma vez devido à trava no início)
+            # calcula a média de 0 a 10
+            nota = (self.acertos / len(questoes)) * 10
+
             await self.thread.send(
-                content=f"{feedback}\n\n🏆 **Simulado Concluído!**\nAcertos: **{self.acertos}/{len(questoes)}**", 
-                view=view_final
-            )   
+            content=(
+                f"{feedback}\n\n"
+                f"🏆 **Simulado Concluído!**\n"
+                f"Acertos: **{self.acertos}/{len(questoes)}** | Nota: **{nota:.1f}**"
+            ),
+            view=view_final
+    )
 
 # --- MENU PRINCIPAL (ESTILO ALFREDO) ---
 
@@ -211,17 +217,17 @@ class MenuSimulado(View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.secondary, row=2)
-    async def btn1(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
+    @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=2)
+    async def btn1(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
+
+    @discord.ui.button(label="Introdução aos Sistemas de Informação", style=discord.ButtonStyle.secondary, row=2)
+    async def btn2(self, it, btn): await self.preparar_sala(it, "Introdução aos Sistemas de Informação.txt")
 
     @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.secondary, row=2)
-    async def btn2(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
+    async def btn3(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
 
-    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.secondary, row=2)
-    async def btn3(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
-
-    @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=2)
-    async def btn4(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
+    @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.secondary, row=2)
+    async def btn4(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
 
     async def preparar_sala(self, interaction, nome_arquivo):
         # 1. Cria a thread primeiro
@@ -353,10 +359,10 @@ async def menu(ctx):
         description=(
             "Aqui estão as provas disponíveis neste servidor.\n"
             "Você pode iniciar um simulado clicando no botão correspondente abaixo.\n\n"
-            "**Teoria Geral dos Sistemas**\n"
-            "**Sistemas Operacionais**\n"
             "**Arquitetura de Computadores**\n"
             "**Introdução à Ciência de Dados**\n"
+            "**Sistemas Operacionais**\n"
+            "**Teoria Geral dos Sistemas**\n"
             "📌 Vinculado por: @Galileu Meirelles\n\n"
             "🔹 *Clique em um dos botões abaixo para abrir sua sala privada!*"
         ),
