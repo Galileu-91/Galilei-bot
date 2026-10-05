@@ -103,15 +103,15 @@ class QuestaoView(View):
        # Validação direta e blindada via memória do objeto
         texto_correto = q_atual["texto_correto"].lower()
         
-        # Procura se o texto correto coincide com o que foi guardado na questão atual
-        if texto_correto in [alt.lower() for alt in q_atual["alternativas"]]:
-            # Valida se a alternativa clicada corresponde à string correta na lista original
-            # Como as alternativas foram salvas puras do dicionário alts_dict:
+        # Pega a alternativa diretamente pelo índice de memória da View (A=0, B=1, C=2, D=3)
+        index_letra = ord(escolha_letra) - 65
+        texto_escolhido = self.alternativas_atuais[index_letra]
+
+        if texto_escolhido.lower() == q_atual["texto_correto"].lower():
+            self.acertos += 1
+            feedback = f"✅ **Correto!**"
+        else:
             feedback = f"❌ **Errado!** A resposta era: **{q_atual['texto_correto']}**"
-            for letra_chave, texto_chave in zip(["A", "B", "C", "D"], q_atual["alternativas"]):
-                if texto_chave.lower() == texto_correto and escolha_letra == letra_chave:
-                     # (Nota: Como embaralhamos para exibição, vamos validar direto pelo texto do botão clicado na View)
-                     pass
 
        # Pega a alternativa diretamente pelo índice de memória da View (A=0, B=1, C=2, D=3)
         index_letra = ord(escolha_letra) - 65
@@ -127,9 +127,6 @@ class QuestaoView(View):
         await interaction.response.edit_message(view=None)
 
         proximo = self.index + 1
-        if proximo < len(questoes):
-            # --- SEGUE PARA A PRÓXIMA QUESTÃO ---
-           proximo = self.index + 1
         if proximo < len(questoes):
             # --- SEGUE PARA A PRÓXIMA QUESTÃO ---
             q_prox = questoes[proximo]
@@ -181,17 +178,22 @@ class QuestaoView(View):
                 random.shuffle(alts)
                 opcs = [f"{l}. {t}" for l, t in zip(["A", "B", "C", "D"], alts)]
                 
+                pergunta_ini_limpa = q_ini['pergunta'].replace("QUESTÃO:", "").replace("QUESTAO:", "").strip()
+                bloco_ini_opcoes = ""
+                for l, t in zip(["A", "B", "C", "D"], alts):
+                    texto_alt_limpo = re.sub(r'^[A-D]:\s*', '', t)
+                    bloco_ini_opcoes += f"**{l})** {texto_alt_limpo}\n"
+
                 embed_reiniciar = discord.Embed(
                     title="Questão 1",
-                    description=f"🎲 **Simulado Reiniciado!**\n\n**{q_ini['pergunta'].strip()}**",
+                    description=f"🎲 **Simulado Reiniciado!**\n\n{pergunta_ini_limpa}\n\n{bloco_ini_opcoes}",
                     color=discord.Color.blue()
                 )
                 
                 if q_ini["imagem"]:
                     embed_reiniciar.set_image(url=q_ini["imagem"])
-                    
-                for l, t in zip(["A", "B", "C", "D"], alts):
-                    embed_reiniciar.add_field(name=l, value=f"{l}. {t}", inline=False)
+
+                nova_v.alternativas_atuais = alts
 
                 m = await self.thread.send(embed=embed_reiniciar, view=nova_v)
                 nova_v.message = m
