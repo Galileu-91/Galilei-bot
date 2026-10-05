@@ -219,7 +219,7 @@ class MenuSimulado(View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    @discord.ui.button(label="Algoritmos Para Programação", style=discord.ButtonStyle.primary, row=0)
+    @discord.ui.button(label="Algoritimos Para Programação", style=discord.ButtonStyle.primary, row=0)
     async def btn1(self, it, btn): await self.preparar_sala(it, "Algoritmos Para Programação.txt")
 
     @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=0)
@@ -371,7 +371,7 @@ async def menu(ctx):
         description=(
             "Aqui estão as provas disponíveis neste servidor.\n"
             "Você pode iniciar um simulado clicando no botão correspondente abaixo.\n\n"
-            "**Algoritmos Para Programação**\n"
+            "**Algoritimos Para Programação**\n"
             "**Arquitetura de Computadores**\n"
             "**Engenharia de Software**\n"
             "**Introdução à Ciência de Dados**\n"
