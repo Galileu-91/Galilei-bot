@@ -220,7 +220,7 @@ class MenuSimulado(View):
         super().__init__(timeout=None)
 
     @discord.ui.button(label="Algoritimos Para Programação", style=discord.ButtonStyle.primary, row=0)
-    async def btn1(self, it, btn): await self.preparar_sala(it, "Algoritmos Para Programação.txt")
+    async def btn1(self, it, btn): await self.preparar_sala(it, "Algoritimos Para Programação.txt")
 
     @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=0)
     async def btn2(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
