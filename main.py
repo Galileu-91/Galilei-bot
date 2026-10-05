@@ -217,17 +217,27 @@ class MenuSimulado(View):
     def __init__(self):
         super().__init__(timeout=None)
 
+    @discord.ui.button(label="Algoritmos Para Programação", style=discord.ButtonStyle.primary, row=2)
+    async def btn1(self, it, btn): await self.preparar_sala(it, "Algoritmos Para Programação.txt")
+
     @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=2)
-    async def btn1(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
+    async def btn2(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
+
+    @discord.ui.button(label="Engenharia de Software", style=discord.ButtonStyle.secondary, row=2)
+    async def btn3(self, it, btn): await self.preparar_sala(it, "Engenharia de Software.txt")
 
     @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.secondary, row=2)
-    async def btn2(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
+    async def btn4(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
+
+    @discord.ui.button(label="Rede de Computadores", style=discord.ButtonStyle.secondary, row=2)
+    async def btn5(self, it, btn): await self.preparar_sala(it, "Rede de Computadores.txt")
 
     @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.secondary, row=2)
-    async def btn3(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
+    async def btn6(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
 
     @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.secondary, row=2)
-    async def btn4(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
+    async def btn7(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
+
 
     async def preparar_sala(self, interaction, nome_arquivo):
         # 1. Cria a thread primeiro
@@ -359,8 +369,11 @@ async def menu(ctx):
         description=(
             "Aqui estão as provas disponíveis neste servidor.\n"
             "Você pode iniciar um simulado clicando no botão correspondente abaixo.\n\n"
+            "**Algoritmos Para Programação**\n"
             "**Arquitetura de Computadores**\n"
+            "**Engenharia de Software**\n"
             "**Introdução à Ciência de Dados**\n"
+            "**Rede de Computadores**\n"
             "**Sistemas Operacionais**\n"
             "**Teoria Geral dos Sistemas**\n"
             "📌 Vinculado por: @Galileu Meirelles\n\n"
@@ -391,7 +404,7 @@ async def limpar(ctx, quantidade: int = 100):
 
 @bot.event
 async def on_ready():
-    print(f"✅ Galilei#0213 Online | Visual Alfredo | Sistema de Threads")
+    print(f"✅ Galilei#0213 Online | Sistema de Threads")
 
 if __name__ == "__main__":
     keep_alive()

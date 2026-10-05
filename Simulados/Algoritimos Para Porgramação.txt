@@ -1,0 +1,203 @@
+QUESTÃO: Na lógica de programação, qual a figura geométrica representa o "início/fim" de um programa em um fluxograma?
+A: Trapézio
+B: Retângulo
+C: Losango
+D: Elipse 
+GABARITO: D
+---
+QUESTAO: Qual operador é utilizado para verificar diferença de valores em Python?
+A: ==
+B: =
+C: >
+D: !=
+GABARITO: D
+---
+QUESTAO: Na lógica de programação, qual a figura geométrica representa o "processamento" de um programa e mum fluxograma?
+A: Losango
+B: Retângulo
+C: Trapézio
+D: Elipse
+GABARITO: B
+---
+QUESTAO: Qual site deve ser acessado para baixar o Python para Windows?
+A: https://www.python.org/
+B: https://www.java.com/
+C: https://www.eclipse.org/
+D: https://www.microsoft.com/
+GABARITO: A
+---
+QUESTAO: Qual é a extensão para salvar arquivos de programação Python utilizada nas aulas?
+A: .py
+B: .cpp
+C: .java
+D: .cs
+GABARITO: A
+---
+QUESTAO: Qual operador lógico representa o "OU" em Python?
+A: and
+B: or
+C: &&
+D: ||
+GABARITO: B
+---
+QUESTAO: Qual operador é utilizado para comparar igualdade em Python?
+A: ==
+B: =
+C: !=
+D: >
+GABARITO: A
+---
+QUESTAO: Qual operador é utilizado para atribuição em Python?
+A: >
+B: ==
+C: =
+D: !=
+GABARITO: C
+---
+QUESTAO: Qual é a primeira etapa para preparar o ambiente de desenvolvimento em Python?
+A: Instalar o Java Development Kit
+B: Instalar o Jupyter Notebook
+C: Instalar o Linux
+D: Instalar o Python
+GABARITO: D
+---
+QUESTAO: Qual o objetivo de uma Lista em Python?
+A: Fazer um loop de repetição
+B: Excluir valores
+C: Armazenar valores em respectivas posições, tendo acesso através de um índice
+D: Fazer uma decisão com valores
+GABARITO: C
+---
+QUESTAO: Qual é o objetivo da estrutura de repetição?
+A: Apresentar funções em Python
+B: Apresentar a estrutura de decisão
+C: Apresentar operadores lógicos
+D: Realizar repetições de determinados trechos de código
+GABARITO: D
+---
+QUESTAO: No Python, quais caracteres representam a abertura e fechamento de uma lista?
+A: [ ]
+B: ( )
+C: { }
+D: < >
+GABARITO: A
+---
+QUESTAO: Qual comando é utilizado para pular uma iteração em um loop em Python?
+A: pass
+B: skip
+C: break
+D: continue
+GABARITO: D
+---
+QUESTAO: Qual método da lista que retorna o menor índice do elemento x?
+A: sequence
+B: order
+C: index
+D: arrange
+GABARITO: C
+---
+QUESTAO: Qual comando é utilizado para interromper um loop em Python?
+A: continue
+B: stop
+C: break
+D: exit
+GABARITO: C
+---
+QUESTAO: Qual método da lista remove todos os elementos da lista?
+A: clear
+B: remove
+C: discard
+D: delete
+GABARITO: A
+---
+QUESTAO: Quando a estrutura de repetição while é utilizada?
+A: Quando a condição é falsa
+B: Quando não há condição
+C: Quando temos um intervalo já definido
+D: Quando a condição é verdadeira
+GABARITO: D
+---
+QUESTAO: Qual método da lista remove o primeiro elemento cujo valor é x encontrado na lista?
+A: remove
+B: delete
+C: clear
+D: discard
+GABARITO: A
+---
+QUESTAO: Qual método da lista ordena os elementos da lista?
+A: order
+B: arrange
+C: sequence
+D: sort
+GABARITO: A
+---
+QUESTAO: Qual método do Set remove todos os elementos do conjunto?
+A: erase
+B: clear
+C: remove
+D: delete
+GABARITO: B
+---
+QUESTAO: Qual é a sintaxe correta para definir um dicionário em Python?
+A: { 'chave': 'valor' }
+B: [ 'chave', 'valor' ]
+C: ( 'chave', 'valor' )
+D: { 'chave', 'valor' }
+GABARITO: A
+---
+QUESTAO: Qual estrutura de armazenamento em Python é imutável?
+A: Dictionary
+B: Set
+C: Tuple
+D: List
+GABARITO: C
+---
+QUESTAO: Qual a principal diferença entre listas e tuplas em Python?
+A: Listas são mais rápidas que tuplas.
+B: Tuplas podem ter elementos repetidos e listas não.
+C: Tuplas são mutáveis e listas são imutáveis.
+D: Listas são mutáveis e tuplas são imutáveis.
+GABARITO: D
+---
+QUESTAO: Qual estrutura de armazenamento em Python não permite elementos duplicados?
+A: List
+B: Dictionary
+C: Set
+D: Tuple
+GABARITO: C
+---
+QUESTAO: Qual método de dicionário em Python remove todos os elementos?
+A: reset
+B: delete
+C: remove
+D: clear
+GABARITO: D
+---
+QUESTAO: Qual método de dicionário remove o último elemento adicionado?
+A: remove
+B: pop
+C: clear
+D: popitem
+GABARITO: D
+---
+QUESTAO: Qual método de dicionário atualiza o dicionário incluindo ou alterando um valor?
+A: modify
+B: change
+C: update
+D: alter
+GABARITO: C
+---
+QUESTAO: Qual método do Set em Python adiciona um novo elemento?
+A: add
+B: insert
+C: put
+D: append
+GABARITO: A
+---
+QUESTAO: Qual método da tupla retorna a quantidade de vezes que um elemento aparece?
+A: find
+B: index
+C: count
+D: total
+GABARITO: C
+---

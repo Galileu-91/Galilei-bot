@@ -1,0 +1,139 @@
+QUESTAO: Qual objetivo do protocolo DHCP configurado de modo dinâmico? 
+A: Manter seguro todos os computadores da rede 
+B: Atribuir de forma manual um IP para um computador da rede 
+C: Manter seguro um computador da rede 
+D: Atribuir um novo IP para um computador conectado na rede
+GABARITO: D
+---
+QUESTAO: Qual o modelo o nome do modelo que divide o sistema de comunicação em sete camadas abstratas.
+A: API
+B: ISO
+C: TCP
+D: OSI
+GABARITO: D
+---
+QUESTAO: Qual objetivo do protocolo FTP? 
+A: Permitir que o cliente envie uma resposta e o servidor uma requisição
+B: Permitir que arquivos sejam transferidos entre computadores
+C: Permitir que o servidor envie uma requisição pra ele mesmo
+D: Bloquear que arquivos sejam transferidos entre computadores
+GABARITO: B
+---
+QUESTAO: Quais são os tipos de cloud?
+A: On-premise, privada e híbrida
+B: Pública, on-premise e híbrida
+C: Pública, privada e on-premise
+D: Pública, privada e híbrida
+GABARITO: D
+---
+QUESTAO: Qual objetivo do protocolo SSL?
+A: Permitir apenas o envio de arquivos entre cliente e servidor
+B: Permitir a comunicação segura apenas do lado do servidor
+C: Permitir a comunicação segura entre os lados cliente e servidor de uma aplicação web
+D: Permitir a comunicação segura apenas do lado do cliente
+GABARITO: C
+---
+QUESTAO: Se utilizarmos cloud para criar uma instância de banco de dados gerenciada, estaríamos dentro de qual modelo de serviço? A: IaaS
+B: TaaS
+C: SaaS
+D: PaaS
+GABRITO: D
+---
+QUESTAO: Quando utilizamos o Gmail, LinkedIn ou Outlook, estamos utilizando um sistema que está em cloud. Entretanto, como estamos utilizando, estaríamos dentro de qual modelo de serviço?
+A: PaaS
+B: SaaS
+C: TaaS
+D: IaaS
+GABARITO: B
+---
+QUESTAO: Se utilizarmos cloud para criar um servidor, estaríamos dentro de qual modelo de serviço?
+A: PaaS
+B: TaaS
+C: IaaS
+D: SaaS
+GABARITO: C
+---
+QUESTAO: Qual objetivo do protocolo HTTP?
+A: Permitir que o servidor envie uma requisição pra ele mesmo
+B: Permitir que o cliente envie uma resposta e o servidor uma requisição
+C: Permitir que o cliente envie uma requisição pra ele mesmo
+D: Permitir que o cliente envie uma requisição e o servidor uma resposta
+GABARITO: D
+---
+QUESTAO: O que significa o termo infraestrutura on-premise?
+A: É o modelo onde os servidores ficam localizados na própria empresa
+B: É o modelo onde os servidores ficam localizados em um cliente
+C: É o modelo onde os servidores ficam localizados na cloud
+D: É o modelo onde os servidores ficam localizados em um fornecedor
+GABARITO: A
+---
+QUESTAO: Quais das práticas abaixo fazem parte da segurança da informação nas empresas?
+A: Fazer backups, ter treinamentos e desenvolver de forma local
+B: Não fazer backups, ter treinamentos e ter um plano de contingência
+C: Fazer backups, ter treinamentos e não ter um plano de contingência
+D: Fazer backups, ter treinamentos e ter um plano de contingência
+GABARITO: D
+---
+QUESTAO: Qual a melhor prática atualmente para autenticação?
+A: Autenticação com email
+B: Autenticação com login e senha
+C: Autenticação com rede social
+D: Autenticação de dois fatores (2FA)
+GABARITO: D
+---
+QUESTAO: Quais são os tipos básicos de criptografia?
+A: privada e pública
+B: simétrica e assimétrica
+C: assimétrica e pública
+D: simétrica e pública
+GABARITO: B
+---
+QUESTAO: Quais são os 3 maiores e principais provedores de cloud na atualidade?
+A: AWS, Azure e GCP
+B: AWS, Alibaba e GCP
+C: AWS, Azure e Alibaba
+D: Alibaba, Azure e GCP
+GABARITO: A
+---
+QUESTAO: Qual objetivo de uma VPN? 
+A: Estabelecer uma conexão entre computadores feita de forma privada
+B: Estabelecer uma conexão entre computadores de forma simples
+C: Estabelecer uma conexão entre computadores feita de forma pública
+D: Estabelecer uma conexão entre computadores de forma compartilhada
+GABARITO: A
+---
+QUESTAO: Quais são os 3 principais modelos de serviço em cloud?
+A: IaaS, PaaS e SaaS
+B: IaaS, TaaS e SaaS
+C: IaaS, PaaS e TaaS
+D: TaaS, PaaS e SaaS
+GABARITO: A
+---
+QUESTAO: Qual objetivo do firewall? 
+A: Utiliza um conjunto de regras definidas para nunca bloquear o tráfego
+B: Utiliza um conjunto de regras definidas para nunca permitir ou bloquear o tráfego
+C: Utiliza um conjunto de regras definidas para sempre permitir o tráfego
+D: Utiliza um conjunto de regras definidas para permitir ou bloquear o tráfego
+GABARITO: D
+---
+QUESTAO: Qual o provedor de cloud mais utilizado no mundo na atualidade?
+A: Azur
+B: Alibaba
+C: GCP
+D: AWS
+GABARITO: D
+---
+QUESTAO: Qual o objetivo do documento PSI?
+A: Documento que reúne todas as diretrizes de auditoria a serem seguidas
+B: Documento que reúne todas as diretrizes de desenvolvimento a serem seguidas
+C: Documento que reúne todas as diretrizes de segurança a serem seguidas
+D: Documento que reúne todas as diretrizes de rede a serem seguidas
+GABARITO: C
+---
+QUESTAO: Entre as opções abaixo, qual o provedor de cloud mais econômico?
+A: AWS
+B: Nenhum
+C: GCP
+D: Azure
+GABARITO: C
+---

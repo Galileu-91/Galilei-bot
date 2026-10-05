@@ -1,0 +1,210 @@
+QUESTAO: O software tem um papel duplo, quais são eles?
+A: Produto e veículo
+B: Apenas veículo
+C: Dados e veículo
+D: Apenas produto
+GABARITO: A
+---   
+QUESTAO: Qual modelo é indicado quando os requisitos do sistema mudam frequentemente durante o processo de desenvolvimento?
+A: Modelo ágil
+B: Modelo evolucionário/espiral
+C: Modelo de prototipação
+D: Modelo cascata
+GABARITO: C
+---
+QUESTAO: A atividade de medição pertence a qual grupo de atividades?
+A: Atividades metodológicas
+B: Atividades de apoio e metodológicas
+C: Atividades de apoio
+D: Nenhuma das alternativas
+GABARITO: C
+---
+QUESTAO: Qual modelo é indicado quando o usuário não consegue detalhar os requisitos do sistema?
+A: Modelo ágil
+B: Modelo evolucionário/espiral
+C: Modelo de prototipação
+D: Modelo cascata
+GABARITO: C
+---
+QUESTAO: Atividades metodológicas fazem parte da metodologia do processo, quais atividades abaixo fazem parte de atividades metodológicas?
+A: Testes e planejamento
+B: Comunicação e planejamento
+C: Comunicação e testes
+D: Apenas comunicação
+GABARITO: B
+---
+QUESTAO: Qual modelo segue uma estratégia sequencial e linear?
+A: Modelo evolucionário/espiral
+B: Modelo ágil
+C: Modelo cascata
+D: Modelo de prototipação
+GABARITO: C
+---
+QUESTAO: Quais são as camadas da Engenharia de Software?
+A: Foco na qualidade, processo, métodos e ferramentas
+B: Foco na produtividade, processo, métodos e ferramentas
+C: Foco na qualidade, processo, plataformas e ferramentas
+D: Foco na qualidade, processo, métodos e desenvolvimento
+GABARITO: A
+---
+QUESTAO: De acordo com o IEEE, qual a definição para Engenharia de Software?
+A: A aplicação de uma abordagem sistemática, disciplinada e não quantificável no desenvolvimento, na operação e na manutenção de software
+B: A aplicação de uma abordagem sistemática, disciplinada e quantificável no desenvolvimento e na operação apenas
+C: A aplicação de uma abordagem sistemática, disciplinada e quantificável no desenvolvimento, na operação e na manutenção de software
+D: A aplicação de uma abordagem não sistemática, disciplinada e quantificável no desenvolvimento, na operação e na manutenção de software
+GABARITO: C
+---
+QUESTAO: Atividades de apoio fazem parte da metodologia do processo, quais atividades abaixo fazem parte de atividades de apoio?
+A: Desenvolvimento e administração de riscos
+B: Controle e acompanhamento do projeto e administração de riscos
+C: Controle e acompanhamento do projeto e desenvolvimento
+D: Apenas controle e acompanhamento do projeto
+GABARITO: B
+---
+QUESTAO: Quais são os 4 principais ciclos de vida que vimos em aula?
+A: Modelo cascata, ágil, evolucionário/espiral e processo unificado
+B: Modelo cascata, prototipação, evolucionário/espiral e processo unificado
+C: Modelo cascata, prototipação, ágil e processo unificado
+D: Modelo cascata, prototipação, evolucionário/espiral e ágil
+GABARITO: B
+---
+QUESTAO: Um processo para ser ágil deve:
+A: ser totalmente planejado
+B: ser previsível
+C: ser adaptável
+D: não ser adaptável
+GABARITO: C
+---
+QUESTAO: O time que que aplica Scrum, é composto basicamente por:
+A: Product owner, Gerente de projetos e uma pequena equipe de desenvolvimento
+B: Product owner, Scrum master e uma pequena equipe de desenvolvimento
+C: Equipe de desenvolvimento
+D: Product owner e Scrum master apenas
+GABARITO: B
+---
+QUESTAO: Qual é o framework mais utilizado no mundo ágil?
+A: Scrum
+B: XP
+C: Kanban
+D: PMBook
+GABARITO: A
+---
+QUESTAO: Qual o framework ágil que estimula a programação em pares?
+A: Scrum
+B: Kanban
+C: DevOps
+D: XP
+GABARITO: D
+---
+QUESTAO: DevOps é uma cultura que foi criada para contemplar atividades de:
+A: Desenvolvimento e operação
+B: Desenvolvimento sem operação
+C: Operação sem desenvolvimento
+D: Desenvolvimento com automações apenas
+GABARITO: A
+---
+QUESTAO: Quais são as 4 principais cerimônias do Scrum?
+A: Planning, Daily, Review e Retro
+B: Planning, Sprint, Review e Retro
+C: Planning, Daily, Review e Sprint
+D: Planning, Daily, Development e Retro
+GABARITO: A
+---
+QUESTAO: Os principais artefatos do Scrum, são:
+A: Backlog do produto, o backlog do sprint e o time de desenvolvimento
+B: Backlog do produto, o backlog do sprint e o incremento de código
+C: Backlog do produto e o incremento de código
+D: Backlog do produto e o backlog do sprint
+GABARITO: B
+---
+QUESTAO: Um dos itens que o manifesto ágil defende é:
+A: indivíduos e interações acima de processos e ferramentas
+B: indivíduos e interações abaixo de processos e ferramentas
+C: processos e ferramentas são suficientes
+D: processos e ferramentas acima de indivíduos e interações
+GABARITO: A
+---
+QUESTAO: Em uma daily, devemos ser breves e falar apenas:
+A: o que já fizemos desde a última reunião, o que não estamos fazendo e o que faremos até a próxima reunião
+B: o que já fizemos desde a última reunião e o que faremos até a próxima reunião
+C: o que já fizemos desde a última reunião e o que estamos fazendo
+D: o que já fizemos desde a última reunião, o que estamos fazendo e o que faremos até a próxima reunião
+GABARITO: D
+---
+QUESTAO: Qual a quantidade de princípios que a Agile Alliance estabelece para alcançar a agilidade?
+A: 11
+B: 10
+C: 12
+D: 13
+GABARITO: C
+---
+QUESTAO: Quais são os 3 tipos de diagramas que a UML oferece?
+A: Estruturais, comportamentais e integração
+B: Integração, comportamentais e interação
+C: Estruturais, comportamentais e interação
+D: Estruturais, integração e interação
+GABARITO: C
+---
+QUESTAO: Qual a linguagem padrão para descrever/documentar projeto de software?
+A: UML
+B: Java
+C: BPMN
+D: C
+GABARITO: A
+---
+QUESTAO: Qual é o objetivo do diagrama de sequência?
+A: Apresentar a ordem temporal que as mensagens/ações não são trocadas
+B: Apresentar as funcionalidades do sistema
+C: Apresentar a ordem temporal que as mensagens/ações são trocadas
+D: Apresentar as mensagens/ações que são trocadas sem seguir uma ordem
+GABARITO: C
+---
+QUESTAO: Qual é o objetivo do diagrama de classe?
+A: Definir a estrutura das classes, apresentando nome da classe e atributos apenas
+B: Definir a estrutura das classes, apresentando nome da classe, atributos e métodos
+C: Definir a estrutura das classes, apresentando nome da classe apenas
+D: Definir a estrutura das classes, apresentando atributos e métodos
+GABARITO: B
+---
+QUESTAO: No processo de desenvolvimento de software a etapa de construção do protótipo é necessária para:
+A: provar que o seu design está aderente
+B: definir como será o frontend
+C: provar que o seu projeto é uma abordagem viável
+D: provar que o seu backend é o ideal
+GABARITO: C
+---
+QUESTAO: Qual é o objetivo do diagrama de caso de uso?
+A: Apresentar quais usuários fazem parte do sistema apenas
+B: Apresentar quais usuários tem acesso no sistema
+C: Apresentar as funcionalidades do sistema apenas
+D: Apresentar quais usuários realizam determinadas funcionalidades do sistema
+GABARITO: D
+---
+QUESTAO: No processo de desenvolvimento de software a etapa de definição de requisitos é necessária para:
+A: entender as necessidades de negócio
+B: entender as necessidades do time de desenvolvimento
+C: entender as necessidades da sprint
+D: escolher as tecnologias
+GABARITO: A
+---
+QUESTAO: Qual tipo de manutenção de software é mais aplicada?
+A: preventiva
+B: adaptativa
+C: perfectiva
+D: corretiva
+GABARITO: C
+---
+QUESTAO: Podemos entender que software legado é:
+A: Um software que foi desenvolvimento há anos atrás
+B: Um software desenvolvido na última sprint
+C: Um software desenvolvido no mês passado
+D: Um software de uso local
+GABARITO: A
+---
+QUESTAO: Podemos definir qualidade de software em 3 itens, são eles:
+A: Gestão efetiva, utilidade do produto e usabilidade
+B: Gestão efetiva, utilidade do produto e agregação de valor
+C: Gestão efetiva, usabilidade do produto e agregação de valor
+D: Usabilidade, utilidade do produto e agregação de valor
+GABARITO: B
+---
