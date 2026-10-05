@@ -219,25 +219,25 @@ class MenuSimulado(View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    @discord.ui.button(label="Algoritmos Para Programação", style=discord.ButtonStyle.primary, row=2)
+    @discord.ui.button(label="Algoritmos Para Programação", style=discord.ButtonStyle.primary, row=0)
     async def btn1(self, it, btn): await self.preparar_sala(it, "Algoritmos Para Programação.txt")
 
-    @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=2)
+    @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=0)
     async def btn2(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
 
-    @discord.ui.button(label="Engenharia de Software", style=discord.ButtonStyle.secondary, row=2)
+    @discord.ui.button(label="Engenharia de Software", style=discord.ButtonStyle.secondary, row=0)
     async def btn3(self, it, btn): await self.preparar_sala(it, "Engenharia de Software.txt")
 
-    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.secondary, row=2)
+    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.secondary, row=0)
     async def btn4(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
 
-    @discord.ui.button(label="Rede de Computadores", style=discord.ButtonStyle.secondary, row=2)
+    @discord.ui.button(label="Rede de Computadores", style=discord.ButtonStyle.secondary, row=1)
     async def btn5(self, it, btn): await self.preparar_sala(it, "Rede de Computadores.txt")
 
-    @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.secondary, row=2)
+    @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.secondary, row=1)
     async def btn6(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
 
-    @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.secondary, row=2)
+    @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.secondary, row=1)
     async def btn7(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
 
 
