@@ -201,17 +201,22 @@ class QuestaoView(View):
             btn_repetir.callback = repetir_callback
             view_final.add_item(btn_repetir)
 
-            # calcula a média de 0 a 10
-            nota = (self.acertos / len(questoes)) * 10
+            # Garante que o total de questões é pego dinamicamente do arquivo carregado
+            total_questoes = len(questoes)
+            
+            # Trava de segurança para não ultrapassar o total de questões
+            acertos_finais = min(self.acertos, total_questoes)
+            
+            # Cálculo exato da nota proporcional de 0.0 a 10.0
+            nota = (acertos_finais / total_questoes) * 10.0 if total_questoes > 0 else 0.0
 
             await self.thread.send(
-            content=(
-                f"{feedback}\n\n"
-                f"🏆 **Simulado Concluído!**\n"
-                f"Acertos: **{self.acertos}/{len(questoes)}** | Nota: **{nota:.1f}**"
-            ),
-            view=view_final
-    )
+                content=(
+                    f"🏆 **Simulado Concluído!**\n"
+                    f"Acertos: **{acertos_finais}/{total_questoes}** | Nota: **{nota:.1f}**"
+                ),
+                view=view_final
+            )
 
 # --- MENU PRINCIPAL (ESTILO ALFREDO) ---
 
