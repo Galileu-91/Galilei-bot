@@ -75,7 +75,7 @@ C: ser adaptável
 D: não ser adaptável
 GABARITO: C
 ---
-QUESTAO: O time que que aplica Scrum, é composto basicamente por:
+QUESTAO: O time que aplica Scrum, é composto basicamente por:
 A: Product owner, Gerente de projetos e uma pequena equipe de desenvolvimento
 B: Product owner, Scrum master e uma pequena equipe de desenvolvimento
 C: Equipe de desenvolvimento

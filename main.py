@@ -160,8 +160,8 @@ class QuestaoView(View):
             msg = await self.thread.send(embed=embed_prox, view=nova_view)
             nova_view.message = msg
         else:
-            # --- FINALIZA O SIMULADO (TRAVA DE DUPLICIDADE FINAL) ---
-            self.stop() # Para qualquer processo pendente desta View
+            # --- FINALIZA O SIMULADO ---
+            self.stop()
             
             view_final = View()
             btn_repetir = Button(label="Repetir Simulado", style=discord.ButtonStyle.success, emoji="🔄")
@@ -172,16 +172,16 @@ class QuestaoView(View):
                     await msg.delete()
                 
                 random.shuffle(sessoes_usuarios[self.user_id])
+                # IMPORTANTE: Passa '0' no 3º argumento para zerar a contagem de acertos ao reiniciar
                 nova_v = QuestaoView(self.user_id, 0, 0, self.thread)
                 q_ini = sessoes_usuarios[self.user_id][0]
                 alts = q_ini["alternativas"].copy()
                 random.shuffle(alts)
-                opcs = [f"{l}. {t}" for l, t in zip(["A", "B", "C", "D"], alts)]
                 
                 pergunta_ini_limpa = q_ini['pergunta'].replace("QUESTÃO:", "").replace("QUESTAO:", "").strip()
                 bloco_ini_opcoes = ""
                 for l, t in zip(["A", "B", "C", "D"], alts):
-                    texto_alt_limpo = re.sub(r'^[A-D]:\s*', '', t)
+                    texto_alt_limpo = re.sub(r'^[A-D][:\.]\s*', '', t)
                     bloco_ini_opcoes += f"**{l})** {texto_alt_limpo}\n"
 
                 embed_reiniciar = discord.Embed(
@@ -192,24 +192,20 @@ class QuestaoView(View):
                 
                 if q_ini["imagem"]:
                     embed_reiniciar.set_image(url=q_ini["imagem"])
-
+                    
                 nova_v.alternativas_atuais = alts
-
                 m = await self.thread.send(embed=embed_reiniciar, view=nova_v)
                 nova_v.message = m
 
             btn_repetir.callback = repetir_callback
             view_final.add_item(btn_repetir)
 
-            # Garante que o total de questões é pego dinamicamente do arquivo carregado
+            # CÁLCULO DINÂMICO E PRECISO DA NOTA
             total_questoes = len(questoes)
-            
-            # Trava de segurança para não ultrapassar o total de questões
             acertos_finais = min(self.acertos, total_questoes)
-            
-            # Cálculo exato da nota proporcional de 0.0 a 10.0
             nota = (acertos_finais / total_questoes) * 10.0 if total_questoes > 0 else 0.0
 
+            # MENSAGEM FINAL LIMPA (Sem a resposta da última questão colada)
             await self.thread.send(
                 content=(
                     f"🏆 **Simulado Concluído!**\n"
