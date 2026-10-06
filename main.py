@@ -393,15 +393,16 @@ async def menu(ctx):
 @commands.has_permissions(manage_messages=True)
 async def limpar(ctx, quantidade: int = 100):
     try:
-        # 1. Apaga primeiro a mensagem que enviou o comando !limpar
-        await ctx.message.delete()
-    except:
-        pass
+        # Apaga a mensagem que chamou o comando
+        try:
+            await ctx.message.delete()
+        except Exception:
+            pass
         
-        # 2. Faz a limpeza (o purge funciona em Threads se o bot tiver permissão)
+        # Limpa o canal ou thread
         deleted = await ctx.channel.purge(limit=min(quantidade, 100))
         
-        # 3. Envia o aviso e garante que ele SUMA sozinho após 3 segundos
+        # Envia aviso temporário e deleta após 3 segundos
         msg_feedback = await ctx.send(f"🧹 Faxina concluída! {len(deleted)} mensagens removidas por ordem do Mano Gali.")
         await asyncio.sleep(3)
         await msg_feedback.delete()
