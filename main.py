@@ -222,25 +222,25 @@ class MenuSimulado(View):
     @discord.ui.button(label="Algoritmos Para Programação", style=discord.ButtonStyle.primary, row=0)
     async def btn1(self, it, btn): await self.preparar_sala(it, "Algoritmos Para Programação.txt")
 
-    @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.secondary, row=0)
+    @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.primary, row=0)
     async def btn2(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
 
-    @discord.ui.button(label="Engenharia de Software", style=discord.ButtonStyle.secondary, row=0)
+    @discord.ui.button(label="Engenharia de Software", style=discord.ButtonStyle.primary, row=0)
     async def btn3(self, it, btn): await self.preparar_sala(it, "Engenharia de Software.txt")
 
-    @discord.ui.button(label="Inteligência Artificial", style=discord.ButtonStyle.secondary, row=0)
+    @discord.ui.button(label="Inteligência Artificial", style=discord.ButtonStyle.primary, row=0)
     async def btn4(self, it, btn): await self.preparar_sala(it, "Inteligência Artificial.txt")
 
-    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.secondary, row=1)
+    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.primary, row=1)
     async def btn5(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
 
-    @discord.ui.button(label="Rede de Computadores", style=discord.ButtonStyle.secondary, row=1)
+    @discord.ui.button(label="Rede de Computadores", style=discord.ButtonStyle.primary, row=1)
     async def btn6(self, it, btn): await self.preparar_sala(it, "Rede de Computadores.txt")
 
-    @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.secondary, row=1)
+    @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.primary, row=1)
     async def btn7(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
 
-    @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.secondary, row=1)
+    @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.primary, row=1)
     async def btn8(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
 
 
@@ -393,14 +393,19 @@ async def menu(ctx):
 @commands.has_permissions(manage_messages=True)
 async def limpar(ctx, quantidade: int = 100):
     try:
-        # 1. Tenta apagar a mensagem do comando !limpar
+        # 1. Apaga primeiro a mensagem que enviou o comando !limpar
         await ctx.message.delete()
+    except:
+        pass
         
         # 2. Faz a limpeza (o purge funciona em Threads se o bot tiver permissão)
         deleted = await ctx.channel.purge(limit=min(quantidade, 100))
         
-        # 3. Feedback rápido e autodeletável
-        await ctx.send(f"🧹 Faxina concluída! {len(deleted)} mensagens removidas por ordem do Mano Gali.", delete_after=5)
+        # 3. Envia o aviso e garante que ele SUMA sozinho após 3 segundos
+        msg_feedback = await ctx.send(f"🧹 Faxina concluída! {len(deleted)} mensagens removidas por ordem do Mano Gali.")
+        await asyncio.sleep(3)
+        await msg_feedback.delete()
+
         print(f"✅ Limpeza executada por {ctx.author} em {ctx.channel.name}")
 
     except discord.errors.Forbidden:
