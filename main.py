@@ -370,7 +370,7 @@ class MenuSimulado(View):
 @bot.command()
 async def menu(ctx):
     embed = discord.Embed(
-        title="🎓 Central de Simulados & Estudos | Galilei",
+        title="🎓Central de Simulados & Estudos🎓",
         description=(
             "Bem-vindo(a) à sua plataforma de treino!\n"
             "Selecione uma disciplina abaixo para gerar uma **sala de estudos privada**.\n\n"

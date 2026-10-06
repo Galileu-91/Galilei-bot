@@ -12,7 +12,7 @@ C: >
 D: !=
 GABARITO: D
 ---
-QUESTAO: Na lógica de programação, qual a figura geométrica representa o "processamento" de um programa e mum fluxograma?
+QUESTAO: Na lógica de programação, qual a figura geométrica representa o "processamento" de um programa em um fluxograma?
 A: Losango
 B: Retângulo
 C: Trapézio
