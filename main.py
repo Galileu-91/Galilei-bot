@@ -219,28 +219,28 @@ class MenuSimulado(View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    @discord.ui.button(label="Algoritmos Para Programação", style=discord.ButtonStyle.primary, row=0)
+    @discord.ui.button(label="Algoritmos Para Programação", emoji="💻", style=discord.ButtonStyle.primary, row=0)
     async def btn1(self, it, btn): await self.preparar_sala(it, "Algoritmos Para Programação.txt")
 
-    @discord.ui.button(label="Arquitetura de Computadores", style=discord.ButtonStyle.primary, row=0)
+    @discord.ui.button(label="Arquitetura de Computadores", emoji="🖥️", style=discord.ButtonStyle.primary, row=0)
     async def btn2(self, it, btn): await self.preparar_sala(it, "Arquitetura de Computadores.txt")
 
-    @discord.ui.button(label="Engenharia de Software", style=discord.ButtonStyle.primary, row=0)
+    @discord.ui.button(label="Engenharia de Software", emoji="⚙️", style=discord.ButtonStyle.primary, row=0)
     async def btn3(self, it, btn): await self.preparar_sala(it, "Engenharia de Software.txt")
 
-    @discord.ui.button(label="Inteligência Artificial", style=discord.ButtonStyle.primary, row=0)
+    @discord.ui.button(label="Inteligência Artificial", emoji="🤖", style=discord.ButtonStyle.primary, row=0)
     async def btn4(self, it, btn): await self.preparar_sala(it, "Inteligência Artificial.txt")
 
-    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.primary, row=1)
+    @discord.ui.button(label="Introdução à Ciência de Dados", emoji="📊", style=discord.ButtonStyle.primary, row=1)
     async def btn5(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
 
-    @discord.ui.button(label="Rede de Computadores", style=discord.ButtonStyle.primary, row=1)
+    @discord.ui.button(label="Rede de Computadores", emoji="🌐", style=discord.ButtonStyle.primary, row=1)
     async def btn6(self, it, btn): await self.preparar_sala(it, "Rede de Computadores.txt")
 
-    @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.primary, row=1)
+    @discord.ui.button(label="Sistemas Operacionais", emoji="🐧", style=discord.ButtonStyle.primary, row=1)
     async def btn7(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
 
-    @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.primary, row=1)
+    @discord.ui.button(label="Teoria Geral dos Sistemas", emoji="🧠", style=discord.ButtonStyle.primary, row=1)
     async def btn8(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
 
 
@@ -378,11 +378,12 @@ async def menu(ctx):
             "💻 `Algoritmos Para Programação`\n"
             "🖥️ `Arquitetura de Computadores`\n"
             "⚙️ `Engenharia de Software`\n"
+            "🤖 `Inteligência Artificial`\n"
             "📊 `Introdução à Ciência de Dados`\n"
             "🌐 `Rede de Computadores`\n"
             "🐧 `Sistemas Operacionais`\n"
-            "🔄 `Teoria Geral dos Sistemas`\n\n"
-            "👤 **Organizado por:** @Galileu Meirelles\n"
+            "🧠 `Teoria Geral dos Sistemas`\n\n"
+            "**Organizado por:** @Galileu Meirelles\n"
             "-----------------------------------------\n"
             "👇 **Clique em um dos botões abaixo para iniciar:**"
         ),
