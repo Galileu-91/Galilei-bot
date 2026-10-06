@@ -370,23 +370,26 @@ class MenuSimulado(View):
 @bot.command()
 async def menu(ctx):
     embed = discord.Embed(
-        title="📚 Central de Simulados (1/1)",
+        title="🎓 Central de Simulados & Estudos | Galilei",
         description=(
-            "Aqui estão as provas disponíveis neste servidor.\n"
-            "Você pode iniciar um simulado clicando no botão correspondente abaixo.\n\n"
-            "**Algoritmos Para Programação**\n"
-            "**Arquitetura de Computadores**\n"
-            "**Inteligência Artificial**\n"
-            "**Engenharia de Software**\n"
-            "**Introdução à Ciência de Dados**\n"
-            "**Rede de Computadores**\n"
-            "**Sistemas Operacionais**\n"
-            "**Teoria Geral dos Sistemas**\n"
-            "📌 Vinculado por: @Galileu Meirelles\n\n"
-            "🔹 *Clique em um dos botões abaixo para abrir sua sala privada!*"
+            "Bem-vindo(a) à sua plataforma de treino!\n"
+            "Selecione uma disciplina abaixo para gerar uma **sala de estudos privada**.\n\n"
+            "📌 **DISCIPLINAS DISPONÍVEIS:**\n"
+            "💻 `Algoritmos Para Programação`\n"
+            "🖥️ `Arquitetura de Computadores`\n"
+            "⚙️ `Engenharia de Software`\n"
+            "📊 `Introdução à Ciência de Dados`\n"
+            "🌐 `Rede de Computadores`\n"
+            "🐧 `Sistemas Operacionais`\n"
+            "🔄 `Teoria Geral dos Sistemas`\n\n"
+            "👤 **Organizado por:** @Galileu Meirelles\n"
+            "-----------------------------------------\n"
+            "👇 **Clique em um dos botões abaixo para iniciar:**"
         ),
         color=discord.Color.blue()
     )
+    # Adiciona um rodapé estilizado no Embed
+    embed.set_footer(text="Bot Galilei • Bons estudos!", icon_url=bot.user.display_avatar.url)
     await ctx.send(embed=embed, view=MenuSimulado())
 
 @bot.command(name="limpar")
