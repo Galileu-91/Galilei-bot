@@ -113,16 +113,6 @@ class QuestaoView(View):
         else:
             feedback = f"❌ **Errado!** A resposta era: **{q_atual['texto_correto']}**"
 
-       # Pega a alternativa diretamente pelo índice de memória da View (A=0, B=1, C=2, D=3)
-        index_letra = ord(escolha_letra) - 65
-        texto_escolhido = self.alternativas_atuais[index_letra]
-
-        if texto_escolhido.lower() == q_atual["texto_correto"].lower():
-            self.acertos += 1
-            feedback = f"✅ **Correto!**"
-        else:
-            feedback = f"❌ **Errado!** A resposta era: **{q_atual['texto_correto']}**"
-
         # Remove os botões da questão atual após o clique
         await interaction.response.edit_message(view=None)
 
@@ -162,6 +152,7 @@ class QuestaoView(View):
         else:
             # --- FINALIZA O SIMULADO ---
             self.stop()
+            await self.thread.send(content=feedback)
             
             view_final = View()
             btn_repetir = Button(label="Repetir Simulado", style=discord.ButtonStyle.success, emoji="🔄")
