@@ -103,64 +103,68 @@ class QuestaoView(View):
        # Validação direta e blindada via memória do objeto
         texto_correto = q_atual["texto_correto"].lower()
         
-        # Pega o texto da alternativa clicada e remove prefixos tipo "A:", "A." etc.
-       index_letra = ord(escolha_letra) - 65
-       raw_texto = self.alternativas_atuais[index_letra]
-       texto_escolhido_limpo = re.sub(r'^[A-D][:\.]\s*', '', raw_texto).strip()
-       gabarito_limpo = re.sub(r'^[A-D][:\.]\s*', '', q_atual["texto_correto"]).strip()
+        # Pega a alternativa diretamente pelo índice de memória da View (A=0, B=1, C=2, D=3)
+        index_letra = ord(escolha_letra) - 65
+        texto_escolhido = self.alternativas_atuais[index_letra]
 
-       # Compara textos limpos sem interferência de letras
-       if texto_escolhido_limpo.lower() == gabarito_limpo.lower():
-           self.acertos += 1
-           feedback = f"✅ **Correto!**"
-       else:
-           feedback = f"❌ **Errado!** A resposta era: **{q_atual['texto_correto']}**"
+        if texto_escolhido.lower() == q_atual["texto_correto"].lower():
+            self.acertos += 1
+            feedback = f"✅ **Correto!**"
+        else:
+            feedback = f"❌ **Errado!** A resposta era: **{q_atual['texto_correto']}**"
 
-       # Remove os botões da questão atual após o clique
-       await interaction.response.edit_message(view=None)
+       # Pega a alternativa diretamente pelo índice de memória da View (A=0, B=1, C=2, D=3)
+        index_letra = ord(escolha_letra) - 65
+        texto_escolhido = self.alternativas_atuais[index_letra]
 
-       proximo = self.index + 1
-       if proximo < len(questoes):
-           # --- SEGUE PARA A PRÓXIMA QUESTÃO ---
-           q_prox = questoes[proximo]
-           alts_texto = q_prox["alternativas"].copy()
-           random.shuffle(alts_texto)
-           
-           # Envia o feedback da resposta anterior separado antes da nova questão
-           await self.thread.send(content=feedback)
+        if texto_escolhido.lower() == q_atual["texto_correto"].lower():
+            self.acertos += 1
+            feedback = f"✅ **Correto!**"
+        else:
+            feedback = f"❌ **Errado!** A resposta era: **{q_atual['texto_correto']}**"
 
-           # --- HIGIENIZAÇÃO DA PRÓXIMA PERGUNTA ---
-           pergunta_limpa = q_prox['pergunta'].replace("QUESTÃO:", "").replace("QUESTAO:", "").strip()
+        # Remove os botões da questão atual após o clique
+        await interaction.response.edit_message(view=None)
 
-           # Monta o bloco de alternativas direto para a descrição
-           bloco_opcoes = ""
-           for l, t in zip(["A", "B", "C", "D"], alts_texto):
-               texto_alt_limpo = re.sub(r'^[A-D][:\.]\s*', '', t)
-               bloco_opcoes += f"**{l})** {texto_alt_limpo}\n"
+        proximo = self.index + 1
+        if proximo < len(questoes):
+            # --- SEGUE PARA A PRÓXIMA QUESTÃO ---
+            q_prox = questoes[proximo]
+            alts_texto = q_prox["alternativas"].copy()
+            random.shuffle(alts_texto)
+            
+            # Envia o feedback da resposta anterior separado antes da nova questão
+            await self.thread.send(content=feedback)
 
-           embed_prox = discord.Embed(
-               title=f"Questão {proximo + 1}",
-               description=f"{pergunta_limpa}\n\n{bloco_opcoes}",
-               color=discord.Color.blue()
-           )
-           
-           if q_prox["imagem"]:
-               embed_prox.set_image(url=q_prox["imagem"])
+            # --- HIGIENIZAÇÃO DA PRÓXIMA PERGUNTA ---
+            pergunta_limpa = q_prox['pergunta'].replace("QUESTÃO:", "").replace("QUESTAO:", "").strip()
 
-           nova_view = QuestaoView(self.user_id, proximo, self.acertos, self.thread)
-           nova_view.alternativas_atuais = alts_texto # Passa a ordem de memória adiante
-           
-           msg = await self.thread.send(embed=embed_prox, view=nova_view)
-           nova_view.message = msg
-       else:
-           # --- FINALIZA O SIMULADO ---
-           self.stop()
-           
-           # 1. Envia PRIMEIRO o feedback do clique da ÚLTIMA questão
-           await self.thread.send(content=feedback)
-           
-           view_final = View()
-           btn_repetir = Button(label="Repetir Simulado", style=discord.ButtonStyle.success, emoji="🔄")
+            # Monta o bloco de alternativas direto para a descrição
+            bloco_opcoes = ""
+            for l, t in zip(["A", "B", "C", "D"], alts_texto):
+                texto_alt_limpo = re.sub(r'^[A-D]:\s*', '', t)
+                bloco_opcoes += f"**{l})** {texto_alt_limpo}\n"
+
+            embed_prox = discord.Embed(
+                title=f"Questão {proximo + 1}",
+                description=f"{pergunta_limpa}\n\n{bloco_opcoes}",
+                color=discord.Color.blue()
+            )
+            
+            if q_prox["imagem"]:
+                embed_prox.set_image(url=q_prox["imagem"])
+
+            nova_view = QuestaoView(self.user_id, proximo, self.acertos, self.thread)
+            nova_view.alternativas_atuais = alts_texto # Passa a ordem de memória adiante
+            
+            msg = await self.thread.send(embed=embed_prox, view=nova_view)
+            nova_view.message = msg
+        else:
+            # --- FINALIZA O SIMULADO ---
+            self.stop()
+            
+            view_final = View()
+            btn_repetir = Button(label="Repetir Simulado", style=discord.ButtonStyle.success, emoji="🔄")
             
             async def repetir_callback(it: discord.Interaction):
                 await it.response.defer(ephemeral=True) 
