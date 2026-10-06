@@ -1,0 +1,245 @@
+QUESTAO: A IA pode ser aplicada em qual setor para personalizar o aprendizado?
+A: Entretenimento.
+B: Comércio.
+C: Saúde.
+D: Educação.
+GABARITO: D
+---
+QUESTAO: A IA foi aplicada em assistentes virtuais como:
+A: Twitter, Facebook e Instagram.
+B: Siri, Alexa e Google Assistant.
+C: Tik Tok, Snapchat e WhatsApp.
+D: Linkedin, Zoom e Slack.
+GABARITO: B
+---
+QUESTAO: O desenvolvimento de IA se acelerou nas últimas décadas devido a:
+A: Avanços significativos em hardware, software e técnicas de aprendizado.
+B: Diminuição da capacidade computacional.
+C: Redução na disponibilidade de grandes volumes de dados.
+D: Falta de interesse das empresas em inovar.
+GABARITO: A
+---
+QUESTAO: A IA é frequentemente aplicada em que setor para otimizar investimentos e detectar fraudes?
+A: Educação.
+B: Finanças.
+C: Saúde.
+D: Entretenimento.
+GABARITO: B
+---
+QUESTAO: O termo "inverno da IA" refere-se a um período de?
+A: Desilusão e cortes de financiamento na área de IA.
+B: Crescimento exponencial na pesquisa de IA.
+C: Aumento de investimentos em IA.
+D: Avanços significativos em algoritmos de aprendizado.
+GABARITO: A
+---
+QUESTAO: Qual das seguintes áreas não é uma aplicação comum de IA?
+A: Análise de dados meteorológicos.
+B: Programação de código-fonte.
+C: Robótica.
+D: Tradução automática.
+GABARITO: B
+---
+QUESTAO: A IA Superinteligente é hipotética por:
+A: Estar restrita a aplicações militares.
+B: Não ter capacidade de aprendizado ou raciocínio.
+C: Ser restrita a tarefas específicas e limitadas.
+D: Ser capaz de superar a inteligência humana em todos os aspectos.
+GABARITO: D
+---
+QUESTAO: Quem propôs o conceito de máquinas que podem aprender com a experiência?
+A: GPT-3.
+B: Alan Turing.
+C: Midjourney.
+D: AlphaFold.
+GABARITO: B
+---
+QUESTAO: A IA Geral ou Forte é caracterizada por:
+A: Aprender e adaptar-se a uma ampla variedade de tarefas.
+B: Não ter consciência ou autoconhecimento.
+C: Capacidade de realizar qualquer tarefa intelectual humana.
+D: Realizar tarefas específicas e limitadas.
+GABARITO: C
+---
+QUESTAO: A IA Restrita ou Fraca se caracteriza por?
+A: Capacidade de realizar qualquer tarefa intelectual humana.
+B: Consciência e autoconhecimento.
+C: Realizar tarefas específicas e limitadas.
+D: Capacidade de aprendizado ilimitado.
+GABARITO: C
+---
+QUESTAO: O que é necessário para que a Regressão Linear funcione adequadamente?
+A: Relação linear entre variáveis de entrada e saída.
+B: Dados sequenciais.
+C: Função logística aplicada aos dados.
+D: Grande volume de dados não rotulados.
+GABARITO: A
+---
+QUESTAO: Quais são as desvantagens do uso de Machine Learning?
+A: Falta de adaptabilidade a mudanças ambientais.
+B: Dependência de dados imprecisos ou enviesados.
+C: Limitação na análise de grandes conjuntos de dados.
+D: Difícil interpretação dos resultados.
+GABARITO: B
+---
+QUESTAO: Como a inteligência artificial (IA) está revolucionando as empresas?
+A: Aumentando a eficiência energética
+B: Reduzindo custos operacionais
+C: Melhorando a segurança física
+D: Eliminando a necessidade de supervisão humana
+GABARITO: B
+---
+QUESTAO: Para qual tipo de dados as Redes Neurais Recorrentes são mais adequadas?
+A: Dados rotulados.
+B: Dados não sequenciais.
+C: Dados de séries temporais.
+D: Imagens e vídeos.
+GABARITO: C
+---
+QUESTAO: Como os modelos de Machine Learning podem ser adaptados a mudanças nas condições do ambiente?
+A: Reduzindo o tempo de treinamento dos modelos.
+B: Utilizando algoritmos que se ajustam com novos dados.
+C: Pela automatização de processos de decisão.
+D: Através da interpretação clara de padrões complexos.
+GABARITO: B
+---
+QUESTAO: Quais são os tipos principais de aprendizado de máquina?
+A: Aprendizado supervisionado, aprendizado não supervisionado, aprendizado por reforço, aprendizado profundo.
+B: Aprendizado de máquina, aprendizado cognitivo, aprendizado adaptativo, aprendizado automático.
+C: Aprendizado automático, aprendizado assistido, aprendizado semi-automático, aprendizado por feedback.
+D: Aprendizado supervisionado, aprendizado não supervisionado, aprendizado semissupervisionado, aprendizado por reforço.
+GABARITO: D
+---
+QUESTAO: Qual é a principal diferença entre aprendizado supervisionado e não supervisionado?
+A: A aprendizagem supervisionada é mais rápida; a não supervisionada é mais precisa.
+B: O aprendizado supervisionado usa dados rotulados; o não supervisionado usa dados não rotulados.
+C: O aprendizado supervisionado é usado apenas para classificação; o não supervisionado, apenas para regressão.
+D: No aprendizado supervisionado, há feedback do ambiente; no não supervisionado, não há feedback.
+GABARITO: B
+---
+QUESTAO: Qual é a característica principal das Redes Neurais Feedforward?
+A: Dados fluem em uma única direção.
+B: Competição entre gerador e discriminador.
+C: Memória de longo prazo.
+D: Aplicação em dados sequenciais.
+GABARITO: A
+---
+QUESTAO: Qual algoritmo de Machine Learning é adequado para problemas de classificação binária?
+A: Redes Neurais Convolucionais.
+B: K-means Clustering.
+C: Regressão Logística.
+D: Regressão Linear.
+GABARITO: C
+---
+QUESTAO: O que é Machine Learning?
+A: Um ramo da inteligência artificial que se concentra em criar sistemas que podem aprender com dados.
+B: Um conjunto de dados que podem ser usados para treinar algoritmos.
+C: Um tipo de programação que não utiliza algoritmos.
+D: Um método para programar sistemas diretamente com regras específicas.
+GABARITO: A
+---
+QUESTAO: Qual é um benefício da IA pronta para uso?
+A: Maior personalização.
+B: Menor dependência de dados.
+C: Redução da automação.
+D: Aumento da complexidade.
+GABARITO: A
+---
+QUESTAO: Como a IA é aplicada no setor de Recursos Humanos?
+A: Melhorando a segurança física.
+B: Reduzindo fraudes financeiras.
+C: Automatizando operações analíticas.
+D: Simplificando o onboarding de novos funcionários.
+GABARITO: D
+---
+QUESTAO: Como a IA pode ser aplicada nas operações ou produção?
+A: Detectando fraudes financeiras.
+B: Otimizando a estufagem de veículos.
+C: Analisando padrões de compra.
+D: Melhorando a segurança física.
+GABARITO: B
+---
+QUESTAO: Qual é um exemplo de aplicação da IA na gestão financeira?
+A: Otimização de processos de marketing.
+B: Manutenção preditiva de equipamentos.
+C: Análise de risco de crédito.
+D: Monitoramento de robôs na fábrica.
+GABARITO: C
+---
+QUESTAO: Qual é uma aplicação da IA no marketing?
+A: Manutenção preditiva.
+B: Automação de cálculos financeiros.
+C: Otimização de preços dinâmicos.
+D: Monitoramento de robôs.
+GABARITO: C
+---
+QUESTAO: Como a Netflix utiliza IA?
+A: Para recomendar conteúdo personalizado.
+B: Para melhorar a segurança física.
+C: Para otimizar operações de produção.
+D: Para automatizar processos financeiros.
+GABARITO: A
+---
+QUESTAO: Qual é uma estratégia de vendas impulsionada por IA?
+A: Aumentar o número de funcionários.
+B: Reduzir a complexidade das operações.
+C: Aumentar o custo de produção.
+D: Personalizar a experiência de compra.
+GABARITO: D
+---
+QUESTAO: O que a IA ajuda a Amazon Brasil a fazer?
+A: Otimizar processos financeiros.
+B: Detectar fraudes.
+C: Melhorar a segurança física.
+D: Analisar comportamento do usuário.
+GABARITO: B
+---
+QUESTAO: Quais são os riscos associados ao uso da IA mencionados no texto?
+A: Melhoria na inovação empresarial.
+B: Sobrecarga de dados.
+C: Necessidade de pessoal especializado.
+D: Segurança de dados e vieses.
+GABARITO: D
+---
+QUESTAO: Qual empresa utiliza IA para melhorar suas recomendações de produtos e otimizar buscas?
+A: Mercado Livre.
+B: Americanas.com.
+C: OLX Brasil.
+D: Magazine Luiza.
+GABARITO: A
+---
+QUESTAO: Como a IA pode ser utilizada para automação do processo de vendas?
+A: Automatizando e-mails de marketing.
+B: Aumentando a automação de cálculos financeiros.
+C: Reduzindo a complexidade das operações.
+D: Otimizando a estufagem de veículos.
+GABARITO: A
+---
+QUESTAO: O que é operacionalização da IA?
+A: Implementação de chatbots.
+B: Desenvolvimento de novos algoritmos.
+C: Análise avançada de dados
+D: Integração de IA em operações de negócios.
+GABARITO: D
+---
+QUESTAO: O que a IA analisa para melhorar a qualidade dos anúncios na OLX Brasil?
+A: Comportamento do usuário.
+B: Previsão de comportamento do consumidor.
+C: Custos de produção.
+D: Análise de tendências de mercado.
+GABARITO: A
+---
+QUESTAO: Qual empresa utilizou IA para construir modelos de identificação de critérios de compra dos clientes?
+A: OLX Brasil.
+B: Beacon Street Services.
+C: Netflix.
+D: Farmwise.
+GABARITO: B
+---
+QUESTAO: Qual é um exemplo de aplicação de IA na Suzano?
+A: Detecção de avarias em fardos de celulose.
+B: Otimização de processos de logística.
+C: Previsão de comportamento do consumidor.
+D: Análise de tendências de mercado.
+GABARITO: A
+---

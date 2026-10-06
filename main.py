@@ -228,17 +228,20 @@ class MenuSimulado(View):
     @discord.ui.button(label="Engenharia de Software", style=discord.ButtonStyle.secondary, row=0)
     async def btn3(self, it, btn): await self.preparar_sala(it, "Engenharia de Software.txt")
 
-    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.secondary, row=0)
-    async def btn4(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
+    @discord.ui.button(label="Inteligência Artificial", style=discord.ButtonStyle.secondary, row=0)
+    async def btn4(self, it, btn): await self.preparar_sala(it, "Inteligência Artificial.txt")
+
+    @discord.ui.button(label="Introdução à Ciência de Dados", style=discord.ButtonStyle.secondary, row=1)
+    async def btn5(self, it, btn): await self.preparar_sala(it, "Introdução à Ciência de Dados.txt")
 
     @discord.ui.button(label="Rede de Computadores", style=discord.ButtonStyle.secondary, row=1)
-    async def btn5(self, it, btn): await self.preparar_sala(it, "Rede de Computadores.txt")
+    async def btn6(self, it, btn): await self.preparar_sala(it, "Rede de Computadores.txt")
 
     @discord.ui.button(label="Sistemas Operacionais", style=discord.ButtonStyle.secondary, row=1)
-    async def btn6(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
+    async def btn7(self, it, btn): await self.preparar_sala(it, "Sistemas Operacionais.txt")
 
     @discord.ui.button(label="Teoria Geral dos Sistemas", style=discord.ButtonStyle.secondary, row=1)
-    async def btn7(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
+    async def btn8(self, it, btn): await self.preparar_sala(it, "Teoria Geral dos Sistemas.txt")
 
 
     async def preparar_sala(self, interaction, nome_arquivo):
@@ -373,6 +376,7 @@ async def menu(ctx):
             "Você pode iniciar um simulado clicando no botão correspondente abaixo.\n\n"
             "**Algoritimos Para Programação**\n"
             "**Arquitetura de Computadores**\n"
+            "**Inteligência Artificial**\n"
             "**Engenharia de Software**\n"
             "**Introdução à Ciência de Dados**\n"
             "**Rede de Computadores**\n"
